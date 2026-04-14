@@ -13,7 +13,7 @@ class CNN1D(nn.Module):
 
         in_channels = 4  # DNA one-hot (A,C,G,T)
 
-        # --- Conv stack ---
+        #  Conv stack 
         for i in range(config["num_conv_layers"]):
             out_channels = config["conv_filters"][i] if isinstance(config["conv_filters"], list) else config["conv_filters"]
             kernel_size = config["conv_width"][i] if isinstance(config["conv_width"], list) else config["conv_width"]
@@ -29,7 +29,7 @@ class CNN1D(nn.Module):
 
             in_channels = out_channels
 
-        # --- Pooling ---
+        #  Pooling 
         self.pool = nn.MaxPool1d(
             kernel_size=config["max_pool_size"],
             stride=config["max_pool_stride"]
@@ -62,10 +62,10 @@ class CNN1D(nn.Module):
 
         # Conv stack
         for conv, bn, drop in zip(self.conv_layers, self.bn_layers, self.dropout_layers):
-            x = conv(x)
-            x = bn(x)
-            x = F.relu(x)
-            x = drop(x)
+            x = conv(x) #scan for motifs
+            x = bn(x) #normalize
+            x = F.relu(x) #non_linearity
+            x = drop(x) # regularization
             x = self.pool(x)  # pooling after each block
 
         # Global pooling
