@@ -11,7 +11,7 @@ class CNN1D(nn.Module):
         self.bn_layers = nn.ModuleList()
         self.dropout_layers = nn.ModuleList()
 
-        in_channels = 4  # DNA one-hot (A,C,G,T)
+        in_channels = 4  # DNA one-hot (A,C,G,T,N)
 
         #  Conv stack 
         for i in range(config["num_conv_layers"]):
@@ -61,12 +61,18 @@ class CNN1D(nn.Module):
         x = x.permute(0, 2, 1)  # → (batch, 4, L)
 
         # Conv stack
-        for conv, bn, drop in zip(self.conv_layers, self.bn_layers, self.dropout_layers):
+        for i, (conv, bn, drop )in enumerate(zip(self.conv_layers, self.bn_layers, self.dropout_layers)):
             x = conv(x) #scan for motifs
             x = bn(x) #normalize
             x = F.relu(x) #non_linearity
             x = drop(x) # regularization
-            x = self.pool(x)  # pooling after each block
+            #only pool after first two layers 
+            if i < len(self.conv_layers) - 1:
+                x = self.pool(x)  
+                 
+             # x = self.pool(x)  # only  layers will be pooling and global ofc
+
+            
 
         # Global pooling
         x = self.global_pool(x)  # (batch, C, 1)
