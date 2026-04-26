@@ -18,11 +18,15 @@ cnn_config = {
         "longerbp": 32,
         "multiclass": 64,
         "bottleneck": 64,
+        "HumanvsNeanderthal": 32,
+        "DenisovanvsNeanderthal": 32
     },
     "lr": {
         "original": 5e-5, #previous was 1e-4
         "longerbp": 1e-4,
-        "multiclass": 1e-3,
+        "multiclass": 3e-4,
         "bottleneck": 1e-4,
+        "HumanvsNeanderthal": 1e-4,
+        "DenisovanvsNeanderthal": 1e-4,
     },
 }
