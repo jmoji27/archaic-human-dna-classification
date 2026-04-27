@@ -1,0 +1,820 @@
+jmoji@jmoji-Dell-G15-5511:~/archaic-human-dna-classification$  source /home/jmoji/archaic-human-dna-classification/venv/bin/activate
+(venv) jmoji@jmoji-Dell-G15-5511:~/archaic-human-dna-classification$ /home/jmoji/archaic-human-dna-classification/venv/bin/python /home/jmoji/archaic-human-dna-classification/src/data/build_dataset.py
+
+======================================================================
+EXTRACTING BAM/FASTA SEQUENCES (chromosome-based splits)
+  Train chroms : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+  Val chroms   : [18, 19, 20]
+  Test chroms  : [21, 22]
+======================================================================
+Cleaning up old dataset directories if they exist...
+Deleting dataset/binary/
+Deleting dataset/multiclass/
+
+======================================================================
+BUILDING BINARY DATASET original: Denisovan (1) vs Human (0) [35–120 bp]
+======================================================================
+
+  [TRAIN] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr1.bam
+  Processing: data/denisovan/den_chr2.bam
+  Processing: data/denisovan/den_chr3.bam
+  Processing: data/denisovan/den_chr4.bam
+  Processing: data/denisovan/den_chr5.bam
+  Processing: data/denisovan/den_chr6.bam
+  Processing: data/denisovan/den_chr7.bam
+  Processing: data/denisovan/den_chr8.bam
+  Processing: data/denisovan/den_chr9.bam
+  Processing: data/denisovan/den_chr10.bam
+  Processing: data/denisovan/den_chr11.bam
+  Processing: data/denisovan/den_chr12.bam
+  Processing: data/denisovan/den_chr13.bam
+  Processing: data/denisovan/den_chr14.bam
+  Processing: data/denisovan/den_chr15.bam
+  Processing: data/denisovan/den_chr16.bam
+  Processing: data/denisovan/den_chr17.bam
+    Denisovan: 1,218,937
+    Extracting 1,218,937 Human sequences from train chromosomes...
+  Processing: data/human/human_chr1.fa
+  Processing: data/human/human_chr2.fa
+  Processing: data/human/human_chr3.fa
+  Processing: data/human/human_chr4.fa
+  Processing: data/human/human_chr5.fa
+  Processing: data/human/human_chr6.fa
+  Processing: data/human/human_chr7.fa
+  Processing: data/human/human_chr8.fa
+  Processing: data/human/human_chr9.fa
+  Processing: data/human/human_chr10.fa
+  Processing: data/human/human_chr11.fa
+  Processing: data/human/human_chr12.fa
+  Processing: data/human/human_chr13.fa
+  Processing: data/human/human_chr14.fa
+  Processing: data/human/human_chr15.fa
+  Processing: data/human/human_chr16.fa
+  Processing: data/human/human_chr17.fa
+    Human: 1,218,937
+  Built DataFrame: 2,437,874 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 2,437,874
+Class distribution:
+label
+0    1218937
+1    1218937
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 1
+Total samples to remove: 3 (0.00%)
+
+ Cleaned dataset size: 2,437,871
+Class distribution after cleaning:
+label
+0    1218936
+1    1218935
+Name: count, dtype: int64
+Removed: 3 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 2,437,871 samples
+After: 2,017,980 samples
+Removed: 419,891 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 2,017,980
+Removed: 419,894 (17.22%)
+Class distribution:
+label
+0    1216965
+1     801015
+Name: count, dtype: int64
+Unique sequences: 2,017,980
+======================================================================
+
+
+  [VAL] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr18.bam
+  Processing: data/denisovan/den_chr19.bam
+  Processing: data/denisovan/den_chr20.bam
+    Denisovan: 87,671
+    Extracting 87,671 Human sequences from val chromosomes...
+  Processing: data/human/human_chr18.fa
+  Processing: data/human/human_chr19.fa
+  Processing: data/human/human_chr20.fa
+    Human: 87,671
+  Built DataFrame: 175,342 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 175,342
+Class distribution:
+label
+0    87671
+1    87671
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 175,342
+Class distribution after cleaning:
+label
+0    87671
+1    87671
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 175,342 samples
+After: 148,662 samples
+Removed: 26,680 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 148,662
+Removed: 26,680 (15.22%)
+Class distribution:
+label
+0    87478
+1    61184
+Name: count, dtype: int64
+Unique sequences: 148,662
+======================================================================
+
+
+  [TEST] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr21.bam
+  Processing: data/denisovan/den_chr22.bam
+    Denisovan: 30,061
+    Extracting 30,061 Human sequences from test chromosomes...
+  Processing: data/human/human_chr21.fa
+  Processing: data/human/human_chr22.fa
+    Human: 30,061
+  Built DataFrame: 60,122 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 60,122
+Class distribution:
+label
+0    30061
+1    30061
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 60,122
+Class distribution after cleaning:
+label
+0    30061
+1    30061
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 60,122 samples
+After: 50,888 samples
+Removed: 9,234 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 50,888
+Removed: 9,234 (15.36%)
+Class distribution:
+label
+0    30041
+1    20847
+Name: count, dtype: int64
+Unique sequences: 50,888
+======================================================================
+
+
+  Saved to dataset/binary/original
+    Train: 2,017,980  |  Val: 148,662  |  Test: 50,888
+
+  Data Leakage Check:
+    train↔val: ✗ 41 overlapping sequences!
+    train↔test: ✗ 26 overlapping sequences!
+    val↔test: ✓ No leakage
+Freed binary/original memory
+
+======================================================================
+BUILDING BINARY DATASET longerbp: Denisovan (1) vs Human (0) [85–120 bp]
+======================================================================
+
+  [TRAIN] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr1.bam
+  Processing: data/denisovan/den_chr2.bam
+  Processing: data/denisovan/den_chr3.bam
+  Processing: data/denisovan/den_chr4.bam
+  Processing: data/denisovan/den_chr5.bam
+  Processing: data/denisovan/den_chr6.bam
+  Processing: data/denisovan/den_chr7.bam
+  Processing: data/denisovan/den_chr8.bam
+  Processing: data/denisovan/den_chr9.bam
+  Processing: data/denisovan/den_chr10.bam
+  Processing: data/denisovan/den_chr11.bam
+  Processing: data/denisovan/den_chr12.bam
+  Processing: data/denisovan/den_chr13.bam
+  Processing: data/denisovan/den_chr14.bam
+  Processing: data/denisovan/den_chr15.bam
+  Processing: data/denisovan/den_chr16.bam
+  Processing: data/denisovan/den_chr17.bam
+    Denisovan: 104,243
+    Extracting 104,243 Human sequences from train chromosomes...
+  Processing: data/human/human_chr1.fa
+  Processing: data/human/human_chr2.fa
+  Processing: data/human/human_chr3.fa
+  Processing: data/human/human_chr4.fa
+  Processing: data/human/human_chr5.fa
+  Processing: data/human/human_chr6.fa
+  Processing: data/human/human_chr7.fa
+  Processing: data/human/human_chr8.fa
+  Processing: data/human/human_chr9.fa
+  Processing: data/human/human_chr10.fa
+  Processing: data/human/human_chr11.fa
+  Processing: data/human/human_chr12.fa
+  Processing: data/human/human_chr13.fa
+  Processing: data/human/human_chr14.fa
+  Processing: data/human/human_chr15.fa
+  Processing: data/human/human_chr16.fa
+  Processing: data/human/human_chr17.fa
+    Human: 104,243
+  Built DataFrame: 208,486 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 208,486
+Class distribution:
+label
+0    104243
+1    104243
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 208,486
+Class distribution after cleaning:
+label
+0    104243
+1    104243
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 208,486 samples
+After: 183,632 samples
+Removed: 24,854 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 183,632
+Removed: 24,854 (11.92%)
+Class distribution:
+label
+0    104224
+1     79408
+Name: count, dtype: int64
+Unique sequences: 183,632
+======================================================================
+
+
+  [VAL] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr18.bam
+  Processing: data/denisovan/den_chr19.bam
+  Processing: data/denisovan/den_chr20.bam
+    Denisovan: 7,745
+    Extracting 7,745 Human sequences from val chromosomes...
+  Processing: data/human/human_chr18.fa
+  Processing: data/human/human_chr19.fa
+  Processing: data/human/human_chr20.fa
+    Human: 7,745
+  Built DataFrame: 15,490 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 15,490
+Class distribution:
+label
+0    7745
+1    7745
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 15,490
+Class distribution after cleaning:
+label
+0    7745
+1    7745
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 15,490 samples
+After: 13,698 samples
+Removed: 1,792 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 13,698
+Removed: 1,792 (11.57%)
+Class distribution:
+label
+0    7743
+1    5955
+Name: count, dtype: int64
+Unique sequences: 13,698
+======================================================================
+
+
+  [TEST] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr21.bam
+  Processing: data/denisovan/den_chr22.bam
+    Denisovan: 2,631
+    Extracting 2,631 Human sequences from test chromosomes...
+  Processing: data/human/human_chr21.fa
+  Processing: data/human/human_chr22.fa
+    Human: 2,631
+  Built DataFrame: 5,262 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 5,262
+Class distribution:
+label
+0    2631
+1    2631
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 5,262
+Class distribution after cleaning:
+label
+0    2631
+1    2631
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 5,262 samples
+After: 4,649 samples
+Removed: 613 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 4,649
+Removed: 613 (11.65%)
+Class distribution:
+label
+0    2631
+1    2018
+Name: count, dtype: int64
+Unique sequences: 4,649
+======================================================================
+
+
+  Saved to dataset/binary/longerbp
+    Train: 183,632  |  Val: 13,698  |  Test: 4,649
+
+  Data Leakage Check:
+    train↔val: ✓ No leakage
+    train↔test: ✓ No leakage
+    val↔test: ✓ No leakage
+Freed longerbp memory
+
+======================================================================
+BUILDING BINARY BOTTLENECK DATASET: Human (0) vs Denisovan (1) [35–85 bp]
+======================================================================
+
+  [TRAIN] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr1.bam
+  Processing: data/denisovan/den_chr2.bam
+  Processing: data/denisovan/den_chr3.bam
+  Processing: data/denisovan/den_chr4.bam
+  Processing: data/denisovan/den_chr5.bam
+  Processing: data/denisovan/den_chr6.bam
+  Processing: data/denisovan/den_chr7.bam
+  Processing: data/denisovan/den_chr8.bam
+  Processing: data/denisovan/den_chr9.bam
+  Processing: data/denisovan/den_chr10.bam
+  Processing: data/denisovan/den_chr11.bam
+  Processing: data/denisovan/den_chr12.bam
+  Processing: data/denisovan/den_chr13.bam
+  Processing: data/denisovan/den_chr14.bam
+  Processing: data/denisovan/den_chr15.bam
+  Processing: data/denisovan/den_chr16.bam
+  Processing: data/denisovan/den_chr17.bam
+    Denisovan: 1,119,319
+    Extracting 1,119,319 Human sequences from train chromosomes...
+  Processing: data/human/human_chr1.fa
+  Processing: data/human/human_chr2.fa
+  Processing: data/human/human_chr3.fa
+  Processing: data/human/human_chr4.fa
+  Processing: data/human/human_chr5.fa
+  Processing: data/human/human_chr6.fa
+  Processing: data/human/human_chr7.fa
+  Processing: data/human/human_chr8.fa
+  Processing: data/human/human_chr9.fa
+  Processing: data/human/human_chr10.fa
+  Processing: data/human/human_chr11.fa
+  Processing: data/human/human_chr12.fa
+  Processing: data/human/human_chr13.fa
+  Processing: data/human/human_chr14.fa
+  Processing: data/human/human_chr15.fa
+  Processing: data/human/human_chr16.fa
+  Processing: data/human/human_chr17.fa
+    Human: 1,119,319
+  Built DataFrame: 2,238,638 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 2,238,638
+Class distribution:
+label
+0    1119319
+1    1119319
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 4
+Total samples to remove: 9 (0.00%)
+
+ Cleaned dataset size: 2,238,629
+Class distribution after cleaning:
+label
+0    1119315
+1    1119314
+Name: count, dtype: int64
+Removed: 9 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 2,238,629 samples
+After: 1,841,716 samples
+Removed: 396,913 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 1,841,716
+Removed: 396,922 (17.73%)
+Class distribution:
+label
+0    1116633
+1     725083
+Name: count, dtype: int64
+Unique sequences: 1,841,716
+======================================================================
+
+
+  [VAL] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr18.bam
+  Processing: data/denisovan/den_chr19.bam
+  Processing: data/denisovan/den_chr20.bam
+    Denisovan: 80,259
+    Extracting 80,259 Human sequences from val chromosomes...
+  Processing: data/human/human_chr18.fa
+  Processing: data/human/human_chr19.fa
+  Processing: data/human/human_chr20.fa
+    Human: 80,259
+  Built DataFrame: 160,518 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 160,518
+Class distribution:
+label
+0    80259
+1    80259
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 160,518
+Class distribution after cleaning:
+label
+0    80259
+1    80259
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 160,518 samples
+After: 135,518 samples
+Removed: 25,000 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 135,518
+Removed: 25,000 (15.57%)
+Class distribution:
+label
+0    80036
+1    55482
+Name: count, dtype: int64
+Unique sequences: 135,518
+======================================================================
+
+
+  [TEST] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr21.bam
+  Processing: data/denisovan/den_chr22.bam
+    Denisovan: 27,573
+    Extracting 27,573 Human sequences from test chromosomes...
+  Processing: data/human/human_chr21.fa
+  Processing: data/human/human_chr22.fa
+    Human: 27,573
+  Built DataFrame: 55,146 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 55,146
+Class distribution:
+label
+0    27573
+1    27573
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 55,146
+Class distribution after cleaning:
+label
+0    27573
+1    27573
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 55,146 samples
+After: 46,483 samples
+Removed: 8,663 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 46,483
+Removed: 8,663 (15.71%)
+Class distribution:
+label
+0    27544
+1    18939
+Name: count, dtype: int64
+Unique sequences: 46,483
+======================================================================
+
+
+  Saved to dataset/binary/bottleneck
+    Train: 1,841,716  |  Val: 135,518  |  Test: 46,483
+
+  Data Leakage Check:
+    train↔val: ✗ 91 overlapping sequences!
+    train↔test: ✗ 83 overlapping sequences!
+    val↔test: ✓ No leakage
+Freed bottleneck memory
+
+======================================================================
+BUILDING MULTICLASS DATASET: Human (0) vs Denisovan (1) vs Neanderthal (2) [35–85 bp]
+======================================================================
+
+  [TRAIN] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr1.bam
+  Processing: data/denisovan/den_chr2.bam
+  Processing: data/denisovan/den_chr3.bam
+  Processing: data/denisovan/den_chr4.bam
+  Processing: data/denisovan/den_chr5.bam
+  Processing: data/denisovan/den_chr6.bam
+  Processing: data/denisovan/den_chr7.bam
+  Processing: data/denisovan/den_chr8.bam
+  Processing: data/denisovan/den_chr9.bam
+  Processing: data/denisovan/den_chr10.bam
+  Processing: data/denisovan/den_chr11.bam
+  Processing: data/denisovan/den_chr12.bam
+  Processing: data/denisovan/den_chr13.bam
+  Processing: data/denisovan/den_chr14.bam
+  Processing: data/denisovan/den_chr15.bam
+  Processing: data/denisovan/den_chr16.bam
+  Processing: data/denisovan/den_chr17.bam
+    Denisovan: 1,119,319
+  Processing: data/neanderthal/nea_chr1.bam
+  Processing: data/neanderthal/nea_chr2.bam
+  Processing: data/neanderthal/nea_chr3.bam
+  Processing: data/neanderthal/nea_chr4.bam
+  Processing: data/neanderthal/nea_chr5.bam
+  Processing: data/neanderthal/nea_chr6.bam
+  Processing: data/neanderthal/nea_chr7.bam
+  Processing: data/neanderthal/nea_chr8.bam
+  Processing: data/neanderthal/nea_chr9.bam
+  Processing: data/neanderthal/nea_chr10.bam
+  Processing: data/neanderthal/nea_chr11.bam
+  Processing: data/neanderthal/nea_chr12.bam
+  Processing: data/neanderthal/nea_chr13.bam
+  Processing: data/neanderthal/nea_chr14.bam
+  Processing: data/neanderthal/nea_chr15.bam
+  Processing: data/neanderthal/nea_chr16.bam
+  Processing: data/neanderthal/nea_chr17.bam
+    Neanderthal: 25,032
+    Extracting 25,032 Human sequences from train chromosomes...
+  Processing: data/human/human_chr1.fa
+  Processing: data/human/human_chr2.fa
+  Processing: data/human/human_chr3.fa
+  Processing: data/human/human_chr4.fa
+  Processing: data/human/human_chr5.fa
+  Processing: data/human/human_chr6.fa
+  Processing: data/human/human_chr7.fa
+  Processing: data/human/human_chr8.fa
+  Processing: data/human/human_chr9.fa
+  Processing: data/human/human_chr10.fa
+  Processing: data/human/human_chr11.fa
+  Processing: data/human/human_chr12.fa
+  Processing: data/human/human_chr13.fa
+  Processing: data/human/human_chr14.fa
+  Processing: data/human/human_chr15.fa
+  Processing: data/human/human_chr16.fa
+  Processing: data/human/human_chr17.fa
+    Human: 25,032
+  Built DataFrame: 75,096 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 75,096
+Class distribution:
+label
+0    25032
+1    25032
+2    25032
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 75,096
+Class distribution after cleaning:
+label
+0    25032
+1    25032
+2    25032
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 75,096 samples
+After: 72,861 samples
+Removed: 2,235 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 72,861
+Removed: 2,235 (2.98%)
+Class distribution:
+label
+0    25030
+2    25030
+1    22801
+Name: count, dtype: int64
+Unique sequences: 72,861
+======================================================================
+
+
+  [VAL] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr18.bam
+  Processing: data/denisovan/den_chr19.bam
+  Processing: data/denisovan/den_chr20.bam
+    Denisovan: 80,259
+  Processing: data/neanderthal/nea_chr18.bam
+  Processing: data/neanderthal/nea_chr19.bam
+  Processing: data/neanderthal/nea_chr20.bam
+    Neanderthal: 2,501
+    Extracting 2,501 Human sequences from val chromosomes...
+  Processing: data/human/human_chr18.fa
+  Processing: data/human/human_chr19.fa
+  Processing: data/human/human_chr20.fa
+    Human: 2,501
+  Built DataFrame: 7,503 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 7,503
+Class distribution:
+label
+0    2501
+1    2501
+2    2501
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 7,503
+Class distribution after cleaning:
+label
+0    2501
+1    2501
+2    2501
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 7,503 samples
+After: 7,420 samples
+Removed: 83 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 7,420
+Removed: 83 (1.11%)
+Class distribution:
+label
+2    2501
+0    2500
+1    2419
+Name: count, dtype: int64
+Unique sequences: 7,420
+======================================================================
+
+
+  [TEST] Extracting Denisovan (chr: {'train':'1-17','val':'18-20','test':'21-22'}[split])...
+  Processing: data/denisovan/den_chr21.bam
+  Processing: data/denisovan/den_chr22.bam
+    Denisovan: 27,573
+  Processing: data/neanderthal/nea_chr21.bam
+  Processing: data/neanderthal/nea_chr22.bam
+    Neanderthal: 964
+    Extracting 964 Human sequences from test chromosomes...
+  Processing: data/human/human_chr21.fa
+  Processing: data/human/human_chr22.fa
+    Human: 964
+  Built DataFrame: 2,892 rows
+
+======================================================================
+DATASET CLEANING PIPELINE
+REMOVING CROSS-CLASS DUPLICATES
+Initial dataset size: 2,892
+Class distribution:
+label
+0    964
+1    964
+2    964
+Name: count, dtype: int64
+
+ Sequences appearing in MULTIPLE classes: 0
+Total samples to remove: 0 (0.00%)
+
+ Cleaned dataset size: 2,892
+Class distribution after cleaning:
+label
+0    964
+1    964
+2    964
+Name: count, dtype: int64
+Removed: 0 samples
+
+======================================================================
+REMOVING WITHIN-CLASS DUPLICATES
+Before: 2,892 samples
+After: 2,829 samples
+Removed: 63 duplicate samples
+======================================================================
+FINAL CLEANED DATASET:
+Total samples: 2,829
+Removed: 63 (2.18%)
+Class distribution:
+label
+0    964
+2    964
+1    901
+Name: count, dtype: int64
+Unique sequences: 2,829
+======================================================================
+
+
+  Saved to dataset/multiclass/original
+    Train: 72,861  |  Val: 7,420  |  Test: 2,829
+
+  Data Leakage Check:
+    train↔val: ✓ No leakage
+    train↔test: ✓ No leakage
+    val↔test: ✓ No leakage
+Freed multiclass memory
+
+======================================================================
+ALL DATASETS BUILT — chromosome-based splits, zero genomic leakage
+======================================================================
+(venv) jmoji@jmoji-Dell-G15-5511:~/archaic-human-dna-classification$ 
+
