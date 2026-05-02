@@ -12,7 +12,7 @@ from src.models.RNN import RNNModel
 from src.models.Transformer import TransformerModel
 from src.models.Danq import DanqModel
 from src.dataset import DNADataset, variable_length_collate  # FIX: import collate fn
-from src.train import train_model
+from src.train import train_model, train_rnn
 
 from src.configs.cnn_config import cnn_config
 from src.configs.rnn_config import rnn_config
@@ -208,13 +208,23 @@ def main():
     os.makedirs(save_dir, exist_ok=True)
     save_path = f"{save_dir}/{args.model}_{args.dataset_type}_best_model.pt"
 
-    history = train_model(
-        model, train_loader, val_loader, device,
-        num_epochs=args.epochs,
-        save_path=save_path,
-        train_labels=train_dataset.labels,
-        lr=config.get("lr", {}).get(args.dataset_type, 1e-3),
-    )
+    if args.model == "rnn":
+        history = train_rnn(
+            model, train_loader, val_loader, device,
+            num_epochs=args.epochs,
+            save_path=save_path,
+            train_labels=train_dataset.labels,
+            lr=config.get("lr", {}).get(args.dataset_type, 1e-3),
+        )
+   
+    else:
+        history = train_model(
+            model, train_loader, val_loader, device,
+            num_epochs=args.epochs,
+            save_path=save_path,
+            train_labels=train_dataset.labels,
+            lr=config.get("lr", {}).get(args.dataset_type, 1e-3),
+        )
 
     # ── plot training curves
     plot_training_history(history, save_dir, args.model, args.dataset_type)
