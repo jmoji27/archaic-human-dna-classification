@@ -26,7 +26,7 @@ cnn_config = {
         "longerbp": 1e-4,
         "multiclass": 3e-4,
         "bottleneck": 1e-4,
-        "HumanvsNeanderthal": 1e-4,
+        "HumanvsNeanderthal": 5e-5,
         "DenisovanvsNeanderthal": 5e-5,
     },
 }
