@@ -42,7 +42,7 @@ class CNN1D(nn.Module):
         self.fc_layers = nn.ModuleList()
         self.fc_dropout = nn.ModuleList()
 
-        in_features = in_channels
+        in_features = in_channels *2 # after global pooling concatenate(avg , max)
 
         for i in range(config["num_dense_layers"]):
             out_features = config["dense_filters"][i] if isinstance(config["dense_filters"], list) else config["dense_filters"]
@@ -67,15 +67,19 @@ class CNN1D(nn.Module):
             x = F.relu(x) #non_linearity
             x = drop(x) # regularization
             #only pool after first two layers 
-            if i < len(self.conv_layers) - 1:
-                x = self.pool(x)  
+            #if i < len(self.conv_layers) - 1:
+             #   x = self.pool(x)   
+             # for a weird reason pooling after every conv layer seems to hurt performance, 
+             # maybe because the sequences are already short and pooling reduces them too much?
                  
              # x = self.pool(x)  # only  layers will be pooling and global ofc
 
             
 
         # Global pooling
-        x = self.global_pool(x)  # (batch, C, 1)
+        avg_p = F.adaptive_avg_pool1d(x, 1)  
+        max_p = F.adaptive_max_pool1d(x, 1)
+        x = torch.cat([avg_p, max_p], dim=1)    # (batch, C, 1)
         x = x.squeeze(-1)        # (batch, C)
 
         # Dense stack
