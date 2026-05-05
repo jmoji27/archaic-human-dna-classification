@@ -71,6 +71,8 @@ class DNADataset(Dataset):
         else:
             df = data.copy()
 
+        df = df.sample(frac=1, random_state=42).reset_index(drop=True)  # shuffle dataset
+
         self.df     = df
         self.train  = train
         self.labels = torch.tensor(self.df["label"].values, dtype=torch.long)
