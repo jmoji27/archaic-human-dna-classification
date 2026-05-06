@@ -35,10 +35,10 @@ class CNN1D(nn.Module):
             stride=config["max_pool_stride"]
         )
 
-        # --- Global pooling (replaces Flatten) ---
+        # Global pooling (replaces Flatten) 
         self.global_pool = nn.AdaptiveMaxPool1d(1)
 
-        # --- Dense stack ---
+        # Dense stack  
         self.fc_layers = nn.ModuleList()
         self.fc_dropout = nn.ModuleList()
 
