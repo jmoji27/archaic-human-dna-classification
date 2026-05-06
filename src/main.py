@@ -32,14 +32,6 @@ SEQ_LEN = {
     "DenisovanvsNeanderthal": 85
 }
 
-BATCH_SIZE = {
-    "original":   64,
-    "longerbp":   64,
-    "bottleneck": 32,
-    "multiclass": 32,
-    "HumanvsNeanderthal": 32,
-    "DenisovanvsNeanderthal": 32
-}
 
 
 def plot_training_history(history, save_dir, model_name, dataset_type):
@@ -141,6 +133,70 @@ def plot_confusion_matrix(model, loader, device, num_classes, save_dir, model_na
     print()
 
 
+def plot_auroc(model, loader, device, num_classes, save_dir, model_name, dataset_type):
+    from sklearn.metrics import roc_curve, auc
+    from itertools import cycle
+
+    CLASS_NAMES = {
+        "original":               ["Human", "Archaic"],
+        "longerbp":               ["Human", "Archaic"],
+        "bottleneck":             ["Human", "Archaic"],
+        "multiclass":             ["Human", "Denisovan", "Neanderthal"],
+        "HumanvsNeanderthal":     ["Human", "Neanderthal"],
+        "DenisovanvsNeanderthal": ["Denisovan", "Neanderthal"],
+    }
+    labels_names = CLASS_NAMES.get(dataset_type, [str(i) for i in range(num_classes)])
+
+    model.eval()
+    all_probs  = []
+    all_labels = []
+
+    with torch.no_grad():
+        for x, y in loader:
+            x, y = x.to(device), y.to(device)
+            probs = torch.softmax(model(x), dim=1)
+            all_probs.extend(probs.cpu().numpy())
+            all_labels.extend(y.cpu().numpy())
+
+    all_probs  = np.array(all_probs)   # shape: (N, num_classes)
+    all_labels = np.array(all_labels)  # shape: (N,)
+
+    plt.figure(figsize=(7, 5))
+    colors = cycle(["#2196F3", "#FF9800", "#4CAF50"])
+
+    if num_classes == 2:
+        # Binary: one curve using P(class 1)
+        fpr, tpr, _ = roc_curve(all_labels, all_probs[:, 1])
+        roc_auc     = auc(fpr, tpr)
+        plt.plot(fpr, tpr, linewidth=2,
+                 label=f"{labels_names[1]} vs {labels_names[0]}  (AUC = {roc_auc:.3f})")
+    else:
+        # Multiclass: one-vs-rest curve per class
+        from sklearn.preprocessing import label_binarize
+        all_labels_bin = label_binarize(all_labels, classes=list(range(num_classes)))
+        for i, (name, color) in enumerate(zip(labels_names, colors)):
+            fpr, tpr, _ = roc_curve(all_labels_bin[:, i], all_probs[:, i])
+            roc_auc     = auc(fpr, tpr)
+            plt.plot(fpr, tpr, color=color, linewidth=2,
+                     label=f"{name} (AUC = {roc_auc:.3f})")
+
+    plt.plot([0, 1], [0, 1], "k--", linewidth=1, label="Random (AUC = 0.500)")
+    plt.xlabel("False Positive Rate", fontsize=12)
+    plt.ylabel("True Positive Rate", fontsize=12)
+    plt.title(f"{model_name.upper()} — {dataset_type} — ROC Curve (val set)",
+              fontsize=13, fontweight="bold")
+    plt.legend(loc="lower right", fontsize=10)
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+
+    os.makedirs(f"{save_dir}/graphs", exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    path = f"{save_dir}/graphs/{model_name}_{dataset_type}_auroc_{timestamp}.png"
+    plt.savefig(path, dpi=300, bbox_inches="tight")
+    plt.close()
+    print(f"  AUROC plot saved → {path}")
+
+
 def main():
     torch.manual_seed(42)
     torch.cuda.manual_seed_all(42)
@@ -157,10 +213,7 @@ def main():
     if args.dataset_type not in SEQ_LEN:
         raise ValueError(f"Unknown dataset_type '{args.dataset_type}'. Choose from: {list(SEQ_LEN)}")
 
-    device     = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    batch_size = BATCH_SIZE[args.dataset_type]
-    print(f"Device: {device} | Batch: {batch_size}")
-    print("Sequences returned at natural length — padded per-batch by variable_length_collate")
+   
 
     # ── model
     model_map = {
@@ -172,9 +225,17 @@ def main():
 
     if args.model not in model_map:
         raise ValueError(f"Unknown model '{args.model}'. Choose from: {list(model_map)}")
+    
+    device     = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+   
 
     ModelClass, config = model_map[args.model]
     model = ModelClass(config, args.num_classes).to(device)
+
+    
+    batch_size = config.get("batch_size", {}).get(args.dataset_type, 64)  # default batch size if not specified per dataset
+    print(f"Device: {device} | Batch: {batch_size}")
+    print("Sequences returned at natural length — padded per-batch by variable_length_collate")
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"Model: {args.model} | Params: {n_params:,}")
@@ -224,6 +285,14 @@ def main():
     # so the matrix reflects the best model, not the last epoch.
     model.load_state_dict(torch.load(save_path, map_location=device))
     plot_confusion_matrix(
+        model, val_loader, device,
+        num_classes=args.num_classes,
+        save_dir=save_dir,
+        model_name=args.model,
+        dataset_type=args.dataset_type,
+    )
+
+    plot_auroc(
         model, val_loader, device,
         num_classes=args.num_classes,
         save_dir=save_dir,

@@ -1,0 +1,1095 @@
+Using device: cuda
+
+Starting Optuna search: 50 trials on 'multiclass'
+  Objective   : balanced_accuracy_score (mean per-class recall)
+  LR range    : [1e-5, 1e-2]  (extended from [1e-5, 1e-3])
+  search_epochs=20, es_patience=5
+
+Epoch 1/20 | Train Loss: 2.4048 | Train Acc: 0.5524 | Val Loss: 2.4324 | Val Acc: 0.5319 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3174 | Train Acc: 0.5693 | Val Loss: 2.4174 | Val Acc: 0.5425 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2850 | Train Acc: 0.5727 | Val Loss: 2.4456 | Val Acc: 0.5410 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.2741 | Train Acc: 0.5766 | Val Loss: 2.4117 | Val Acc: 0.5500 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2715 | Train Acc: 0.5763 | Val Loss: 2.4217 | Val Acc: 0.5498 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2619 | Train Acc: 0.5779 | Val Loss: 2.4106 | Val Acc: 0.5567 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2607 | Train Acc: 0.5790 | Val Loss: 2.3529 | Val Acc: 0.5555 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2533 | Train Acc: 0.5800 | Val Loss: 2.4184 | Val Acc: 0.5433 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2487 | Train Acc: 0.5823 | Val Loss: 2.3888 | Val Acc: 0.5509 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.2489 | Train Acc: 0.5813 | Val Loss: 2.4222 | Val Acc: 0.5446 | No improvement: 4/5
+Epoch 11/20 | Train Loss: 2.2462 | Train Acc: 0.5822 | Val Loss: 2.3597 | Val Acc: 0.5544 | No improvement: 5/5
+
+Early stopping triggered after 11 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5567  →  saved to optuna_trial_0.pth
+  Trial   0 | bal_acc=0.5550 | Human=0.356 | Denisovan=0.430 | Neanderthal=0.878
+[32m[I 2026-05-05 00:48:44,616][0m Trial 0 finished with value: 0.5549811728786204 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'filters_0': 256, 'filters_1': 32, 'filters_2': 128, 'filters_3': 128, 'width_0': 9, 'width_1': 19, 'width_2': 19, 'width_3': 11, 'drop_conv_0': 0.2522179367875782, 'drop_conv_1': 0.343164242627918, 'drop_conv_2': 0.4551372145001692, 'drop_conv_3': 0.4065455691384028, 'dense_0': 64, 'drop_dense_0': 0.5438223301440345, 'lr': 0.0008809834133766492, 'weight_decay': 0.0003902065550741602}. Best is trial 0 with value: 0.5549811728786204.[0m
+Epoch 1/20 | Train Loss: 2.4343 | Train Acc: 0.5442 | Val Loss: 2.4754 | Val Acc: 0.5334 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3590 | Train Acc: 0.5564 | Val Loss: 2.6914 | Val Acc: 0.4829 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.3411 | Train Acc: 0.5615 | Val Loss: 2.5422 | Val Acc: 0.5105 | No improvement: 2/5
+Epoch 4/20 | Train Loss: 2.3300 | Train Acc: 0.5617 | Val Loss: 2.5606 | Val Acc: 0.5028 | No improvement: 3/5
+Epoch 5/20 | Train Loss: 2.3182 | Train Acc: 0.5630 | Val Loss: 2.4788 | Val Acc: 0.5247 | No improvement: 4/5
+Epoch 6/20 | Train Loss: 2.3188 | Train Acc: 0.5635 | Val Loss: 2.5310 | Val Acc: 0.5072 | No improvement: 5/5
+
+Early stopping triggered after 6 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5334  →  saved to optuna_trial_1.pth
+  Trial   1 | bal_acc=0.5313 | Human=0.371 | Denisovan=0.370 | Neanderthal=0.852
+[32m[I 2026-05-05 00:49:28,901][0m Trial 1 finished with value: 0.5312576621440831 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'filters_0': 128, 'filters_1': 64, 'width_0': 19, 'width_1': 9, 'drop_conv_0': 0.15783160302080076, 'drop_conv_1': 0.4718145117575323, 'dense_0': 128, 'drop_dense_0': 0.5425389389846145, 'lr': 0.0025041742978689024, 'weight_decay': 0.0012436158556164965}. Best is trial 0 with value: 0.5549811728786204.[0m
+Epoch 1/20 | Train Loss: 2.6378 | Train Acc: 0.5207 | Val Loss: 2.6465 | Val Acc: 0.5059 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4358 | Train Acc: 0.5404 | Val Loss: 2.5887 | Val Acc: 0.4913 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.4132 | Train Acc: 0.5458 | Val Loss: 2.6047 | Val Acc: 0.5206 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3981 | Train Acc: 0.5472 | Val Loss: 2.6137 | Val Acc: 0.5245 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.4071 | Train Acc: 0.5473 | Val Loss: 2.6365 | Val Acc: 0.5244 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.4008 | Train Acc: 0.5492 | Val Loss: 2.7301 | Val Acc: 0.4928 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.4011 | Train Acc: 0.5496 | Val Loss: 2.6583 | Val Acc: 0.5138 | No improvement: 3/5
+Epoch 8/20 | Train Loss: 2.3994 | Train Acc: 0.5483 | Val Loss: 2.6440 | Val Acc: 0.5111 | No improvement: 4/5
+Epoch 9/20 | Train Loss: 2.3978 | Train Acc: 0.5481 | Val Loss: 2.6288 | Val Acc: 0.5307 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.3941 | Train Acc: 0.5494 | Val Loss: 2.6474 | Val Acc: 0.5240 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.3977 | Train Acc: 0.5471 | Val Loss: 2.7527 | Val Acc: 0.4848 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.3925 | Train Acc: 0.5490 | Val Loss: 2.6423 | Val Acc: 0.5256 | No improvement: 3/5
+Epoch 13/20 | Train Loss: 2.3960 | Train Acc: 0.5491 | Val Loss: 2.6529 | Val Acc: 0.5163 | No improvement: 4/5
+Epoch 14/20 | Train Loss: 2.4002 | Train Acc: 0.5464 | Val Loss: 2.6800 | Val Acc: 0.5080 | No improvement: 5/5
+
+Early stopping triggered after 14 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5307  →  saved to optuna_trial_2.pth
+  Trial   2 | bal_acc=0.5297 | Human=0.214 | Denisovan=0.455 | Neanderthal=0.920
+[32m[I 2026-05-05 00:51:41,779][0m Trial 2 finished with value: 0.5297244700620376 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'filters_0': 128, 'filters_1': 32, 'filters_2': 32, 'filters_3': 256, 'width_0': 11, 'width_1': 15, 'width_2': 5, 'width_3': 15, 'drop_conv_0': 0.4021721132026924, 'drop_conv_1': 0.5655548135840519, 'drop_conv_2': 0.42556809132103457, 'drop_conv_3': 0.32940094728512515, 'dense_0': 256, 'drop_dense_0': 0.38893680628192145, 'lr': 0.004153978956726444, 'weight_decay': 0.008709322537189966}. Best is trial 0 with value: 0.5549811728786204.[0m
+Epoch 1/20 | Train Loss: 2.6293 | Train Acc: 0.4948 | Val Loss: 2.6492 | Val Acc: 0.5236 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4917 | Train Acc: 0.5284 | Val Loss: 2.5949 | Val Acc: 0.5236 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.4493 | Train Acc: 0.5399 | Val Loss: 2.5412 | Val Acc: 0.5357 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.4256 | Train Acc: 0.5437 | Val Loss: 2.5152 | Val Acc: 0.5342 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.4088 | Train Acc: 0.5475 | Val Loss: 2.5209 | Val Acc: 0.5306 | No improvement: 2/5
+Epoch 6/20 | Train Loss: 2.4001 | Train Acc: 0.5485 | Val Loss: 2.5319 | Val Acc: 0.5184 | No improvement: 3/5
+Epoch 7/20 | Train Loss: 2.3861 | Train Acc: 0.5529 | Val Loss: 2.5541 | Val Acc: 0.4968 | No improvement: 4/5
+Epoch 8/20 | Train Loss: 2.3869 | Train Acc: 0.5507 | Val Loss: 2.6276 | Val Acc: 0.4783 | No improvement: 5/5
+
+Early stopping triggered after 8 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5357  →  saved to optuna_trial_3.pth
+  Trial   3 | bal_acc=0.5347 | Human=0.236 | Denisovan=0.461 | Neanderthal=0.907
+[32m[I 2026-05-05 00:52:11,659][0m Trial 3 finished with value: 0.534733545149204 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'filters_0': 32, 'filters_1': 256, 'width_0': 5, 'width_1': 7, 'drop_conv_0': 0.5325068543265387, 'drop_conv_1': 0.4549553189321083, 'dense_0': 128, 'drop_dense_0': 0.5914633938166521, 'lr': 0.0004444981768260983, 'weight_decay': 0.0021416672842958498}. Best is trial 0 with value: 0.5549811728786204.[0m
+Epoch 1/20 | Train Loss: 2.7068 | Train Acc: 0.4839 | Val Loss: 2.5919 | Val Acc: 0.5336 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4543 | Train Acc: 0.5424 | Val Loss: 2.4400 | Val Acc: 0.5486 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3733 | Train Acc: 0.5606 | Val Loss: 2.4370 | Val Acc: 0.5378 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.3329 | Train Acc: 0.5673 | Val Loss: 2.3811 | Val Acc: 0.5525 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3080 | Train Acc: 0.5729 | Val Loss: 2.3861 | Val Acc: 0.5471 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2928 | Train Acc: 0.5754 | Val Loss: 2.3970 | Val Acc: 0.5453 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.2803 | Train Acc: 0.5804 | Val Loss: 2.3362 | Val Acc: 0.5559 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2629 | Train Acc: 0.5796 | Val Loss: 2.3439 | Val Acc: 0.5575 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2522 | Train Acc: 0.5835 | Val Loss: 2.3262 | Val Acc: 0.5606 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2441 | Train Acc: 0.5837 | Val Loss: 2.3098 | Val Acc: 0.5672 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2402 | Train Acc: 0.5844 | Val Loss: 2.3156 | Val Acc: 0.5669 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2292 | Train Acc: 0.5855 | Val Loss: 2.3102 | Val Acc: 0.5645 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.2255 | Train Acc: 0.5891 | Val Loss: 2.2982 | Val Acc: 0.5654 | No improvement: 3/5
+Epoch 14/20 | Train Loss: 2.2210 | Train Acc: 0.5893 | Val Loss: 2.3231 | Val Acc: 0.5625 | No improvement: 4/5
+Epoch 15/20 | Train Loss: 2.2243 | Train Acc: 0.5894 | Val Loss: 2.3091 | Val Acc: 0.5677 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.2210 | Train Acc: 0.5894 | Val Loss: 2.2984 | Val Acc: 0.5722 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.2162 | Train Acc: 0.5913 | Val Loss: 2.3114 | Val Acc: 0.5706 | No improvement: 1/5
+Epoch 18/20 | Train Loss: 2.2143 | Train Acc: 0.5908 | Val Loss: 2.3172 | Val Acc: 0.5626 | No improvement: 2/5
+Epoch 19/20 | Train Loss: 2.2169 | Train Acc: 0.5926 | Val Loss: 2.3002 | Val Acc: 0.5694 | No improvement: 3/5
+Epoch 20/20 | Train Loss: 2.2139 | Train Acc: 0.5924 | Val Loss: 2.3054 | Val Acc: 0.5626 | No improvement: 4/5
+
+Best Val Acc: 0.5722  →  saved to optuna_trial_4.pth
+  Trial   4 | bal_acc=0.5707 | Human=0.438 | Denisovan=0.460 | Neanderthal=0.814
+[32m[I 2026-05-05 00:55:14,173][0m Trial 4 finished with value: 0.5707080488643083 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 128, 'filters_3': 128, 'width_0': 11, 'width_1': 19, 'width_2': 9, 'width_3': 15, 'drop_conv_0': 0.3351488338815529, 'drop_conv_1': 0.35197476763036994, 'drop_conv_2': 0.12461747894941463, 'drop_conv_3': 0.11442567784274374, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.591523164463706, 'drop_dense_1': 0.3756663204440118, 'lr': 5.149626505467298e-05, 'weight_decay': 0.007706637630945661}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.3795 | Train Acc: 0.5522 | Val Loss: 2.5086 | Val Acc: 0.5165 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2590 | Train Acc: 0.5774 | Val Loss: 2.5067 | Val Acc: 0.5301 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2357 | Train Acc: 0.5797 | Val Loss: 2.4631 | Val Acc: 0.5326 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2118 | Train Acc: 0.5851 | Val Loss: 2.4210 | Val Acc: 0.5513 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2045 | Train Acc: 0.5875 | Val Loss: 2.4540 | Val Acc: 0.5513 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.1949 | Train Acc: 0.5889 | Val Loss: 2.4536 | Val Acc: 0.5353 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.1861 | Train Acc: 0.5905 | Val Loss: 2.4558 | Val Acc: 0.5365 | No improvement: 3/5
+Epoch 8/20 | Train Loss: 2.1909 | Train Acc: 0.5901 | Val Loss: 2.4141 | Val Acc: 0.5582 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.1795 | Train Acc: 0.5912 | Val Loss: 2.4218 | Val Acc: 0.5525 | No improvement: 1/5
+Epoch 10/20 | Train Loss: 2.1794 | Train Acc: 0.5911 | Val Loss: 2.3935 | Val Acc: 0.5649 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.1708 | Train Acc: 0.5939 | Val Loss: 2.3925 | Val Acc: 0.5636 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.1705 | Train Acc: 0.5932 | Val Loss: 2.4258 | Val Acc: 0.5659 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1671 | Train Acc: 0.5942 | Val Loss: 2.3663 | Val Acc: 0.5613 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1600 | Train Acc: 0.5938 | Val Loss: 2.3790 | Val Acc: 0.5618 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.1614 | Train Acc: 0.5958 | Val Loss: 2.4392 | Val Acc: 0.5544 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.1555 | Train Acc: 0.5971 | Val Loss: 2.4008 | Val Acc: 0.5627 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.1531 | Train Acc: 0.5968 | Val Loss: 2.4847 | Val Acc: 0.5519 | No improvement: 5/5
+
+Early stopping triggered after 17 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5659  →  saved to optuna_trial_5.pth
+  Trial   5 | bal_acc=0.5643 | Human=0.441 | Denisovan=0.449 | Neanderthal=0.803
+[32m[I 2026-05-05 00:56:01,954][0m Trial 5 finished with value: 0.5642884592657453 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'filters_0': 64, 'filters_1': 32, 'filters_2': 64, 'width_0': 11, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.3202764350912354, 'drop_conv_1': 0.19953446040436104, 'drop_conv_2': 0.5649697529782294, 'dense_0': 256, 'drop_dense_0': 0.4036682711233266, 'lr': 0.0007280988617279108, 'weight_decay': 0.00030066709880880084}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.7359 | Train Acc: 0.4636 | Val Loss: 2.5716 | Val Acc: 0.5101 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4771 | Train Acc: 0.5287 | Val Loss: 2.4990 | Val Acc: 0.5284 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4208 | Train Acc: 0.5420 | Val Loss: 2.4590 | Val Acc: 0.5348 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3906 | Train Acc: 0.5512 | Val Loss: 2.4626 | Val Acc: 0.5268 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.3703 | Train Acc: 0.5551 | Val Loss: 2.4651 | Val Acc: 0.5247 | No improvement: 2/5
+Epoch 6/20 | Train Loss: 2.3501 | Train Acc: 0.5582 | Val Loss: 2.4819 | Val Acc: 0.5180 | No improvement: 3/5
+Epoch 7/20 | Train Loss: 2.3374 | Train Acc: 0.5625 | Val Loss: 2.5111 | Val Acc: 0.5047 | No improvement: 4/5
+Epoch 8/20 | Train Loss: 2.3274 | Train Acc: 0.5625 | Val Loss: 2.4961 | Val Acc: 0.5132 | No improvement: 5/5
+
+Early stopping triggered after 8 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5348  →  saved to optuna_trial_6.pth
+  Trial   6 | bal_acc=0.5337 | Human=0.277 | Denisovan=0.451 | Neanderthal=0.872
+[32m[I 2026-05-05 00:56:33,782][0m Trial 6 finished with value: 0.5336729115101148 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 32, 'filters_1': 128, 'filters_2': 128, 'width_0': 9, 'width_1': 7, 'width_2': 5, 'drop_conv_0': 0.27684988590211634, 'drop_conv_1': 0.4687228814620782, 'drop_conv_2': 0.2537955867428824, 'dense_0': 256, 'dense_1': 128, 'dense_2': 256, 'drop_dense_0': 0.4423085551680189, 'drop_dense_1': 0.3392561489586433, 'drop_dense_2': 0.3877043268714271, 'lr': 5.820778396696826e-05, 'weight_decay': 0.00020420073174684162}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.4439 | Train Acc: 0.5417 | Val Loss: 2.4321 | Val Acc: 0.5364 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3692 | Train Acc: 0.5580 | Val Loss: 2.4263 | Val Acc: 0.5388 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3525 | Train Acc: 0.5573 | Val Loss: 2.4429 | Val Acc: 0.5255 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.3435 | Train Acc: 0.5600 | Val Loss: 2.4593 | Val Acc: 0.5375 | No improvement: 2/5
+Epoch 5/20 | Train Loss: 2.3380 | Train Acc: 0.5602 | Val Loss: 2.4333 | Val Acc: 0.5417 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.3364 | Train Acc: 0.5603 | Val Loss: 2.4397 | Val Acc: 0.5290 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.3223 | Train Acc: 0.5625 | Val Loss: 2.4838 | Val Acc: 0.5194 | No improvement: 2/5
+Epoch 8/20 | Train Loss: 2.3246 | Train Acc: 0.5634 | Val Loss: 2.6290 | Val Acc: 0.5049 | No improvement: 3/5
+Epoch 9/20 | Train Loss: 2.3223 | Train Acc: 0.5643 | Val Loss: 2.4418 | Val Acc: 0.5325 | No improvement: 4/5
+Epoch 10/20 | Train Loss: 2.3169 | Train Acc: 0.5646 | Val Loss: 2.5342 | Val Acc: 0.5244 | No improvement: 5/5
+
+Early stopping triggered after 10 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5417  →  saved to optuna_trial_7.pth
+  Trial   7 | bal_acc=0.5390 | Human=0.476 | Denisovan=0.342 | Neanderthal=0.798
+[32m[I 2026-05-05 00:57:39,835][0m Trial 7 finished with value: 0.5390158250180422 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'filters_0': 256, 'filters_1': 128, 'width_0': 15, 'width_1': 19, 'drop_conv_0': 0.4620240372282689, 'drop_conv_1': 0.36700327973355096, 'dense_0': 128, 'drop_dense_0': 0.5876232435894999, 'lr': 0.0021805773718384215, 'weight_decay': 0.00012310834590584469}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.8018 | Train Acc: 0.4633 | Val Loss: 2.6951 | Val Acc: 0.5240 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.5557 | Train Acc: 0.5131 | Val Loss: 2.6228 | Val Acc: 0.5315 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4984 | Train Acc: 0.5259 | Val Loss: 2.5925 | Val Acc: 0.5336 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.4682 | Train Acc: 0.5321 | Val Loss: 2.5660 | Val Acc: 0.5391 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.4350 | Train Acc: 0.5400 | Val Loss: 2.5535 | Val Acc: 0.5390 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.4131 | Train Acc: 0.5453 | Val Loss: 2.5358 | Val Acc: 0.5411 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.3972 | Train Acc: 0.5482 | Val Loss: 2.5156 | Val Acc: 0.5441 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.3832 | Train Acc: 0.5514 | Val Loss: 2.5065 | Val Acc: 0.5471 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.3633 | Train Acc: 0.5576 | Val Loss: 2.5061 | Val Acc: 0.5476 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.3534 | Train Acc: 0.5569 | Val Loss: 2.4939 | Val Acc: 0.5459 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.3431 | Train Acc: 0.5611 | Val Loss: 2.4754 | Val Acc: 0.5494 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.3326 | Train Acc: 0.5620 | Val Loss: 2.4840 | Val Acc: 0.5522 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.3290 | Train Acc: 0.5628 | Val Loss: 2.4868 | Val Acc: 0.5449 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.3242 | Train Acc: 0.5647 | Val Loss: 2.4686 | Val Acc: 0.5448 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.3130 | Train Acc: 0.5673 | Val Loss: 2.4680 | Val Acc: 0.5511 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.3074 | Train Acc: 0.5697 | Val Loss: 2.4637 | Val Acc: 0.5456 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.3000 | Train Acc: 0.5690 | Val Loss: 2.4594 | Val Acc: 0.5530 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.2954 | Train Acc: 0.5697 | Val Loss: 2.4552 | Val Acc: 0.5533 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.2924 | Train Acc: 0.5722 | Val Loss: 2.4601 | Val Acc: 0.5533 | No improvement: 1/5
+Epoch 20/20 | Train Loss: 2.2878 | Train Acc: 0.5719 | Val Loss: 2.4569 | Val Acc: 0.5514 | No improvement: 2/5
+
+Best Val Acc: 0.5533  →  saved to optuna_trial_8.pth
+  Trial   8 | bal_acc=0.5518 | Human=0.454 | Denisovan=0.439 | Neanderthal=0.762
+[32m[I 2026-05-05 00:59:05,630][0m Trial 8 finished with value: 0.551765743792723 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 1, 'filters_0': 64, 'filters_1': 256, 'width_0': 11, 'width_1': 11, 'drop_conv_0': 0.14966444824883127, 'drop_conv_1': 0.4793127894309994, 'dense_0': 64, 'drop_dense_0': 0.5817452793114934, 'lr': 2.215848000831999e-05, 'weight_decay': 0.0005103989806986275}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.5044 | Train Acc: 0.5236 | Val Loss: 2.5025 | Val Acc: 0.5401 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3327 | Train Acc: 0.5597 | Val Loss: 2.4544 | Val Acc: 0.5406 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2851 | Train Acc: 0.5697 | Val Loss: 2.4115 | Val Acc: 0.5417 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2552 | Train Acc: 0.5767 | Val Loss: 2.3871 | Val Acc: 0.5567 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2350 | Train Acc: 0.5798 | Val Loss: 2.3655 | Val Acc: 0.5530 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2235 | Train Acc: 0.5837 | Val Loss: 2.3905 | Val Acc: 0.5486 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.2111 | Train Acc: 0.5852 | Val Loss: 2.3847 | Val Acc: 0.5513 | No improvement: 3/5
+Epoch 8/20 | Train Loss: 2.2052 | Train Acc: 0.5874 | Val Loss: 2.3747 | Val Acc: 0.5511 | No improvement: 4/5
+Epoch 9/20 | Train Loss: 2.1972 | Train Acc: 0.5890 | Val Loss: 2.3868 | Val Acc: 0.5510 | No improvement: 5/5
+
+Early stopping triggered after 9 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5567  →  saved to optuna_trial_9.pth
+  Trial   9 | bal_acc=0.5550 | Human=0.478 | Denisovan=0.433 | Neanderthal=0.754
+[32m[I 2026-05-05 01:00:17,506][0m Trial 9 finished with value: 0.5550144790063983 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'filters_0': 64, 'filters_1': 128, 'filters_2': 64, 'filters_3': 32, 'width_0': 7, 'width_1': 15, 'width_2': 7, 'width_3': 7, 'drop_conv_0': 0.10251650474044002, 'drop_conv_1': 0.26116709406320615, 'drop_conv_2': 0.30673872625760046, 'drop_conv_3': 0.2632404234706117, 'dense_0': 256, 'drop_dense_0': 0.3266122222867599, 'lr': 0.00011538960115874308, 'weight_decay': 0.002215578652564984}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 3.0605 | Train Acc: 0.3477 | Val Loss: 3.0393 | Val Acc: 0.3992 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.9612 | Train Acc: 0.4031 | Val Loss: 2.8939 | Val Acc: 0.5066 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.8038 | Train Acc: 0.4565 | Val Loss: 2.7450 | Val Acc: 0.5052 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.7146 | Train Acc: 0.4790 | Val Loss: 2.6759 | Val Acc: 0.5075 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.6651 | Train Acc: 0.4912 | Val Loss: 2.6382 | Val Acc: 0.5115 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.6328 | Train Acc: 0.5003 | Val Loss: 2.6163 | Val Acc: 0.5136 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.6086 | Train Acc: 0.5041 | Val Loss: 2.5996 | Val Acc: 0.5110 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.5792 | Train Acc: 0.5093 | Val Loss: 2.5760 | Val Acc: 0.5103 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.5635 | Train Acc: 0.5144 | Val Loss: 2.5646 | Val Acc: 0.5118 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.5443 | Train Acc: 0.5170 | Val Loss: 2.5539 | Val Acc: 0.5110 | No improvement: 4/5
+Epoch 11/20 | Train Loss: 2.5264 | Train Acc: 0.5200 | Val Loss: 2.5371 | Val Acc: 0.5172 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.5183 | Train Acc: 0.5214 | Val Loss: 2.5348 | Val Acc: 0.5114 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.5052 | Train Acc: 0.5236 | Val Loss: 2.5267 | Val Acc: 0.5155 | No improvement: 2/5
+Epoch 14/20 | Train Loss: 2.4873 | Train Acc: 0.5275 | Val Loss: 2.5094 | Val Acc: 0.5190 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.4854 | Train Acc: 0.5264 | Val Loss: 2.5109 | Val Acc: 0.5157 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.4750 | Train Acc: 0.5303 | Val Loss: 2.5058 | Val Acc: 0.5152 | No improvement: 2/5
+Epoch 17/20 | Train Loss: 2.4669 | Train Acc: 0.5296 | Val Loss: 2.4878 | Val Acc: 0.5194 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.4516 | Train Acc: 0.5338 | Val Loss: 2.4767 | Val Acc: 0.5214 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.4446 | Train Acc: 0.5331 | Val Loss: 2.4722 | Val Acc: 0.5217 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.4351 | Train Acc: 0.5356 | Val Loss: 2.4685 | Val Acc: 0.5214 | No improvement: 1/5
+
+Best Val Acc: 0.5217  →  saved to optuna_trial_10.pth
+  Trial  10 | bal_acc=0.5225 | Human=0.156 | Denisovan=0.586 | Neanderthal=0.825
+[32m[I 2026-05-05 01:05:11,401][0m Trial 10 finished with value: 0.5225432803416187 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 3, 'filters_0': 256, 'filters_1': 64, 'filters_2': 256, 'filters_3': 128, 'width_0': 7, 'width_1': 5, 'width_2': 9, 'width_3': 15, 'drop_conv_0': 0.5614573521352355, 'drop_conv_1': 0.10607685000396788, 'drop_conv_2': 0.14633103005498438, 'drop_conv_3': 0.12783543217328436, 'dense_0': 64, 'dense_1': 64, 'dense_2': 128, 'drop_dense_0': 0.4932955902838326, 'drop_dense_1': 0.4759316916862904, 'drop_dense_2': 0.5970271505312885, 'lr': 1.0156188772617928e-05, 'weight_decay': 0.008862842094473503}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.5315 | Train Acc: 0.5169 | Val Loss: 2.5505 | Val Acc: 0.5325 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3399 | Train Acc: 0.5612 | Val Loss: 2.5079 | Val Acc: 0.5373 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3024 | Train Acc: 0.5693 | Val Loss: 2.4998 | Val Acc: 0.5405 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2761 | Train Acc: 0.5743 | Val Loss: 2.4795 | Val Acc: 0.5471 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2513 | Train Acc: 0.5774 | Val Loss: 2.4941 | Val Acc: 0.5486 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2349 | Train Acc: 0.5802 | Val Loss: 2.4599 | Val Acc: 0.5586 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2277 | Train Acc: 0.5819 | Val Loss: 2.4537 | Val Acc: 0.5569 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2216 | Train Acc: 0.5841 | Val Loss: 2.4518 | Val Acc: 0.5403 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2155 | Train Acc: 0.5853 | Val Loss: 2.4353 | Val Acc: 0.5498 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.2035 | Train Acc: 0.5856 | Val Loss: 2.4272 | Val Acc: 0.5598 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2005 | Train Acc: 0.5881 | Val Loss: 2.4596 | Val Acc: 0.5506 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.1911 | Train Acc: 0.5891 | Val Loss: 2.4319 | Val Acc: 0.5556 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.1872 | Train Acc: 0.5918 | Val Loss: 2.4001 | Val Acc: 0.5649 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1818 | Train Acc: 0.5927 | Val Loss: 2.4152 | Val Acc: 0.5579 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.1765 | Train Acc: 0.5930 | Val Loss: 2.4003 | Val Acc: 0.5665 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.1760 | Train Acc: 0.5927 | Val Loss: 2.4292 | Val Acc: 0.5569 | No improvement: 1/5
+Epoch 17/20 | Train Loss: 2.1726 | Train Acc: 0.5938 | Val Loss: 2.4273 | Val Acc: 0.5530 | No improvement: 2/5
+Epoch 18/20 | Train Loss: 2.1707 | Train Acc: 0.5933 | Val Loss: 2.4083 | Val Acc: 0.5584 | No improvement: 3/5
+Epoch 19/20 | Train Loss: 2.1694 | Train Acc: 0.5941 | Val Loss: 2.4073 | Val Acc: 0.5611 | No improvement: 4/5
+Epoch 20/20 | Train Loss: 2.1596 | Train Acc: 0.5951 | Val Loss: 2.3917 | Val Acc: 0.5617 | No improvement: 5/5
+
+Early stopping triggered after 20 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5665  →  saved to optuna_trial_11.pth
+  Trial  11 | bal_acc=0.5644 | Human=0.473 | Denisovan=0.409 | Neanderthal=0.811
+[32m[I 2026-05-05 01:06:07,580][0m Trial 11 finished with value: 0.564421961327922 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 64, 'filters_1': 32, 'filters_2': 64, 'width_0': 11, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.3278359967620911, 'drop_conv_1': 0.19620558852059916, 'drop_conv_2': 0.5553166590336563, 'dense_0': 64, 'dense_1': 256, 'drop_dense_0': 0.405319336660828, 'drop_dense_1': 0.33188641354293225, 'lr': 0.0001646415175753008, 'weight_decay': 0.0005244916980211095}. Best is trial 4 with value: 0.5707080488643083.[0m
+Epoch 1/20 | Train Loss: 2.5008 | Train Acc: 0.5245 | Val Loss: 2.4510 | Val Acc: 0.5349 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3232 | Train Acc: 0.5637 | Val Loss: 2.4083 | Val Acc: 0.5429 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2802 | Train Acc: 0.5731 | Val Loss: 2.3553 | Val Acc: 0.5510 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2521 | Train Acc: 0.5775 | Val Loss: 2.3398 | Val Acc: 0.5526 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2419 | Train Acc: 0.5805 | Val Loss: 2.3241 | Val Acc: 0.5621 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2258 | Train Acc: 0.5840 | Val Loss: 2.3155 | Val Acc: 0.5669 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2205 | Train Acc: 0.5851 | Val Loss: 2.3115 | Val Acc: 0.5591 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2084 | Train Acc: 0.5880 | Val Loss: 2.3298 | Val Acc: 0.5634 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2036 | Train Acc: 0.5893 | Val Loss: 2.2974 | Val Acc: 0.5690 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1969 | Train Acc: 0.5900 | Val Loss: 2.3070 | Val Acc: 0.5663 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.1922 | Train Acc: 0.5919 | Val Loss: 2.3167 | Val Acc: 0.5675 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.1834 | Train Acc: 0.5917 | Val Loss: 2.3150 | Val Acc: 0.5649 | No improvement: 3/5
+Epoch 13/20 | Train Loss: 2.1823 | Train Acc: 0.5933 | Val Loss: 2.2921 | Val Acc: 0.5736 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1771 | Train Acc: 0.5946 | Val Loss: 2.2877 | Val Acc: 0.5726 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.1796 | Train Acc: 0.5934 | Val Loss: 2.3163 | Val Acc: 0.5618 | No improvement: 2/5
+Epoch 16/20 | Train Loss: 2.1779 | Train Acc: 0.5947 | Val Loss: 2.2790 | Val Acc: 0.5765 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.1727 | Train Acc: 0.5950 | Val Loss: 2.2929 | Val Acc: 0.5710 | No improvement: 1/5
+Epoch 18/20 | Train Loss: 2.1672 | Train Acc: 0.5974 | Val Loss: 2.3178 | Val Acc: 0.5654 | No improvement: 2/5
+Epoch 19/20 | Train Loss: 2.1717 | Train Acc: 0.5967 | Val Loss: 2.2809 | Val Acc: 0.5713 | No improvement: 3/5
+Epoch 20/20 | Train Loss: 2.1654 | Train Acc: 0.5974 | Val Loss: 2.3084 | Val Acc: 0.5698 | No improvement: 4/5
+
+Best Val Acc: 0.5765  →  saved to optuna_trial_12.pth
+  Trial  12 | bal_acc=0.5754 | Human=0.402 | Denisovan=0.490 | Neanderthal=0.834
+[32m[I 2026-05-05 01:07:11,646][0m Trial 12 finished with value: 0.5753726830800375 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 64, 'filters_1': 64, 'filters_2': 64, 'width_0': 11, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.38239282532319274, 'drop_conv_1': 0.25269669440799, 'drop_conv_2': 0.11144403248529058, 'dense_0': 64, 'dense_1': 256, 'drop_dense_0': 0.33152218511422443, 'drop_dense_1': 0.33834344322148485, 'lr': 0.00016202881767476642, 'weight_decay': 0.0034202150272933866}. Best is trial 12 with value: 0.5753726830800375.[0m
+Epoch 1/20 | Train Loss: 2.6242 | Train Acc: 0.5003 | Val Loss: 2.5286 | Val Acc: 0.5218 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4286 | Train Acc: 0.5460 | Val Loss: 2.4672 | Val Acc: 0.5380 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3655 | Train Acc: 0.5596 | Val Loss: 2.4258 | Val Acc: 0.5423 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3326 | Train Acc: 0.5632 | Val Loss: 2.3941 | Val Acc: 0.5445 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3039 | Train Acc: 0.5704 | Val Loss: 2.3867 | Val Acc: 0.5507 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2841 | Train Acc: 0.5754 | Val Loss: 2.3695 | Val Acc: 0.5556 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2640 | Train Acc: 0.5761 | Val Loss: 2.3502 | Val Acc: 0.5587 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2536 | Train Acc: 0.5800 | Val Loss: 2.3375 | Val Acc: 0.5630 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2419 | Train Acc: 0.5827 | Val Loss: 2.3155 | Val Acc: 0.5665 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2404 | Train Acc: 0.5805 | Val Loss: 2.3222 | Val Acc: 0.5676 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2269 | Train Acc: 0.5859 | Val Loss: 2.3319 | Val Acc: 0.5645 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2225 | Train Acc: 0.5863 | Val Loss: 2.3254 | Val Acc: 0.5688 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.2157 | Train Acc: 0.5889 | Val Loss: 2.3449 | Val Acc: 0.5648 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.2159 | Train Acc: 0.5879 | Val Loss: 2.3648 | Val Acc: 0.5621 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.2073 | Train Acc: 0.5890 | Val Loss: 2.3130 | Val Acc: 0.5707 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.2024 | Train Acc: 0.5913 | Val Loss: 2.2970 | Val Acc: 0.5754 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.2020 | Train Acc: 0.5915 | Val Loss: 2.3071 | Val Acc: 0.5754 | No improvement: 1/5
+Epoch 18/20 | Train Loss: 2.1974 | Train Acc: 0.5919 | Val Loss: 2.3022 | Val Acc: 0.5690 | No improvement: 2/5
+Epoch 19/20 | Train Loss: 2.1951 | Train Acc: 0.5939 | Val Loss: 2.3149 | Val Acc: 0.5748 | No improvement: 3/5
+Epoch 20/20 | Train Loss: 2.1879 | Train Acc: 0.5941 | Val Loss: 2.3262 | Val Acc: 0.5764 | No improvement: 0/5
+
+Best Val Acc: 0.5764  →  saved to optuna_trial_13.pth
+  Trial  13 | bal_acc=0.5754 | Human=0.383 | Denisovan=0.501 | Neanderthal=0.842
+[32m[I 2026-05-05 01:09:39,298][0m Trial 13 finished with value: 0.5753837296124171 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 128, 'width_0': 11, 'width_1': 19, 'width_2': 11, 'drop_conv_0': 0.41278733920835387, 'drop_conv_1': 0.32068389726538055, 'drop_conv_2': 0.11392790300678668, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.31096282166384376, 'drop_dense_1': 0.37902838822722035, 'lr': 5.477263397174561e-05, 'weight_decay': 0.004367970485681268}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.5992 | Train Acc: 0.4996 | Val Loss: 2.5033 | Val Acc: 0.5287 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4057 | Train Acc: 0.5486 | Val Loss: 2.4700 | Val Acc: 0.5287 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.3595 | Train Acc: 0.5545 | Val Loss: 2.4373 | Val Acc: 0.5414 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3197 | Train Acc: 0.5648 | Val Loss: 2.4074 | Val Acc: 0.5468 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2953 | Train Acc: 0.5684 | Val Loss: 2.3871 | Val Acc: 0.5511 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2814 | Train Acc: 0.5747 | Val Loss: 2.3768 | Val Acc: 0.5580 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2743 | Train Acc: 0.5721 | Val Loss: 2.3822 | Val Acc: 0.5527 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2646 | Train Acc: 0.5748 | Val Loss: 2.3745 | Val Acc: 0.5569 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2604 | Train Acc: 0.5762 | Val Loss: 2.3464 | Val Acc: 0.5552 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.2591 | Train Acc: 0.5762 | Val Loss: 2.3656 | Val Acc: 0.5637 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2505 | Train Acc: 0.5777 | Val Loss: 2.3706 | Val Acc: 0.5606 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2456 | Train Acc: 0.5799 | Val Loss: 2.3407 | Val Acc: 0.5690 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.2471 | Train Acc: 0.5782 | Val Loss: 2.3435 | Val Acc: 0.5625 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.2393 | Train Acc: 0.5795 | Val Loss: 2.3495 | Val Acc: 0.5676 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.2426 | Train Acc: 0.5816 | Val Loss: 2.3509 | Val Acc: 0.5611 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.2367 | Train Acc: 0.5824 | Val Loss: 2.3371 | Val Acc: 0.5629 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.2342 | Train Acc: 0.5824 | Val Loss: 2.3381 | Val Acc: 0.5595 | No improvement: 5/5
+
+Early stopping triggered after 17 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5690  →  saved to optuna_trial_14.pth
+  Trial  14 | bal_acc=0.5675 | Human=0.434 | Denisovan=0.462 | Neanderthal=0.806
+[32m[I 2026-05-05 01:12:18,204][0m Trial 14 finished with value: 0.5675315324376983 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 32, 'width_0': 5, 'width_1': 5, 'width_2': 11, 'drop_conv_0': 0.43416996467612173, 'drop_conv_1': 0.2733971281921743, 'drop_conv_2': 0.20219457272575383, 'dense_0': 64, 'dense_1': 256, 'drop_dense_0': 0.3054507234262375, 'drop_dense_1': 0.5881013774659554, 'lr': 0.000168300978893573, 'weight_decay': 0.004166755028439035}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.7729 | Train Acc: 0.4591 | Val Loss: 2.6037 | Val Acc: 0.5241 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.5130 | Train Acc: 0.5245 | Val Loss: 2.5329 | Val Acc: 0.5337 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4573 | Train Acc: 0.5364 | Val Loss: 2.5074 | Val Acc: 0.5275 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.4199 | Train Acc: 0.5462 | Val Loss: 2.4784 | Val Acc: 0.5287 | No improvement: 2/5
+Epoch 5/20 | Train Loss: 2.3920 | Train Acc: 0.5508 | Val Loss: 2.4581 | Val Acc: 0.5299 | No improvement: 3/5
+Epoch 6/20 | Train Loss: 2.3731 | Train Acc: 0.5578 | Val Loss: 2.4770 | Val Acc: 0.5206 | No improvement: 4/5
+Epoch 7/20 | Train Loss: 2.3502 | Train Acc: 0.5613 | Val Loss: 2.4957 | Val Acc: 0.5170 | No improvement: 5/5
+
+Early stopping triggered after 7 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5337  →  saved to optuna_trial_15.pth
+  Trial  15 | bal_acc=0.5327 | Human=0.281 | Denisovan=0.457 | Neanderthal=0.859
+[32m[I 2026-05-05 01:12:53,929][0m Trial 15 finished with value: 0.532684385637665 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 64, 'filters_1': 64, 'filters_2': 256, 'width_0': 19, 'width_1': 11, 'width_2': 11, 'drop_conv_0': 0.4741353525695999, 'drop_conv_1': 0.25598449405871426, 'drop_conv_2': 0.10832050669820407, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.3474232781942017, 'drop_dense_1': 0.4372690830585451, 'lr': 3.792810269070237e-05, 'weight_decay': 0.0035914160214074132}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.4925 | Train Acc: 0.5261 | Val Loss: 2.4412 | Val Acc: 0.5368 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3394 | Train Acc: 0.5626 | Val Loss: 2.3809 | Val Acc: 0.5496 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2976 | Train Acc: 0.5705 | Val Loss: 2.3753 | Val Acc: 0.5513 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2719 | Train Acc: 0.5757 | Val Loss: 2.4175 | Val Acc: 0.5392 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.2579 | Train Acc: 0.5789 | Val Loss: 2.3633 | Val Acc: 0.5534 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2502 | Train Acc: 0.5798 | Val Loss: 2.3337 | Val Acc: 0.5618 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2441 | Train Acc: 0.5827 | Val Loss: 2.3291 | Val Acc: 0.5630 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2358 | Train Acc: 0.5839 | Val Loss: 2.4123 | Val Acc: 0.5279 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.2413 | Train Acc: 0.5803 | Val Loss: 2.3561 | Val Acc: 0.5496 | No improvement: 2/5
+Epoch 10/20 | Train Loss: 2.2358 | Train Acc: 0.5815 | Val Loss: 2.3570 | Val Acc: 0.5542 | No improvement: 3/5
+Epoch 11/20 | Train Loss: 2.2375 | Train Acc: 0.5823 | Val Loss: 2.3644 | Val Acc: 0.5461 | No improvement: 4/5
+Epoch 12/20 | Train Loss: 2.2320 | Train Acc: 0.5827 | Val Loss: 2.3548 | Val Acc: 0.5495 | No improvement: 5/5
+
+Early stopping triggered after 12 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5630  →  saved to optuna_trial_16.pth
+  Trial  16 | bal_acc=0.5621 | Human=0.396 | Denisovan=0.495 | Neanderthal=0.795
+[32m[I 2026-05-05 01:14:36,357][0m Trial 16 finished with value: 0.562111293203113 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 128, 'filters_1': 64, 'filters_2': 64, 'width_0': 15, 'width_1': 9, 'width_2': 11, 'drop_conv_0': 0.3907370435136871, 'drop_conv_1': 0.1174456746061234, 'drop_conv_2': 0.19207154925985082, 'dense_0': 64, 'dense_1': 256, 'dense_2': 64, 'drop_dense_0': 0.35979679297882633, 'drop_dense_1': 0.4003437494546864, 'drop_dense_2': 0.3248543074783953, 'lr': 0.0003544148430643185, 'weight_decay': 0.0037346803643610554}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.6385 | Train Acc: 0.4901 | Val Loss: 2.5552 | Val Acc: 0.5143 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4362 | Train Acc: 0.5421 | Val Loss: 2.5705 | Val Acc: 0.4980 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.3749 | Train Acc: 0.5546 | Val Loss: 2.6530 | Val Acc: 0.4813 | No improvement: 2/5
+Epoch 4/20 | Train Loss: 2.3474 | Train Acc: 0.5610 | Val Loss: 2.7076 | Val Acc: 0.4835 | No improvement: 3/5
+Epoch 5/20 | Train Loss: 2.3241 | Train Acc: 0.5648 | Val Loss: 2.6600 | Val Acc: 0.4962 | No improvement: 4/5
+Epoch 6/20 | Train Loss: 2.3045 | Train Acc: 0.5682 | Val Loss: 2.6914 | Val Acc: 0.4894 | No improvement: 5/5
+
+Early stopping triggered after 6 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5143  →  saved to optuna_trial_17.pth
+  Trial  17 | bal_acc=0.5147 | Human=0.248 | Denisovan=0.549 | Neanderthal=0.747
+[32m[I 2026-05-05 01:14:59,388][0m Trial 17 finished with value: 0.5147132872520851 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 32, 'filters_1': 64, 'filters_2': 128, 'width_0': 11, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.5991222532496803, 'drop_conv_1': 0.4009879960174214, 'drop_conv_2': 0.2943237479318429, 'dense_0': 64, 'dense_1': 128, 'drop_dense_0': 0.3050758898385695, 'drop_dense_1': 0.30602494184291595, 'lr': 9.960085104311275e-05, 'weight_decay': 0.0010716989097772028}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.9839 | Train Acc: 0.3965 | Val Loss: 2.8223 | Val Acc: 0.5018 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.7102 | Train Acc: 0.4799 | Val Loss: 2.6766 | Val Acc: 0.5102 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.6141 | Train Acc: 0.5010 | Val Loss: 2.6222 | Val Acc: 0.5117 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.5686 | Train Acc: 0.5102 | Val Loss: 2.5957 | Val Acc: 0.5140 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.5394 | Train Acc: 0.5162 | Val Loss: 2.5750 | Val Acc: 0.5145 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.5229 | Train Acc: 0.5204 | Val Loss: 2.5653 | Val Acc: 0.5213 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.5002 | Train Acc: 0.5245 | Val Loss: 2.5479 | Val Acc: 0.5260 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.4848 | Train Acc: 0.5288 | Val Loss: 2.5379 | Val Acc: 0.5268 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.4699 | Train Acc: 0.5306 | Val Loss: 2.5302 | Val Acc: 0.5280 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.4569 | Train Acc: 0.5342 | Val Loss: 2.5112 | Val Acc: 0.5283 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.4480 | Train Acc: 0.5372 | Val Loss: 2.5039 | Val Acc: 0.5294 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.4388 | Train Acc: 0.5398 | Val Loss: 2.5018 | Val Acc: 0.5353 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.4217 | Train Acc: 0.5423 | Val Loss: 2.4893 | Val Acc: 0.5361 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.4106 | Train Acc: 0.5443 | Val Loss: 2.4805 | Val Acc: 0.5395 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.4012 | Train Acc: 0.5467 | Val Loss: 2.4705 | Val Acc: 0.5364 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.3886 | Train Acc: 0.5509 | Val Loss: 2.4650 | Val Acc: 0.5379 | No improvement: 2/5
+Epoch 17/20 | Train Loss: 2.3829 | Train Acc: 0.5517 | Val Loss: 2.4616 | Val Acc: 0.5402 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.3771 | Train Acc: 0.5524 | Val Loss: 2.4533 | Val Acc: 0.5425 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.3696 | Train Acc: 0.5524 | Val Loss: 2.4469 | Val Acc: 0.5422 | No improvement: 1/5
+Epoch 20/20 | Train Loss: 2.3595 | Train Acc: 0.5556 | Val Loss: 2.4452 | Val Acc: 0.5406 | No improvement: 2/5
+
+Best Val Acc: 0.5425  →  saved to optuna_trial_18.pth
+  Trial  18 | bal_acc=0.5415 | Human=0.283 | Denisovan=0.468 | Neanderthal=0.873
+[32m[I 2026-05-05 01:16:01,669][0m Trial 18 finished with value: 0.5414863625561853 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'filters_0': 64, 'filters_1': 64, 'width_0': 11, 'width_1': 19, 'drop_conv_0': 0.25549706048518034, 'drop_conv_1': 0.30442354417501055, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.3658083104801023, 'drop_dense_1': 0.4837675066334396, 'lr': 1.5872761596620377e-05, 'weight_decay': 0.0019482363951191023}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.7751 | Train Acc: 0.4587 | Val Loss: 2.5970 | Val Acc: 0.5064 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.5107 | Train Acc: 0.5223 | Val Loss: 2.5490 | Val Acc: 0.5175 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4561 | Train Acc: 0.5331 | Val Loss: 2.5090 | Val Acc: 0.5228 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.4219 | Train Acc: 0.5399 | Val Loss: 2.5107 | Val Acc: 0.5234 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3940 | Train Acc: 0.5459 | Val Loss: 2.4623 | Val Acc: 0.5336 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.3721 | Train Acc: 0.5522 | Val Loss: 2.4659 | Val Acc: 0.5348 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.3485 | Train Acc: 0.5579 | Val Loss: 2.4773 | Val Acc: 0.5322 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.3318 | Train Acc: 0.5633 | Val Loss: 2.4327 | Val Acc: 0.5403 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.3164 | Train Acc: 0.5679 | Val Loss: 2.4052 | Val Acc: 0.5486 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.3024 | Train Acc: 0.5688 | Val Loss: 2.3970 | Val Acc: 0.5482 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.2885 | Train Acc: 0.5711 | Val Loss: 2.3949 | Val Acc: 0.5491 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.2768 | Train Acc: 0.5732 | Val Loss: 2.4147 | Val Acc: 0.5510 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.2721 | Train Acc: 0.5745 | Val Loss: 2.3785 | Val Acc: 0.5555 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.2675 | Train Acc: 0.5769 | Val Loss: 2.4142 | Val Acc: 0.5496 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.2585 | Train Acc: 0.5795 | Val Loss: 2.4224 | Val Acc: 0.5453 | No improvement: 2/5
+Epoch 16/20 | Train Loss: 2.2586 | Train Acc: 0.5778 | Val Loss: 2.4066 | Val Acc: 0.5565 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.2493 | Train Acc: 0.5795 | Val Loss: 2.4139 | Val Acc: 0.5465 | No improvement: 1/5
+Epoch 18/20 | Train Loss: 2.2426 | Train Acc: 0.5813 | Val Loss: 2.4079 | Val Acc: 0.5496 | No improvement: 2/5
+Epoch 19/20 | Train Loss: 2.2372 | Train Acc: 0.5840 | Val Loss: 2.3776 | Val Acc: 0.5559 | No improvement: 3/5
+Epoch 20/20 | Train Loss: 2.2349 | Train Acc: 0.5836 | Val Loss: 2.3882 | Val Acc: 0.5688 | No improvement: 0/5
+
+Best Val Acc: 0.5688  →  saved to optuna_trial_19.pth
+  Trial  19 | bal_acc=0.5675 | Human=0.385 | Denisovan=0.469 | Neanderthal=0.848
+[32m[I 2026-05-05 01:22:43,252][0m Trial 19 finished with value: 0.5674870687571146 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 256, 'filters_1': 256, 'filters_2': 64, 'width_0': 11, 'width_1': 19, 'width_2': 7, 'drop_conv_0': 0.506576245068763, 'drop_conv_1': 0.19028322619686944, 'drop_conv_2': 0.20465157990336796, 'dense_0': 128, 'dense_1': 256, 'dense_2': 256, 'drop_dense_0': 0.45176967339182017, 'drop_dense_1': 0.3811522655273518, 'drop_dense_2': 0.5270339355542024, 'lr': 2.756728338502431e-05, 'weight_decay': 0.005485639363586157}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.5269 | Train Acc: 0.5180 | Val Loss: 2.4861 | Val Acc: 0.5342 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3634 | Train Acc: 0.5559 | Val Loss: 2.4508 | Val Acc: 0.5382 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3169 | Train Acc: 0.5656 | Val Loss: 2.4403 | Val Acc: 0.5438 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2927 | Train Acc: 0.5701 | Val Loss: 2.4368 | Val Acc: 0.5376 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.2751 | Train Acc: 0.5727 | Val Loss: 2.4037 | Val Acc: 0.5468 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2592 | Train Acc: 0.5764 | Val Loss: 2.4353 | Val Acc: 0.5324 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.2522 | Train Acc: 0.5774 | Val Loss: 2.4582 | Val Acc: 0.5194 | No improvement: 2/5
+Epoch 8/20 | Train Loss: 2.2437 | Train Acc: 0.5804 | Val Loss: 2.4388 | Val Acc: 0.5272 | No improvement: 3/5
+Epoch 9/20 | Train Loss: 2.2349 | Train Acc: 0.5818 | Val Loss: 2.4101 | Val Acc: 0.5344 | No improvement: 4/5
+Epoch 10/20 | Train Loss: 2.2330 | Train Acc: 0.5824 | Val Loss: 2.4152 | Val Acc: 0.5328 | No improvement: 5/5
+
+Early stopping triggered after 10 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5468  →  saved to optuna_trial_20.pth
+  Trial  20 | bal_acc=0.5445 | Human=0.484 | Denisovan=0.375 | Neanderthal=0.774
+[32m[I 2026-05-05 01:23:24,800][0m Trial 20 finished with value: 0.5445189965107945 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 64, 'filters_1': 64, 'filters_2': 128, 'width_0': 9, 'width_1': 9, 'width_2': 19, 'drop_conv_0': 0.38540485309954464, 'drop_conv_1': 0.595527241631034, 'drop_conv_2': 0.3616631291995349, 'dense_0': 64, 'dense_1': 256, 'drop_dense_0': 0.3322041531068118, 'drop_dense_1': 0.4188441889712582, 'lr': 0.0002383274838220191, 'weight_decay': 0.0015940815776079886}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.7116 | Train Acc: 0.4766 | Val Loss: 2.7119 | Val Acc: 0.5241 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4657 | Train Acc: 0.5371 | Val Loss: 2.6475 | Val Acc: 0.5295 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4010 | Train Acc: 0.5508 | Val Loss: 2.6152 | Val Acc: 0.5286 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.3704 | Train Acc: 0.5587 | Val Loss: 2.5893 | Val Acc: 0.5415 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3331 | Train Acc: 0.5654 | Val Loss: 2.5744 | Val Acc: 0.5437 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.3126 | Train Acc: 0.5691 | Val Loss: 2.6127 | Val Acc: 0.5511 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2934 | Train Acc: 0.5719 | Val Loss: 2.5589 | Val Acc: 0.5565 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2870 | Train Acc: 0.5743 | Val Loss: 2.6161 | Val Acc: 0.5483 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.2646 | Train Acc: 0.5797 | Val Loss: 2.5350 | Val Acc: 0.5583 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2507 | Train Acc: 0.5831 | Val Loss: 2.5047 | Val Acc: 0.5592 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2458 | Train Acc: 0.5818 | Val Loss: 2.5545 | Val Acc: 0.5525 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2342 | Train Acc: 0.5832 | Val Loss: 2.5239 | Val Acc: 0.5530 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.2224 | Train Acc: 0.5871 | Val Loss: 2.5156 | Val Acc: 0.5615 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.2220 | Train Acc: 0.5892 | Val Loss: 2.4894 | Val Acc: 0.5604 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.2170 | Train Acc: 0.5891 | Val Loss: 2.5291 | Val Acc: 0.5575 | No improvement: 2/5
+Epoch 16/20 | Train Loss: 2.2121 | Train Acc: 0.5906 | Val Loss: 2.4889 | Val Acc: 0.5649 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.2110 | Train Acc: 0.5914 | Val Loss: 2.5033 | Val Acc: 0.5679 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.2061 | Train Acc: 0.5925 | Val Loss: 2.5167 | Val Acc: 0.5653 | No improvement: 1/5
+Epoch 19/20 | Train Loss: 2.2038 | Train Acc: 0.5938 | Val Loss: 2.5150 | Val Acc: 0.5490 | No improvement: 2/5
+Epoch 20/20 | Train Loss: 2.1980 | Train Acc: 0.5931 | Val Loss: 2.5006 | Val Acc: 0.5621 | No improvement: 3/5
+
+Best Val Acc: 0.5679  →  saved to optuna_trial_21.pth
+  Trial  21 | bal_acc=0.5664 | Human=0.354 | Denisovan=0.460 | Neanderthal=0.885
+[32m[I 2026-05-05 01:26:54,362][0m Trial 21 finished with value: 0.5664430881819146 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 128, 'filters_3': 64, 'width_0': 11, 'width_1': 19, 'width_2': 9, 'width_3': 5, 'drop_conv_0': 0.3435082664222122, 'drop_conv_1': 0.34654400427612586, 'drop_conv_2': 0.10379817527203347, 'drop_conv_3': 0.5984491070926179, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.4864070320013106, 'drop_dense_1': 0.3680400451660445, 'lr': 6.0951891167522385e-05, 'weight_decay': 0.005393427434998841}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.6894 | Train Acc: 0.4887 | Val Loss: 2.5403 | Val Acc: 0.5283 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4466 | Train Acc: 0.5430 | Val Loss: 2.4580 | Val Acc: 0.5322 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3747 | Train Acc: 0.5601 | Val Loss: 2.4128 | Val Acc: 0.5463 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3319 | Train Acc: 0.5680 | Val Loss: 2.4372 | Val Acc: 0.5399 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.3064 | Train Acc: 0.5704 | Val Loss: 2.3676 | Val Acc: 0.5553 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2810 | Train Acc: 0.5789 | Val Loss: 2.3523 | Val Acc: 0.5623 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2708 | Train Acc: 0.5785 | Val Loss: 2.3432 | Val Acc: 0.5610 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2510 | Train Acc: 0.5825 | Val Loss: 2.3643 | Val Acc: 0.5576 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2510 | Train Acc: 0.5840 | Val Loss: 2.3463 | Val Acc: 0.5591 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.2474 | Train Acc: 0.5839 | Val Loss: 2.3360 | Val Acc: 0.5664 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2392 | Train Acc: 0.5869 | Val Loss: 2.3235 | Val Acc: 0.5611 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2346 | Train Acc: 0.5874 | Val Loss: 2.3117 | Val Acc: 0.5563 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.2329 | Train Acc: 0.5865 | Val Loss: 2.3141 | Val Acc: 0.5644 | No improvement: 3/5
+Epoch 14/20 | Train Loss: 2.2289 | Train Acc: 0.5874 | Val Loss: 2.3171 | Val Acc: 0.5644 | No improvement: 4/5
+Epoch 15/20 | Train Loss: 2.2361 | Train Acc: 0.5885 | Val Loss: 2.3271 | Val Acc: 0.5610 | No improvement: 5/5
+
+Early stopping triggered after 15 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5664  →  saved to optuna_trial_22.pth
+  Trial  22 | bal_acc=0.5646 | Human=0.408 | Denisovan=0.431 | Neanderthal=0.855
+[32m[I 2026-05-05 01:29:08,270][0m Trial 22 finished with value: 0.5645828854353026 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 128, 'filters_3': 128, 'width_0': 11, 'width_1': 19, 'width_2': 9, 'width_3': 9, 'drop_conv_0': 0.3020767660004786, 'drop_conv_1': 0.4166701965632484, 'drop_conv_2': 0.15628961347142098, 'drop_conv_3': 0.10062331740530331, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.5119602439466315, 'drop_dense_1': 0.3599153237654916, 'lr': 6.101929631127963e-05, 'weight_decay': 0.009848234270844693}. Best is trial 13 with value: 0.5753837296124171.[0m
+Epoch 1/20 | Train Loss: 2.6144 | Train Acc: 0.5024 | Val Loss: 2.5453 | Val Acc: 0.5283 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4272 | Train Acc: 0.5442 | Val Loss: 2.4476 | Val Acc: 0.5369 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3542 | Train Acc: 0.5597 | Val Loss: 2.4098 | Val Acc: 0.5428 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3192 | Train Acc: 0.5693 | Val Loss: 2.3883 | Val Acc: 0.5506 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2949 | Train Acc: 0.5738 | Val Loss: 2.3783 | Val Acc: 0.5511 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2796 | Train Acc: 0.5759 | Val Loss: 2.3616 | Val Acc: 0.5563 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2603 | Train Acc: 0.5790 | Val Loss: 2.3389 | Val Acc: 0.5559 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2465 | Train Acc: 0.5827 | Val Loss: 2.3215 | Val Acc: 0.5584 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2396 | Train Acc: 0.5831 | Val Loss: 2.3155 | Val Acc: 0.5649 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2265 | Train Acc: 0.5866 | Val Loss: 2.3180 | Val Acc: 0.5652 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2145 | Train Acc: 0.5875 | Val Loss: 2.3118 | Val Acc: 0.5664 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.2098 | Train Acc: 0.5873 | Val Loss: 2.3214 | Val Acc: 0.5621 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.2017 | Train Acc: 0.5884 | Val Loss: 2.2900 | Val Acc: 0.5681 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1979 | Train Acc: 0.5906 | Val Loss: 2.2858 | Val Acc: 0.5722 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.1900 | Train Acc: 0.5930 | Val Loss: 2.2837 | Val Acc: 0.5650 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.1860 | Train Acc: 0.5924 | Val Loss: 2.2958 | Val Acc: 0.5684 | No improvement: 2/5
+Epoch 17/20 | Train Loss: 2.1836 | Train Acc: 0.5932 | Val Loss: 2.2751 | Val Acc: 0.5700 | No improvement: 3/5
+Epoch 18/20 | Train Loss: 2.1793 | Train Acc: 0.5961 | Val Loss: 2.2752 | Val Acc: 0.5719 | No improvement: 4/5
+Epoch 19/20 | Train Loss: 2.1737 | Train Acc: 0.5974 | Val Loss: 2.2733 | Val Acc: 0.5773 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.1710 | Train Acc: 0.5972 | Val Loss: 2.2916 | Val Acc: 0.5702 | No improvement: 1/5
+
+Best Val Acc: 0.5773  →  saved to optuna_trial_23.pth
+  Trial  23 | bal_acc=0.5763 | Human=0.427 | Denisovan=0.498 | Neanderthal=0.804
+[32m[I 2026-05-05 01:31:40,899][0m Trial 23 finished with value: 0.5762778326126164 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 128, 'width_0': 11, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.37308563640155146, 'drop_conv_1': 0.30768179688592523, 'drop_conv_2': 0.10254711806371739, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.3884266887963191, 'drop_dense_1': 0.3049076788255383, 'lr': 4.477589188718224e-05, 'weight_decay': 0.0029119925756385494}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.5250 | Train Acc: 0.5249 | Val Loss: 2.4615 | Val Acc: 0.5387 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3484 | Train Acc: 0.5638 | Val Loss: 2.4402 | Val Acc: 0.5422 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2943 | Train Acc: 0.5744 | Val Loss: 2.3818 | Val Acc: 0.5580 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2661 | Train Acc: 0.5771 | Val Loss: 2.3620 | Val Acc: 0.5606 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2432 | Train Acc: 0.5823 | Val Loss: 2.3547 | Val Acc: 0.5582 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2231 | Train Acc: 0.5858 | Val Loss: 2.3287 | Val Acc: 0.5664 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2171 | Train Acc: 0.5856 | Val Loss: 2.3316 | Val Acc: 0.5632 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2117 | Train Acc: 0.5873 | Val Loss: 2.3491 | Val Acc: 0.5672 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.1981 | Train Acc: 0.5902 | Val Loss: 2.3164 | Val Acc: 0.5671 | No improvement: 1/5
+Epoch 10/20 | Train Loss: 2.1958 | Train Acc: 0.5910 | Val Loss: 2.3020 | Val Acc: 0.5656 | No improvement: 2/5
+Epoch 11/20 | Train Loss: 2.1899 | Train Acc: 0.5924 | Val Loss: 2.3072 | Val Acc: 0.5703 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.1828 | Train Acc: 0.5946 | Val Loss: 2.2942 | Val Acc: 0.5738 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1822 | Train Acc: 0.5941 | Val Loss: 2.3074 | Val Acc: 0.5727 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1782 | Train Acc: 0.5941 | Val Loss: 2.3338 | Val Acc: 0.5622 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.1788 | Train Acc: 0.5951 | Val Loss: 2.3076 | Val Acc: 0.5652 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.1806 | Train Acc: 0.5947 | Val Loss: 2.3235 | Val Acc: 0.5619 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.1689 | Train Acc: 0.5976 | Val Loss: 2.2925 | Val Acc: 0.5733 | No improvement: 5/5
+
+Early stopping triggered after 17 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5738  →  saved to optuna_trial_24.pth
+  Trial  24 | bal_acc=0.5729 | Human=0.372 | Denisovan=0.506 | Neanderthal=0.840
+[32m[I 2026-05-05 01:33:50,623][0m Trial 24 finished with value: 0.5729235724840982 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 128, 'width_0': 11, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.4299319568496877, 'drop_conv_1': 0.3015870685648176, 'drop_conv_2': 0.24004086176673717, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.3813223493211425, 'drop_dense_1': 0.3054475219186146, 'lr': 0.00010459964946164635, 'weight_decay': 0.0028973161431377057}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.8331 | Train Acc: 0.4494 | Val Loss: 2.6471 | Val Acc: 0.5143 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.5891 | Train Acc: 0.5065 | Val Loss: 2.5735 | Val Acc: 0.5238 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.5244 | Train Acc: 0.5218 | Val Loss: 2.5372 | Val Acc: 0.5287 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.4836 | Train Acc: 0.5344 | Val Loss: 2.5129 | Val Acc: 0.5314 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.4524 | Train Acc: 0.5384 | Val Loss: 2.4983 | Val Acc: 0.5356 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.4330 | Train Acc: 0.5400 | Val Loss: 2.4810 | Val Acc: 0.5405 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.4194 | Train Acc: 0.5437 | Val Loss: 2.4775 | Val Acc: 0.5373 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.4012 | Train Acc: 0.5492 | Val Loss: 2.4600 | Val Acc: 0.5405 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.3861 | Train Acc: 0.5522 | Val Loss: 2.4608 | Val Acc: 0.5409 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.3766 | Train Acc: 0.5546 | Val Loss: 2.4440 | Val Acc: 0.5415 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.3704 | Train Acc: 0.5550 | Val Loss: 2.4402 | Val Acc: 0.5414 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.3619 | Train Acc: 0.5556 | Val Loss: 2.4368 | Val Acc: 0.5421 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.3511 | Train Acc: 0.5603 | Val Loss: 2.4265 | Val Acc: 0.5418 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.3435 | Train Acc: 0.5609 | Val Loss: 2.4226 | Val Acc: 0.5405 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.3403 | Train Acc: 0.5604 | Val Loss: 2.4249 | Val Acc: 0.5426 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.3300 | Train Acc: 0.5626 | Val Loss: 2.4166 | Val Acc: 0.5432 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.3216 | Train Acc: 0.5637 | Val Loss: 2.4020 | Val Acc: 0.5453 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.3171 | Train Acc: 0.5657 | Val Loss: 2.4152 | Val Acc: 0.5459 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.3133 | Train Acc: 0.5654 | Val Loss: 2.3912 | Val Acc: 0.5473 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.3069 | Train Acc: 0.5678 | Val Loss: 2.3989 | Val Acc: 0.5488 | No improvement: 0/5
+
+Best Val Acc: 0.5488  →  saved to optuna_trial_25.pth
+  Trial  25 | bal_acc=0.5474 | Human=0.323 | Denisovan=0.439 | Neanderthal=0.879
+[32m[I 2026-05-05 01:37:02,241][0m Trial 25 finished with value: 0.5473730541103009 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 32, 'width_0': 5, 'width_1': 5, 'width_2': 15, 'drop_conv_0': 0.36902925414700144, 'drop_conv_1': 0.240505175969573, 'drop_conv_2': 0.16649795682409002, 'dense_0': 64, 'dense_1': 64, 'drop_dense_0': 0.42758166238389994, 'drop_dense_1': 0.32990438341302764, 'lr': 3.0099908222563746e-05, 'weight_decay': 0.0026470705546941657}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.9807 | Train Acc: 0.4004 | Val Loss: 2.8064 | Val Acc: 0.5082 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.6594 | Train Acc: 0.4985 | Val Loss: 2.6085 | Val Acc: 0.5113 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.5780 | Train Acc: 0.5114 | Val Loss: 2.5715 | Val Acc: 0.5118 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.5414 | Train Acc: 0.5152 | Val Loss: 2.5564 | Val Acc: 0.5137 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.5093 | Train Acc: 0.5255 | Val Loss: 2.5336 | Val Acc: 0.5188 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.4878 | Train Acc: 0.5298 | Val Loss: 2.5143 | Val Acc: 0.5244 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.4682 | Train Acc: 0.5327 | Val Loss: 2.5012 | Val Acc: 0.5253 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.4477 | Train Acc: 0.5365 | Val Loss: 2.4887 | Val Acc: 0.5249 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.4344 | Train Acc: 0.5387 | Val Loss: 2.4747 | Val Acc: 0.5299 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.4229 | Train Acc: 0.5413 | Val Loss: 2.4650 | Val Acc: 0.5326 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.4046 | Train Acc: 0.5474 | Val Loss: 2.4558 | Val Acc: 0.5380 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.3951 | Train Acc: 0.5476 | Val Loss: 2.4456 | Val Acc: 0.5376 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.3824 | Train Acc: 0.5521 | Val Loss: 2.4398 | Val Acc: 0.5395 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.3725 | Train Acc: 0.5532 | Val Loss: 2.4255 | Val Acc: 0.5410 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.3644 | Train Acc: 0.5564 | Val Loss: 2.4231 | Val Acc: 0.5438 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.3550 | Train Acc: 0.5594 | Val Loss: 2.4166 | Val Acc: 0.5428 | No improvement: 1/5
+Epoch 17/20 | Train Loss: 2.3474 | Train Acc: 0.5612 | Val Loss: 2.4044 | Val Acc: 0.5437 | No improvement: 2/5
+Epoch 18/20 | Train Loss: 2.3329 | Train Acc: 0.5624 | Val Loss: 2.3938 | Val Acc: 0.5442 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.3251 | Train Acc: 0.5651 | Val Loss: 2.4011 | Val Acc: 0.5476 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.3184 | Train Acc: 0.5694 | Val Loss: 2.3809 | Val Acc: 0.5469 | No improvement: 1/5
+
+Best Val Acc: 0.5476  →  saved to optuna_trial_26.pth
+  Trial  26 | bal_acc=0.5458 | Human=0.336 | Denisovan=0.412 | Neanderthal=0.889
+[32m[I 2026-05-05 01:40:08,780][0m Trial 26 finished with value: 0.5458127175341164 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 128, 'filters_1': 64, 'filters_2': 256, 'width_0': 7, 'width_1': 7, 'width_2': 11, 'drop_conv_0': 0.22370251052573983, 'drop_conv_1': 0.15504694251909146, 'drop_conv_2': 0.1011579380288272, 'dense_0': 64, 'dense_1': 128, 'dense_2': 64, 'drop_dense_0': 0.32762567007412824, 'drop_dense_1': 0.301506612972877, 'drop_dense_2': 0.4584860864764752, 'lr': 1.3813282617299685e-05, 'weight_decay': 0.000839505047918997}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.3977 | Train Acc: 0.5499 | Val Loss: 2.4374 | Val Acc: 0.5398 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2917 | Train Acc: 0.5710 | Val Loss: 2.4182 | Val Acc: 0.5365 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.2656 | Train Acc: 0.5775 | Val Loss: 2.3871 | Val Acc: 0.5473 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2548 | Train Acc: 0.5791 | Val Loss: 2.4326 | Val Acc: 0.5453 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.2543 | Train Acc: 0.5788 | Val Loss: 2.3808 | Val Acc: 0.5496 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2441 | Train Acc: 0.5811 | Val Loss: 2.3849 | Val Acc: 0.5569 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2428 | Train Acc: 0.5811 | Val Loss: 2.4038 | Val Acc: 0.5488 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2404 | Train Acc: 0.5808 | Val Loss: 2.3946 | Val Acc: 0.5533 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2410 | Train Acc: 0.5827 | Val Loss: 2.3822 | Val Acc: 0.5615 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2366 | Train Acc: 0.5813 | Val Loss: 2.3783 | Val Acc: 0.5572 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.2373 | Train Acc: 0.5822 | Val Loss: 2.3979 | Val Acc: 0.5453 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.2364 | Train Acc: 0.5819 | Val Loss: 2.4205 | Val Acc: 0.5502 | No improvement: 3/5
+Epoch 13/20 | Train Loss: 2.2408 | Train Acc: 0.5818 | Val Loss: 2.4221 | Val Acc: 0.5550 | No improvement: 4/5
+Epoch 14/20 | Train Loss: 2.2356 | Train Acc: 0.5809 | Val Loss: 2.3833 | Val Acc: 0.5633 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.2421 | Train Acc: 0.5808 | Val Loss: 2.4219 | Val Acc: 0.5538 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.2394 | Train Acc: 0.5794 | Val Loss: 2.4145 | Val Acc: 0.5563 | No improvement: 2/5
+Epoch 17/20 | Train Loss: 2.2361 | Train Acc: 0.5820 | Val Loss: 2.3700 | Val Acc: 0.5530 | No improvement: 3/5
+Epoch 18/20 | Train Loss: 2.2398 | Train Acc: 0.5800 | Val Loss: 2.4264 | Val Acc: 0.5576 | No improvement: 4/5
+Epoch 19/20 | Train Loss: 2.2372 | Train Acc: 0.5824 | Val Loss: 2.4082 | Val Acc: 0.5552 | No improvement: 5/5
+
+Early stopping triggered after 19 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5633  →  saved to optuna_trial_27.pth
+  Trial  27 | bal_acc=0.5622 | Human=0.349 | Denisovan=0.484 | Neanderthal=0.854
+[32m[I 2026-05-05 01:44:03,304][0m Trial 27 finished with value: 0.5622279756707619 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 32, 'filters_1': 128, 'filters_2': 64, 'width_0': 19, 'width_1': 15, 'width_2': 15, 'drop_conv_0': 0.4250848724900902, 'drop_conv_1': 0.3132429902339048, 'drop_conv_2': 0.2363774639480401, 'dense_0': 64, 'dense_1': 256, 'drop_dense_0': 0.35023911765854826, 'drop_dense_1': 0.3469845264793799, 'lr': 0.0005964447333797663, 'weight_decay': 0.005639530628999162}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.5964 | Train Acc: 0.5051 | Val Loss: 2.4861 | Val Acc: 0.5272 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4461 | Train Acc: 0.5382 | Val Loss: 2.4626 | Val Acc: 0.5328 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4177 | Train Acc: 0.5472 | Val Loss: 2.4944 | Val Acc: 0.5292 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.4012 | Train Acc: 0.5506 | Val Loss: 2.4143 | Val Acc: 0.5407 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3993 | Train Acc: 0.5517 | Val Loss: 2.4627 | Val Acc: 0.5318 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.3945 | Train Acc: 0.5531 | Val Loss: 2.4220 | Val Acc: 0.5409 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.3864 | Train Acc: 0.5542 | Val Loss: 2.5168 | Val Acc: 0.5134 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.3895 | Train Acc: 0.5545 | Val Loss: 2.5360 | Val Acc: 0.5165 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.3901 | Train Acc: 0.5522 | Val Loss: 2.4120 | Val Acc: 0.5405 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.3833 | Train Acc: 0.5563 | Val Loss: 2.4144 | Val Acc: 0.5434 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.3813 | Train Acc: 0.5542 | Val Loss: 2.4652 | Val Acc: 0.5290 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.3817 | Train Acc: 0.5564 | Val Loss: 2.4079 | Val Acc: 0.5417 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.3864 | Train Acc: 0.5533 | Val Loss: 2.4075 | Val Acc: 0.5390 | No improvement: 3/5
+Epoch 14/20 | Train Loss: 2.3821 | Train Acc: 0.5558 | Val Loss: 2.4192 | Val Acc: 0.5417 | No improvement: 4/5
+Epoch 15/20 | Train Loss: 2.3847 | Train Acc: 0.5547 | Val Loss: 2.4273 | Val Acc: 0.5344 | No improvement: 5/5
+
+Early stopping triggered after 15 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5434  →  saved to optuna_trial_28.pth
+  Trial  28 | bal_acc=0.5420 | Human=0.291 | Denisovan=0.435 | Neanderthal=0.900
+[32m[I 2026-05-05 01:46:11,327][0m Trial 28 finished with value: 0.5419807920230492 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 256, 'width_0': 15, 'width_1': 11, 'drop_conv_0': 0.4825461153477738, 'drop_conv_1': 0.23766148803657902, 'dense_0': 256, 'dense_1': 64, 'drop_dense_0': 0.3070167764761458, 'drop_dense_1': 0.5441315598493666, 'lr': 0.007942920144739875, 'weight_decay': 0.000775698967986777}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.4961 | Train Acc: 0.5258 | Val Loss: 2.4569 | Val Acc: 0.5365 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3252 | Train Acc: 0.5659 | Val Loss: 2.4062 | Val Acc: 0.5425 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2755 | Train Acc: 0.5724 | Val Loss: 2.3545 | Val Acc: 0.5575 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2498 | Train Acc: 0.5783 | Val Loss: 2.3217 | Val Acc: 0.5615 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2325 | Train Acc: 0.5828 | Val Loss: 2.3156 | Val Acc: 0.5555 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2195 | Train Acc: 0.5850 | Val Loss: 2.3250 | Val Acc: 0.5656 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2102 | Train Acc: 0.5877 | Val Loss: 2.3263 | Val Acc: 0.5622 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2105 | Train Acc: 0.5883 | Val Loss: 2.3042 | Val Acc: 0.5649 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.1964 | Train Acc: 0.5919 | Val Loss: 2.3344 | Val Acc: 0.5610 | No improvement: 3/5
+Epoch 10/20 | Train Loss: 2.1999 | Train Acc: 0.5891 | Val Loss: 2.3171 | Val Acc: 0.5604 | No improvement: 4/5
+Epoch 11/20 | Train Loss: 2.1919 | Train Acc: 0.5913 | Val Loss: 2.2937 | Val Acc: 0.5679 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.1904 | Train Acc: 0.5925 | Val Loss: 2.2890 | Val Acc: 0.5673 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.1808 | Train Acc: 0.5922 | Val Loss: 2.3045 | Val Acc: 0.5604 | No improvement: 2/5
+Epoch 14/20 | Train Loss: 2.1829 | Train Acc: 0.5940 | Val Loss: 2.2777 | Val Acc: 0.5694 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.1762 | Train Acc: 0.5948 | Val Loss: 2.2697 | Val Acc: 0.5710 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.1726 | Train Acc: 0.5948 | Val Loss: 2.2775 | Val Acc: 0.5703 | No improvement: 1/5
+Epoch 17/20 | Train Loss: 2.1759 | Train Acc: 0.5948 | Val Loss: 2.2625 | Val Acc: 0.5745 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.1745 | Train Acc: 0.5967 | Val Loss: 2.2953 | Val Acc: 0.5603 | No improvement: 1/5
+Epoch 19/20 | Train Loss: 2.1711 | Train Acc: 0.5967 | Val Loss: 2.2901 | Val Acc: 0.5694 | No improvement: 2/5
+Epoch 20/20 | Train Loss: 2.1695 | Train Acc: 0.5968 | Val Loss: 2.3095 | Val Acc: 0.5560 | No improvement: 3/5
+
+Best Val Acc: 0.5745  →  saved to optuna_trial_29.pth
+  Trial  29 | bal_acc=0.5734 | Human=0.401 | Denisovan=0.489 | Neanderthal=0.830
+[32m[I 2026-05-05 01:48:26,890][0m Trial 29 finished with value: 0.5733623807175727 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 256, 'filters_1': 32, 'filters_2': 128, 'width_0': 9, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.291177261302443, 'drop_conv_1': 0.39439411779646183, 'drop_conv_2': 0.16062157547572553, 'dense_0': 128, 'dense_1': 64, 'dense_2': 128, 'drop_dense_0': 0.37760265256639475, 'drop_dense_1': 0.40708200895772156, 'drop_dense_2': 0.3125586856823361, 'lr': 0.0002381384898915267, 'weight_decay': 0.0015447882989316998}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.5502 | Train Acc: 0.5145 | Val Loss: 2.5366 | Val Acc: 0.5379 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3703 | Train Acc: 0.5558 | Val Loss: 2.4608 | Val Acc: 0.5407 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3130 | Train Acc: 0.5649 | Val Loss: 2.4625 | Val Acc: 0.5442 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2794 | Train Acc: 0.5711 | Val Loss: 2.4303 | Val Acc: 0.5548 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2608 | Train Acc: 0.5754 | Val Loss: 2.4006 | Val Acc: 0.5576 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2441 | Train Acc: 0.5787 | Val Loss: 2.4088 | Val Acc: 0.5604 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2356 | Train Acc: 0.5817 | Val Loss: 2.3870 | Val Acc: 0.5568 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2189 | Train Acc: 0.5857 | Val Loss: 2.3995 | Val Acc: 0.5611 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2112 | Train Acc: 0.5866 | Val Loss: 2.3856 | Val Acc: 0.5645 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2055 | Train Acc: 0.5877 | Val Loss: 2.3715 | Val Acc: 0.5672 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2011 | Train Acc: 0.5878 | Val Loss: 2.3665 | Val Acc: 0.5677 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.1975 | Train Acc: 0.5910 | Val Loss: 2.3925 | Val Acc: 0.5618 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.1935 | Train Acc: 0.5912 | Val Loss: 2.4046 | Val Acc: 0.5652 | No improvement: 2/5
+Epoch 14/20 | Train Loss: 2.1887 | Train Acc: 0.5922 | Val Loss: 2.3737 | Val Acc: 0.5673 | No improvement: 3/5
+Epoch 15/20 | Train Loss: 2.1831 | Train Acc: 0.5922 | Val Loss: 2.3930 | Val Acc: 0.5677 | No improvement: 4/5
+Epoch 16/20 | Train Loss: 2.1804 | Train Acc: 0.5942 | Val Loss: 2.3785 | Val Acc: 0.5688 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.1768 | Train Acc: 0.5948 | Val Loss: 2.3845 | Val Acc: 0.5586 | No improvement: 1/5
+Epoch 18/20 | Train Loss: 2.1721 | Train Acc: 0.5949 | Val Loss: 2.3968 | Val Acc: 0.5596 | No improvement: 2/5
+Epoch 19/20 | Train Loss: 2.1706 | Train Acc: 0.5956 | Val Loss: 2.3992 | Val Acc: 0.5649 | No improvement: 3/5
+Epoch 20/20 | Train Loss: 2.1649 | Train Acc: 0.5963 | Val Loss: 2.3561 | Val Acc: 0.5699 | No improvement: 0/5
+
+Best Val Acc: 0.5699  →  saved to optuna_trial_30.pth
+  Trial  30 | bal_acc=0.5689 | Human=0.328 | Denisovan=0.498 | Neanderthal=0.881
+[32m[I 2026-05-05 01:49:47,087][0m Trial 30 finished with value: 0.568941880418456 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 64, 'filters_1': 64, 'filters_2': 128, 'width_0': 11, 'width_1': 19, 'width_2': 11, 'drop_conv_0': 0.24385292111532134, 'drop_conv_1': 0.30881128295580906, 'drop_conv_2': 0.3808918645104399, 'dense_0': 64, 'dense_1': 256, 'drop_dense_0': 0.33896022608412635, 'drop_dense_1': 0.3232568134729896, 'lr': 9.96383397126902e-05, 'weight_decay': 0.003098202409659793}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.4897 | Train Acc: 0.5284 | Val Loss: 2.4284 | Val Acc: 0.5418 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3293 | Train Acc: 0.5658 | Val Loss: 2.3935 | Val Acc: 0.5522 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2782 | Train Acc: 0.5759 | Val Loss: 2.3424 | Val Acc: 0.5490 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.2450 | Train Acc: 0.5811 | Val Loss: 2.3459 | Val Acc: 0.5618 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2354 | Train Acc: 0.5828 | Val Loss: 2.3450 | Val Acc: 0.5619 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2165 | Train Acc: 0.5857 | Val Loss: 2.3201 | Val Acc: 0.5621 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2127 | Train Acc: 0.5881 | Val Loss: 2.3267 | Val Acc: 0.5634 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2058 | Train Acc: 0.5895 | Val Loss: 2.2812 | Val Acc: 0.5676 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.1991 | Train Acc: 0.5928 | Val Loss: 2.3207 | Val Acc: 0.5654 | No improvement: 1/5
+Epoch 10/20 | Train Loss: 2.1944 | Train Acc: 0.5906 | Val Loss: 2.3006 | Val Acc: 0.5671 | No improvement: 2/5
+Epoch 11/20 | Train Loss: 2.1916 | Train Acc: 0.5914 | Val Loss: 2.2979 | Val Acc: 0.5696 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.1871 | Train Acc: 0.5937 | Val Loss: 2.2814 | Val Acc: 0.5727 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1840 | Train Acc: 0.5932 | Val Loss: 2.3001 | Val Acc: 0.5680 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1837 | Train Acc: 0.5924 | Val Loss: 2.2870 | Val Acc: 0.5650 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.1753 | Train Acc: 0.5947 | Val Loss: 2.2801 | Val Acc: 0.5702 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.1798 | Train Acc: 0.5943 | Val Loss: 2.2990 | Val Acc: 0.5652 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.1779 | Train Acc: 0.5948 | Val Loss: 2.2829 | Val Acc: 0.5710 | No improvement: 5/5
+
+Early stopping triggered after 17 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5727  →  saved to optuna_trial_31.pth
+  Trial  31 | bal_acc=0.5713 | Human=0.402 | Denisovan=0.466 | Neanderthal=0.845
+[32m[I 2026-05-05 01:51:43,754][0m Trial 31 finished with value: 0.5713244342690523 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 256, 'filters_1': 32, 'filters_2': 128, 'width_0': 9, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.2946123422050995, 'drop_conv_1': 0.3847513038458057, 'drop_conv_2': 0.15528579413679022, 'dense_0': 128, 'dense_1': 64, 'dense_2': 128, 'drop_dense_0': 0.37543199042832265, 'drop_dense_1': 0.3925545878106786, 'drop_dense_2': 0.31340213181475296, 'lr': 0.00027338590110288373, 'weight_decay': 0.0014887862912689146}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.4575 | Train Acc: 0.5381 | Val Loss: 2.4807 | Val Acc: 0.5340 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3873 | Train Acc: 0.5554 | Val Loss: 2.4876 | Val Acc: 0.5322 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.3747 | Train Acc: 0.5585 | Val Loss: 2.4707 | Val Acc: 0.5371 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3720 | Train Acc: 0.5569 | Val Loss: 2.4952 | Val Acc: 0.5310 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.3573 | Train Acc: 0.5588 | Val Loss: 2.4854 | Val Acc: 0.5249 | No improvement: 2/5
+Epoch 6/20 | Train Loss: 2.3508 | Train Acc: 0.5607 | Val Loss: 2.7035 | Val Acc: 0.4914 | No improvement: 3/5
+Epoch 7/20 | Train Loss: 2.3523 | Train Acc: 0.5611 | Val Loss: 2.5485 | Val Acc: 0.5198 | No improvement: 4/5
+Epoch 8/20 | Train Loss: 2.3557 | Train Acc: 0.5607 | Val Loss: 2.5853 | Val Acc: 0.5149 | No improvement: 5/5
+
+Early stopping triggered after 8 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5371  →  saved to optuna_trial_32.pth
+  Trial  32 | bal_acc=0.5355 | Human=0.281 | Denisovan=0.415 | Neanderthal=0.910
+[32m[I 2026-05-05 01:52:38,550][0m Trial 32 finished with value: 0.5354501819985598 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 3, 'filters_0': 256, 'filters_1': 32, 'filters_2': 128, 'width_0': 9, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.3641261154022416, 'drop_conv_1': 0.43751830817304305, 'drop_conv_2': 0.14541676360434702, 'dense_0': 128, 'dense_1': 64, 'dense_2': 128, 'drop_dense_0': 0.4068805905118818, 'drop_dense_1': 0.4262342861882779, 'drop_dense_2': 0.4067928053652433, 'lr': 0.0014014233202849634, 'weight_decay': 0.0044831466684329396}. Best is trial 23 with value: 0.5762778326126164.[0m
+Epoch 1/20 | Train Loss: 2.4645 | Train Acc: 0.5373 | Val Loss: 2.5058 | Val Acc: 0.5356 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3281 | Train Acc: 0.5649 | Val Loss: 2.4310 | Val Acc: 0.5437 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2878 | Train Acc: 0.5729 | Val Loss: 2.4613 | Val Acc: 0.5487 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2632 | Train Acc: 0.5780 | Val Loss: 2.3792 | Val Acc: 0.5629 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2425 | Train Acc: 0.5818 | Val Loss: 2.3652 | Val Acc: 0.5591 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2301 | Train Acc: 0.5828 | Val Loss: 2.3267 | Val Acc: 0.5654 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2166 | Train Acc: 0.5876 | Val Loss: 2.3721 | Val Acc: 0.5632 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2079 | Train Acc: 0.5894 | Val Loss: 2.3673 | Val Acc: 0.5598 | No improvement: 2/5
+Epoch 9/20 | Train Loss: 2.2028 | Train Acc: 0.5905 | Val Loss: 2.3213 | Val Acc: 0.5683 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1981 | Train Acc: 0.5915 | Val Loss: 2.3358 | Val Acc: 0.5694 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.1972 | Train Acc: 0.5911 | Val Loss: 2.3723 | Val Acc: 0.5537 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.1840 | Train Acc: 0.5944 | Val Loss: 2.3154 | Val Acc: 0.5654 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.1794 | Train Acc: 0.5962 | Val Loss: 2.3223 | Val Acc: 0.5710 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1821 | Train Acc: 0.5953 | Val Loss: 2.2900 | Val Acc: 0.5717 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.1784 | Train Acc: 0.5948 | Val Loss: 2.3026 | Val Acc: 0.5717 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.1702 | Train Acc: 0.5985 | Val Loss: 2.2906 | Val Acc: 0.5740 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.1757 | Train Acc: 0.5974 | Val Loss: 2.2855 | Val Acc: 0.5776 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.1724 | Train Acc: 0.5966 | Val Loss: 2.2928 | Val Acc: 0.5763 | No improvement: 1/5
+Epoch 19/20 | Train Loss: 2.1648 | Train Acc: 0.5976 | Val Loss: 2.3141 | Val Acc: 0.5736 | No improvement: 2/5
+Epoch 20/20 | Train Loss: 2.1646 | Train Acc: 0.5991 | Val Loss: 2.3057 | Val Acc: 0.5698 | No improvement: 3/5
+
+Best Val Acc: 0.5776  →  saved to optuna_trial_33.pth
+  Trial  33 | bal_acc=0.5766 | Human=0.388 | Denisovan=0.500 | Neanderthal=0.841
+[32m[I 2026-05-05 01:54:54,601][0m Trial 33 finished with value: 0.5765721477617477 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 32, 'filters_2': 128, 'width_0': 9, 'width_1': 19, 'width_2': 15, 'drop_conv_0': 0.20128210662418075, 'drop_conv_1': 0.5045340218342931, 'drop_conv_2': 0.184511895911541, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.32065028211138674, 'drop_dense_1': 0.4087412538740936, 'lr': 0.00015453751072773392, 'weight_decay': 0.0015303716171988218}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.5495 | Train Acc: 0.5129 | Val Loss: 2.5184 | Val Acc: 0.5283 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3662 | Train Acc: 0.5563 | Val Loss: 2.4898 | Val Acc: 0.5348 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3278 | Train Acc: 0.5641 | Val Loss: 2.4419 | Val Acc: 0.5433 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3096 | Train Acc: 0.5681 | Val Loss: 2.4262 | Val Acc: 0.5456 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2864 | Train Acc: 0.5734 | Val Loss: 2.4323 | Val Acc: 0.5430 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2672 | Train Acc: 0.5758 | Val Loss: 2.4105 | Val Acc: 0.5449 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.2560 | Train Acc: 0.5781 | Val Loss: 2.4321 | Val Acc: 0.5378 | No improvement: 3/5
+Epoch 8/20 | Train Loss: 2.2481 | Train Acc: 0.5792 | Val Loss: 2.4035 | Val Acc: 0.5409 | No improvement: 4/5
+Epoch 9/20 | Train Loss: 2.2403 | Train Acc: 0.5812 | Val Loss: 2.4059 | Val Acc: 0.5382 | No improvement: 5/5
+
+Early stopping triggered after 9 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5456  →  saved to optuna_trial_34.pth
+  Trial  34 | bal_acc=0.5437 | Human=0.427 | Denisovan=0.407 | Neanderthal=0.796
+[32m[I 2026-05-05 01:55:50,652][0m Trial 34 finished with value: 0.5437469049586885 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 128, 'filters_1': 32, 'filters_2': 128, 'width_0': 9, 'width_1': 9, 'width_2': 15, 'drop_conv_0': 0.41029824985809277, 'drop_conv_1': 0.5187641091605721, 'drop_conv_2': 0.18101037692227598, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.3184459486720885, 'drop_dense_1': 0.3577273775697356, 'lr': 0.00016210039703740296, 'weight_decay': 0.0025963966814515054}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.7275 | Train Acc: 0.4675 | Val Loss: 2.6813 | Val Acc: 0.5252 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4768 | Train Acc: 0.5330 | Val Loss: 2.6198 | Val Acc: 0.5309 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4201 | Train Acc: 0.5451 | Val Loss: 2.6001 | Val Acc: 0.5349 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.3768 | Train Acc: 0.5505 | Val Loss: 2.5614 | Val Acc: 0.5373 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3488 | Train Acc: 0.5574 | Val Loss: 2.5365 | Val Acc: 0.5376 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.3322 | Train Acc: 0.5597 | Val Loss: 2.5340 | Val Acc: 0.5461 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.3123 | Train Acc: 0.5653 | Val Loss: 2.5144 | Val Acc: 0.5452 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2999 | Train Acc: 0.5666 | Val Loss: 2.5340 | Val Acc: 0.5480 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2902 | Train Acc: 0.5686 | Val Loss: 2.5176 | Val Acc: 0.5522 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2814 | Train Acc: 0.5696 | Val Loss: 2.5207 | Val Acc: 0.5548 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2716 | Train Acc: 0.5752 | Val Loss: 2.5194 | Val Acc: 0.5515 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2658 | Train Acc: 0.5761 | Val Loss: 2.5101 | Val Acc: 0.5542 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.2586 | Train Acc: 0.5764 | Val Loss: 2.5098 | Val Acc: 0.5510 | No improvement: 3/5
+Epoch 14/20 | Train Loss: 2.2503 | Train Acc: 0.5788 | Val Loss: 2.4925 | Val Acc: 0.5537 | No improvement: 4/5
+Epoch 15/20 | Train Loss: 2.2470 | Train Acc: 0.5790 | Val Loss: 2.4958 | Val Acc: 0.5525 | No improvement: 5/5
+
+Early stopping triggered after 15 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5548  →  saved to optuna_trial_35.pth
+  Trial  35 | bal_acc=0.5538 | Human=0.297 | Denisovan=0.479 | Neanderthal=0.886
+[32m[I 2026-05-05 01:57:11,900][0m Trial 35 finished with value: 0.5537591710504469 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 32, 'width_0': 19, 'width_1': 19, 'drop_conv_0': 0.44873166554532073, 'drop_conv_1': 0.5354802203071787, 'dense_0': 128, 'dense_1': 128, 'drop_dense_0': 0.35470379434776517, 'drop_dense_1': 0.460604291318642, 'lr': 4.230402418300217e-05, 'weight_decay': 0.007250974289087253}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.5229 | Train Acc: 0.5233 | Val Loss: 2.5430 | Val Acc: 0.5456 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3145 | Train Acc: 0.5720 | Val Loss: 2.4821 | Val Acc: 0.5445 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.2648 | Train Acc: 0.5797 | Val Loss: 2.4629 | Val Acc: 0.5499 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2311 | Train Acc: 0.5838 | Val Loss: 2.4353 | Val Acc: 0.5609 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2092 | Train Acc: 0.5885 | Val Loss: 2.4244 | Val Acc: 0.5599 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.1987 | Train Acc: 0.5883 | Val Loss: 2.4344 | Val Acc: 0.5660 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.1866 | Train Acc: 0.5941 | Val Loss: 2.4254 | Val Acc: 0.5629 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.1764 | Train Acc: 0.5939 | Val Loss: 2.4103 | Val Acc: 0.5727 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.1727 | Train Acc: 0.5942 | Val Loss: 2.3903 | Val Acc: 0.5677 | No improvement: 1/5
+Epoch 10/20 | Train Loss: 2.1668 | Train Acc: 0.5968 | Val Loss: 2.4072 | Val Acc: 0.5652 | No improvement: 2/5
+Epoch 11/20 | Train Loss: 2.1590 | Train Acc: 0.5972 | Val Loss: 2.3758 | Val Acc: 0.5717 | No improvement: 3/5
+Epoch 12/20 | Train Loss: 2.1513 | Train Acc: 0.5996 | Val Loss: 2.3724 | Val Acc: 0.5736 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1512 | Train Acc: 0.6012 | Val Loss: 2.3904 | Val Acc: 0.5691 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1464 | Train Acc: 0.6020 | Val Loss: 2.3676 | Val Acc: 0.5763 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.1450 | Train Acc: 0.6025 | Val Loss: 2.3880 | Val Acc: 0.5679 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.1326 | Train Acc: 0.6017 | Val Loss: 2.3513 | Val Acc: 0.5741 | No improvement: 2/5
+Epoch 17/20 | Train Loss: 2.1376 | Train Acc: 0.6032 | Val Loss: 2.3547 | Val Acc: 0.5700 | No improvement: 3/5
+Epoch 18/20 | Train Loss: 2.1334 | Train Acc: 0.6043 | Val Loss: 2.3533 | Val Acc: 0.5773 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.1297 | Train Acc: 0.6062 | Val Loss: 2.3862 | Val Acc: 0.5764 | No improvement: 1/5
+Epoch 20/20 | Train Loss: 2.1283 | Train Acc: 0.6057 | Val Loss: 2.3746 | Val Acc: 0.5683 | No improvement: 2/5
+
+Best Val Acc: 0.5773  →  saved to optuna_trial_36.pth
+  Trial  36 | bal_acc=0.5762 | Human=0.363 | Denisovan=0.493 | Neanderthal=0.872
+[32m[I 2026-05-05 01:59:32,537][0m Trial 36 finished with value: 0.5762056693357642 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 64, 'filters_3': 64, 'width_0': 11, 'width_1': 15, 'width_2': 15, 'width_3': 19, 'drop_conv_0': 0.21041438425822398, 'drop_conv_1': 0.3376435743386525, 'drop_conv_2': 0.12762582126475064, 'drop_conv_3': 0.5189092044123859, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.32087484992923, 'drop_dense_1': 0.3884318452974546, 'lr': 8.264226256240091e-05, 'weight_decay': 0.0019366026011405587}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.5972 | Train Acc: 0.5054 | Val Loss: 2.6043 | Val Acc: 0.5332 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3676 | Train Acc: 0.5628 | Val Loss: 2.5435 | Val Acc: 0.5361 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3158 | Train Acc: 0.5705 | Val Loss: 2.5704 | Val Acc: 0.5419 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2893 | Train Acc: 0.5761 | Val Loss: 2.5127 | Val Acc: 0.5494 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2663 | Train Acc: 0.5803 | Val Loss: 2.4900 | Val Acc: 0.5503 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2565 | Train Acc: 0.5814 | Val Loss: 2.4919 | Val Acc: 0.5500 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.2386 | Train Acc: 0.5831 | Val Loss: 2.4875 | Val Acc: 0.5579 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2230 | Train Acc: 0.5877 | Val Loss: 2.4578 | Val Acc: 0.5526 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.2128 | Train Acc: 0.5866 | Val Loss: 2.4544 | Val Acc: 0.5583 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2047 | Train Acc: 0.5892 | Val Loss: 2.4645 | Val Acc: 0.5621 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.1974 | Train Acc: 0.5912 | Val Loss: 2.4580 | Val Acc: 0.5627 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.1958 | Train Acc: 0.5923 | Val Loss: 2.4660 | Val Acc: 0.5636 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1976 | Train Acc: 0.5916 | Val Loss: 2.4273 | Val Acc: 0.5569 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1866 | Train Acc: 0.5941 | Val Loss: 2.4647 | Val Acc: 0.5583 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.1817 | Train Acc: 0.5966 | Val Loss: 2.4549 | Val Acc: 0.5606 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.1753 | Train Acc: 0.5965 | Val Loss: 2.4508 | Val Acc: 0.5656 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.1734 | Train Acc: 0.5968 | Val Loss: 2.4283 | Val Acc: 0.5695 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.1707 | Train Acc: 0.5953 | Val Loss: 2.4260 | Val Acc: 0.5692 | No improvement: 1/5
+Epoch 19/20 | Train Loss: 2.1687 | Train Acc: 0.5985 | Val Loss: 2.4459 | Val Acc: 0.5638 | No improvement: 2/5
+Epoch 20/20 | Train Loss: 2.1670 | Train Acc: 0.5978 | Val Loss: 2.4228 | Val Acc: 0.5673 | No improvement: 3/5
+
+Best Val Acc: 0.5695  →  saved to optuna_trial_37.pth
+  Trial  37 | bal_acc=0.5686 | Human=0.341 | Denisovan=0.501 | Neanderthal=0.864
+[32m[I 2026-05-05 02:05:01,216][0m Trial 37 finished with value: 0.5685919995461486 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 32, 'filters_2': 128, 'filters_3': 64, 'width_0': 5, 'width_1': 15, 'width_2': 19, 'width_3': 19, 'drop_conv_0': 0.11288486507798443, 'drop_conv_1': 0.3397910687657677, 'drop_conv_2': 0.48663735006736225, 'drop_conv_3': 0.5793306239199274, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.3947491247633631, 'drop_dense_1': 0.505096165949642, 'lr': 6.69807753301338e-05, 'weight_decay': 0.0011366482366355322}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.4677 | Train Acc: 0.5355 | Val Loss: 2.5161 | Val Acc: 0.5446 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2736 | Train Acc: 0.5730 | Val Loss: 2.4721 | Val Acc: 0.5556 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2294 | Train Acc: 0.5817 | Val Loss: 2.4483 | Val Acc: 0.5622 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2057 | Train Acc: 0.5876 | Val Loss: 2.3967 | Val Acc: 0.5648 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.1931 | Train Acc: 0.5903 | Val Loss: 2.3966 | Val Acc: 0.5603 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.1807 | Train Acc: 0.5923 | Val Loss: 2.4312 | Val Acc: 0.5667 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.1711 | Train Acc: 0.5949 | Val Loss: 2.3951 | Val Acc: 0.5692 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.1596 | Train Acc: 0.5949 | Val Loss: 2.3711 | Val Acc: 0.5686 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.1579 | Train Acc: 0.5973 | Val Loss: 2.3918 | Val Acc: 0.5729 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1487 | Train Acc: 0.5995 | Val Loss: 2.4219 | Val Acc: 0.5668 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.1471 | Train Acc: 0.5994 | Val Loss: 2.3846 | Val Acc: 0.5669 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.1404 | Train Acc: 0.6003 | Val Loss: 2.3944 | Val Acc: 0.5604 | No improvement: 3/5
+Epoch 13/20 | Train Loss: 2.1421 | Train Acc: 0.6000 | Val Loss: 2.3555 | Val Acc: 0.5745 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1336 | Train Acc: 0.6019 | Val Loss: 2.3534 | Val Acc: 0.5765 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.1344 | Train Acc: 0.6025 | Val Loss: 2.3505 | Val Acc: 0.5723 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.1277 | Train Acc: 0.6024 | Val Loss: 2.3601 | Val Acc: 0.5691 | No improvement: 2/5
+Epoch 17/20 | Train Loss: 2.1259 | Train Acc: 0.6031 | Val Loss: 2.3737 | Val Acc: 0.5713 | No improvement: 3/5
+Epoch 18/20 | Train Loss: 2.1239 | Train Acc: 0.6033 | Val Loss: 2.3688 | Val Acc: 0.5577 | No improvement: 4/5
+Epoch 19/20 | Train Loss: 2.1231 | Train Acc: 0.6040 | Val Loss: 2.3652 | Val Acc: 0.5733 | No improvement: 5/5
+
+Early stopping triggered after 19 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5765  →  saved to optuna_trial_38.pth
+  Trial  38 | bal_acc=0.5751 | Human=0.365 | Denisovan=0.470 | Neanderthal=0.890
+[32m[I 2026-05-05 02:09:24,003][0m Trial 38 finished with value: 0.5751006830365174 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'filters_0': 256, 'filters_1': 256, 'filters_2': 128, 'filters_3': 64, 'width_0': 11, 'width_1': 15, 'width_2': 7, 'width_3': 19, 'drop_conv_0': 0.19414896019348532, 'drop_conv_1': 0.3618240573793505, 'drop_conv_2': 0.22222376117533235, 'drop_conv_3': 0.49207592145185614, 'dense_0': 128, 'drop_dense_0': 0.4271776779558208, 'lr': 8.483707624899726e-05, 'weight_decay': 0.002046604572633887}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.8094 | Train Acc: 0.4462 | Val Loss: 2.7207 | Val Acc: 0.5143 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.5224 | Train Acc: 0.5271 | Val Loss: 2.6431 | Val Acc: 0.5279 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.4546 | Train Acc: 0.5407 | Val Loss: 2.5939 | Val Acc: 0.5373 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.4050 | Train Acc: 0.5523 | Val Loss: 2.5532 | Val Acc: 0.5330 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.3744 | Train Acc: 0.5562 | Val Loss: 2.5419 | Val Acc: 0.5367 | No improvement: 2/5
+Epoch 6/20 | Train Loss: 2.3567 | Train Acc: 0.5615 | Val Loss: 2.5329 | Val Acc: 0.5401 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.3398 | Train Acc: 0.5661 | Val Loss: 2.5190 | Val Acc: 0.5407 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.3296 | Train Acc: 0.5678 | Val Loss: 2.5158 | Val Acc: 0.5448 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.3148 | Train Acc: 0.5694 | Val Loss: 2.4954 | Val Acc: 0.5456 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.3058 | Train Acc: 0.5698 | Val Loss: 2.4829 | Val Acc: 0.5464 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2974 | Train Acc: 0.5719 | Val Loss: 2.4939 | Val Acc: 0.5490 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.2872 | Train Acc: 0.5743 | Val Loss: 2.4737 | Val Acc: 0.5453 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.2827 | Train Acc: 0.5772 | Val Loss: 2.4653 | Val Acc: 0.5494 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.2735 | Train Acc: 0.5779 | Val Loss: 2.4669 | Val Acc: 0.5499 | No improvement: 0/5
+Epoch 15/20 | Train Loss: 2.2655 | Train Acc: 0.5783 | Val Loss: 2.4580 | Val Acc: 0.5499 | No improvement: 1/5
+Epoch 16/20 | Train Loss: 2.2547 | Train Acc: 0.5805 | Val Loss: 2.4617 | Val Acc: 0.5529 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.2509 | Train Acc: 0.5802 | Val Loss: 2.4408 | Val Acc: 0.5559 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.2500 | Train Acc: 0.5803 | Val Loss: 2.4444 | Val Acc: 0.5577 | No improvement: 0/5
+Epoch 19/20 | Train Loss: 2.2388 | Train Acc: 0.5844 | Val Loss: 2.4383 | Val Acc: 0.5582 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.2356 | Train Acc: 0.5852 | Val Loss: 2.4275 | Val Acc: 0.5548 | No improvement: 1/5
+
+Best Val Acc: 0.5582  →  saved to optuna_trial_39.pth
+  Trial  39 | bal_acc=0.5560 | Human=0.433 | Denisovan=0.397 | Neanderthal=0.838
+[32m[I 2026-05-05 02:11:59,805][0m Trial 39 finished with value: 0.5560087224307834 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 128, 'filters_2': 32, 'filters_3': 32, 'width_0': 9, 'width_1': 15, 'width_2': 5, 'width_3': 19, 'drop_conv_0': 0.16984354760208892, 'drop_conv_1': 0.43223686875564815, 'drop_conv_2': 0.2811192622061433, 'drop_conv_3': 0.45927417809233906, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.318783571751494, 'drop_dense_1': 0.37653504531100124, 'lr': 2.0419937672007343e-05, 'weight_decay': 0.0008128390894655047}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.6634 | Train Acc: 0.4896 | Val Loss: 2.6951 | Val Acc: 0.4227 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3989 | Train Acc: 0.5488 | Val Loss: 2.6720 | Val Acc: 0.4447 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3458 | Train Acc: 0.5576 | Val Loss: 2.7180 | Val Acc: 0.4424 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.3150 | Train Acc: 0.5630 | Val Loss: 2.7175 | Val Acc: 0.4555 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2945 | Train Acc: 0.5674 | Val Loss: 2.7100 | Val Acc: 0.4613 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2852 | Train Acc: 0.5685 | Val Loss: 2.7227 | Val Acc: 0.4633 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2717 | Train Acc: 0.5728 | Val Loss: 2.7334 | Val Acc: 0.4694 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2620 | Train Acc: 0.5743 | Val Loss: 2.7480 | Val Acc: 0.4655 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.2493 | Train Acc: 0.5774 | Val Loss: 2.7839 | Val Acc: 0.4670 | No improvement: 2/5
+Epoch 10/20 | Train Loss: 2.2404 | Train Acc: 0.5794 | Val Loss: 2.8128 | Val Acc: 0.4628 | No improvement: 3/5
+Epoch 11/20 | Train Loss: 2.2344 | Train Acc: 0.5792 | Val Loss: 2.7684 | Val Acc: 0.4691 | No improvement: 4/5
+Epoch 12/20 | Train Loss: 2.2278 | Train Acc: 0.5820 | Val Loss: 2.6941 | Val Acc: 0.4833 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.2230 | Train Acc: 0.5822 | Val Loss: 2.7660 | Val Acc: 0.4717 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.2190 | Train Acc: 0.5838 | Val Loss: 2.8102 | Val Acc: 0.4656 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.2160 | Train Acc: 0.5831 | Val Loss: 2.7696 | Val Acc: 0.4775 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.2042 | Train Acc: 0.5856 | Val Loss: 2.7970 | Val Acc: 0.4686 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.2035 | Train Acc: 0.5869 | Val Loss: 2.6719 | Val Acc: 0.4874 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.1999 | Train Acc: 0.5865 | Val Loss: 2.7597 | Val Acc: 0.4824 | No improvement: 1/5
+Epoch 19/20 | Train Loss: 2.2008 | Train Acc: 0.5867 | Val Loss: 2.6658 | Val Acc: 0.4894 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.1998 | Train Acc: 0.5867 | Val Loss: 2.6965 | Val Acc: 0.4848 | No improvement: 1/5
+
+Best Val Acc: 0.4894  →  saved to optuna_trial_40.pth
+  Trial  40 | bal_acc=0.4875 | Human=0.708 | Denisovan=0.348 | Neanderthal=0.407
+[32m[I 2026-05-05 02:15:06,250][0m Trial 40 finished with value: 0.4875086200421955 and parameters: {'num_conv_layers': 4, 'num_dense_layers': 1, 'filters_0': 32, 'filters_1': 64, 'filters_2': 256, 'filters_3': 256, 'width_0': 11, 'width_1': 7, 'width_2': 19, 'width_3': 5, 'drop_conv_0': 0.20553023711773877, 'drop_conv_1': 0.5057522145793253, 'drop_conv_2': 0.13473055524432598, 'drop_conv_3': 0.5130405198208199, 'dense_0': 256, 'drop_dense_0': 0.30420801286757554, 'lr': 3.5802430081489106e-05, 'weight_decay': 0.0013020546825204345}. Best is trial 33 with value: 0.5765721477617477.[0m
+Epoch 1/20 | Train Loss: 2.4928 | Train Acc: 0.5300 | Val Loss: 2.4450 | Val Acc: 0.5360 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3263 | Train Acc: 0.5648 | Val Loss: 2.3683 | Val Acc: 0.5445 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2666 | Train Acc: 0.5756 | Val Loss: 2.3694 | Val Acc: 0.5521 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2402 | Train Acc: 0.5826 | Val Loss: 2.3349 | Val Acc: 0.5633 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2196 | Train Acc: 0.5870 | Val Loss: 2.3166 | Val Acc: 0.5679 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2110 | Train Acc: 0.5888 | Val Loss: 2.3195 | Val Acc: 0.5611 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.2091 | Train Acc: 0.5900 | Val Loss: 2.3097 | Val Acc: 0.5683 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.1949 | Train Acc: 0.5941 | Val Loss: 2.2932 | Val Acc: 0.5690 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.1905 | Train Acc: 0.5932 | Val Loss: 2.2717 | Val Acc: 0.5714 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1820 | Train Acc: 0.5958 | Val Loss: 2.2677 | Val Acc: 0.5690 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.1808 | Train Acc: 0.5949 | Val Loss: 2.2747 | Val Acc: 0.5690 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.1753 | Train Acc: 0.5957 | Val Loss: 2.2729 | Val Acc: 0.5813 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1666 | Train Acc: 0.5975 | Val Loss: 2.2580 | Val Acc: 0.5781 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1639 | Train Acc: 0.5969 | Val Loss: 2.2689 | Val Acc: 0.5752 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.1617 | Train Acc: 0.5984 | Val Loss: 2.2648 | Val Acc: 0.5783 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.1564 | Train Acc: 0.6004 | Val Loss: 2.2677 | Val Acc: 0.5763 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.1532 | Train Acc: 0.6016 | Val Loss: 2.2678 | Val Acc: 0.5730 | No improvement: 5/5
+
+Early stopping triggered after 17 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5813  →  saved to optuna_trial_41.pth
+  Trial  41 | bal_acc=0.5799 | Human=0.473 | Denisovan=0.479 | Neanderthal=0.788
+[32m[I 2026-05-05 02:16:50,544][0m Trial 41 finished with value: 0.5798876062514048 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 64, 'width_0': 11, 'width_1': 15, 'width_2': 15, 'drop_conv_0': 0.35836001875434187, 'drop_conv_1': 0.28109586812132253, 'drop_conv_2': 0.12700947318878059, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.3383210225335532, 'drop_dense_1': 0.3835371244001687, 'lr': 0.00014591581118944368, 'weight_decay': 0.001856553763319814}. Best is trial 41 with value: 0.5798876062514048.[0m
+Epoch 1/20 | Train Loss: 2.4002 | Train Acc: 0.5504 | Val Loss: 2.4208 | Val Acc: 0.5422 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2760 | Train Acc: 0.5733 | Val Loss: 2.3531 | Val Acc: 0.5546 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2398 | Train Acc: 0.5824 | Val Loss: 2.3115 | Val Acc: 0.5609 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2226 | Train Acc: 0.5867 | Val Loss: 2.2922 | Val Acc: 0.5660 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2148 | Train Acc: 0.5858 | Val Loss: 2.3093 | Val Acc: 0.5596 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.2070 | Train Acc: 0.5883 | Val Loss: 2.3203 | Val Acc: 0.5633 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.2030 | Train Acc: 0.5898 | Val Loss: 2.3123 | Val Acc: 0.5610 | No improvement: 3/5
+Epoch 8/20 | Train Loss: 2.1941 | Train Acc: 0.5916 | Val Loss: 2.3092 | Val Acc: 0.5614 | No improvement: 4/5
+Epoch 9/20 | Train Loss: 2.1972 | Train Acc: 0.5921 | Val Loss: 2.2866 | Val Acc: 0.5711 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1888 | Train Acc: 0.5912 | Val Loss: 2.3582 | Val Acc: 0.5423 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.1876 | Train Acc: 0.5928 | Val Loss: 2.3035 | Val Acc: 0.5669 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.1791 | Train Acc: 0.5944 | Val Loss: 2.3162 | Val Acc: 0.5614 | No improvement: 3/5
+Epoch 13/20 | Train Loss: 2.1813 | Train Acc: 0.5935 | Val Loss: 2.2956 | Val Acc: 0.5722 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1778 | Train Acc: 0.5935 | Val Loss: 2.3145 | Val Acc: 0.5648 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.1774 | Train Acc: 0.5963 | Val Loss: 2.3011 | Val Acc: 0.5607 | No improvement: 2/5
+Epoch 16/20 | Train Loss: 2.1742 | Train Acc: 0.5961 | Val Loss: 2.2783 | Val Acc: 0.5733 | No improvement: 0/5
+Epoch 17/20 | Train Loss: 2.1726 | Train Acc: 0.5950 | Val Loss: 2.3258 | Val Acc: 0.5580 | No improvement: 1/5
+Epoch 18/20 | Train Loss: 2.1689 | Train Acc: 0.5964 | Val Loss: 2.2707 | Val Acc: 0.5688 | No improvement: 2/5
+Epoch 19/20 | Train Loss: 2.1648 | Train Acc: 0.5972 | Val Loss: 2.2568 | Val Acc: 0.5763 | No improvement: 0/5
+Epoch 20/20 | Train Loss: 2.1676 | Train Acc: 0.5983 | Val Loss: 2.2860 | Val Acc: 0.5673 | No improvement: 1/5
+
+Best Val Acc: 0.5763  →  saved to optuna_trial_42.pth
+  Trial  42 | bal_acc=0.5751 | Human=0.417 | Denisovan=0.493 | Neanderthal=0.816
+[32m[I 2026-05-05 02:18:53,399][0m Trial 42 finished with value: 0.5751449801864621 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 64, 'width_0': 11, 'width_1': 15, 'width_2': 15, 'drop_conv_0': 0.1359566004766265, 'drop_conv_1': 0.3284493967916885, 'drop_conv_2': 0.12992928705935736, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.34179607346410884, 'drop_dense_1': 0.38844992209311785, 'lr': 0.0004349637640887413, 'weight_decay': 0.0018159504105014694}. Best is trial 41 with value: 0.5798876062514048.[0m
+Epoch 1/20 | Train Loss: 2.6293 | Train Acc: 0.4982 | Val Loss: 2.5520 | Val Acc: 0.5297 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4164 | Train Acc: 0.5471 | Val Loss: 2.4897 | Val Acc: 0.5369 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3620 | Train Acc: 0.5569 | Val Loss: 2.4535 | Val Acc: 0.5365 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.3241 | Train Acc: 0.5659 | Val Loss: 2.4255 | Val Acc: 0.5413 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.3000 | Train Acc: 0.5707 | Val Loss: 2.3868 | Val Acc: 0.5496 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2808 | Train Acc: 0.5747 | Val Loss: 2.3596 | Val Acc: 0.5490 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.2619 | Train Acc: 0.5779 | Val Loss: 2.3496 | Val Acc: 0.5571 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.2458 | Train Acc: 0.5809 | Val Loss: 2.3439 | Val Acc: 0.5607 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2386 | Train Acc: 0.5827 | Val Loss: 2.3346 | Val Acc: 0.5637 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2293 | Train Acc: 0.5843 | Val Loss: 2.3384 | Val Acc: 0.5661 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.2158 | Train Acc: 0.5878 | Val Loss: 2.3308 | Val Acc: 0.5648 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.2188 | Train Acc: 0.5872 | Val Loss: 2.3121 | Val Acc: 0.5692 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.2105 | Train Acc: 0.5894 | Val Loss: 2.3136 | Val Acc: 0.5729 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.2012 | Train Acc: 0.5897 | Val Loss: 2.3173 | Val Acc: 0.5684 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.1936 | Train Acc: 0.5918 | Val Loss: 2.3213 | Val Acc: 0.5654 | No improvement: 2/5
+Epoch 16/20 | Train Loss: 2.1927 | Train Acc: 0.5934 | Val Loss: 2.3085 | Val Acc: 0.5686 | No improvement: 3/5
+Epoch 17/20 | Train Loss: 2.1881 | Train Acc: 0.5937 | Val Loss: 2.3083 | Val Acc: 0.5699 | No improvement: 4/5
+Epoch 18/20 | Train Loss: 2.1868 | Train Acc: 0.5949 | Val Loss: 2.3296 | Val Acc: 0.5676 | No improvement: 5/5
+
+Early stopping triggered after 18 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5729  →  saved to optuna_trial_43.pth
+  Trial  43 | bal_acc=0.5711 | Human=0.435 | Denisovan=0.439 | Neanderthal=0.839
+[32m[I 2026-05-05 02:20:44,173][0m Trial 43 finished with value: 0.5710913468848196 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 64, 'width_0': 11, 'width_1': 15, 'width_2': 15, 'drop_conv_0': 0.26408074526059794, 'drop_conv_1': 0.2840736249982458, 'drop_conv_2': 0.18324209902823485, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.368365474979864, 'drop_dense_1': 0.4118291494079113, 'lr': 4.637784107650896e-05, 'weight_decay': 0.0023069643284113974}. Best is trial 41 with value: 0.5798876062514048.[0m
+Epoch 1/20 | Train Loss: 2.5994 | Train Acc: 0.5030 | Val Loss: 2.5246 | Val Acc: 0.5267 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.4129 | Train Acc: 0.5466 | Val Loss: 2.4637 | Val Acc: 0.5383 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.3522 | Train Acc: 0.5595 | Val Loss: 2.4348 | Val Acc: 0.5352 | No improvement: 1/5
+Epoch 4/20 | Train Loss: 2.3175 | Train Acc: 0.5682 | Val Loss: 2.3922 | Val Acc: 0.5495 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2938 | Train Acc: 0.5730 | Val Loss: 2.3906 | Val Acc: 0.5525 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2683 | Train Acc: 0.5780 | Val Loss: 2.3403 | Val Acc: 0.5604 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.2470 | Train Acc: 0.5812 | Val Loss: 2.3186 | Val Acc: 0.5598 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.2355 | Train Acc: 0.5827 | Val Loss: 2.3120 | Val Acc: 0.5621 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.2212 | Train Acc: 0.5877 | Val Loss: 2.3088 | Val Acc: 0.5650 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.2162 | Train Acc: 0.5870 | Val Loss: 2.3007 | Val Acc: 0.5591 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.2070 | Train Acc: 0.5899 | Val Loss: 2.2862 | Val Acc: 0.5667 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.2010 | Train Acc: 0.5912 | Val Loss: 2.2970 | Val Acc: 0.5667 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.1915 | Train Acc: 0.5916 | Val Loss: 2.2795 | Val Acc: 0.5711 | No improvement: 0/5
+Epoch 14/20 | Train Loss: 2.1921 | Train Acc: 0.5924 | Val Loss: 2.2793 | Val Acc: 0.5677 | No improvement: 1/5
+Epoch 15/20 | Train Loss: 2.1828 | Train Acc: 0.5935 | Val Loss: 2.2778 | Val Acc: 0.5702 | No improvement: 2/5
+Epoch 16/20 | Train Loss: 2.1769 | Train Acc: 0.5958 | Val Loss: 2.2791 | Val Acc: 0.5694 | No improvement: 3/5
+Epoch 17/20 | Train Loss: 2.1756 | Train Acc: 0.5938 | Val Loss: 2.2717 | Val Acc: 0.5731 | No improvement: 0/5
+Epoch 18/20 | Train Loss: 2.1711 | Train Acc: 0.5964 | Val Loss: 2.2641 | Val Acc: 0.5706 | No improvement: 1/5
+Epoch 19/20 | Train Loss: 2.1666 | Train Acc: 0.5984 | Val Loss: 2.2865 | Val Acc: 0.5676 | No improvement: 2/5
+Epoch 20/20 | Train Loss: 2.1648 | Train Acc: 0.5961 | Val Loss: 2.2827 | Val Acc: 0.5679 | No improvement: 3/5
+
+Best Val Acc: 0.5731  →  saved to optuna_trial_44.pth
+  Trial  44 | bal_acc=0.5721 | Human=0.404 | Denisovan=0.496 | Neanderthal=0.816
+[32m[I 2026-05-05 02:22:41,720][0m Trial 44 finished with value: 0.5721239478663622 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'filters_2': 64, 'width_0': 11, 'width_1': 15, 'width_2': 5, 'drop_conv_0': 0.3190419108011498, 'drop_conv_1': 0.2223525191424849, 'drop_conv_2': 0.12805577490580156, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.3205758272601017, 'drop_dense_1': 0.4361821966345528, 'lr': 7.50238196279528e-05, 'weight_decay': 0.0006271907282411979}. Best is trial 41 with value: 0.5798876062514048.[0m
+Epoch 1/20 | Train Loss: 2.5051 | Train Acc: 0.5240 | Val Loss: 2.4673 | Val Acc: 0.5419 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.3367 | Train Acc: 0.5597 | Val Loss: 2.4168 | Val Acc: 0.5518 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2814 | Train Acc: 0.5732 | Val Loss: 2.3920 | Val Acc: 0.5533 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2553 | Train Acc: 0.5793 | Val Loss: 2.3626 | Val Acc: 0.5561 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2393 | Train Acc: 0.5816 | Val Loss: 2.3609 | Val Acc: 0.5594 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2201 | Train Acc: 0.5860 | Val Loss: 2.3687 | Val Acc: 0.5533 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.2154 | Train Acc: 0.5876 | Val Loss: 2.3646 | Val Acc: 0.5563 | No improvement: 2/5
+Epoch 8/20 | Train Loss: 2.2045 | Train Acc: 0.5904 | Val Loss: 2.3735 | Val Acc: 0.5569 | No improvement: 3/5
+Epoch 9/20 | Train Loss: 2.1958 | Train Acc: 0.5931 | Val Loss: 2.3444 | Val Acc: 0.5625 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1919 | Train Acc: 0.5919 | Val Loss: 2.3690 | Val Acc: 0.5563 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.1834 | Train Acc: 0.5954 | Val Loss: 2.3765 | Val Acc: 0.5536 | No improvement: 2/5
+Epoch 12/20 | Train Loss: 2.1850 | Train Acc: 0.5961 | Val Loss: 2.3519 | Val Acc: 0.5681 | No improvement: 0/5
+Epoch 13/20 | Train Loss: 2.1743 | Train Acc: 0.5955 | Val Loss: 2.3377 | Val Acc: 0.5637 | No improvement: 1/5
+Epoch 14/20 | Train Loss: 2.1743 | Train Acc: 0.5972 | Val Loss: 2.3736 | Val Acc: 0.5519 | No improvement: 2/5
+Epoch 15/20 | Train Loss: 2.1669 | Train Acc: 0.5977 | Val Loss: 2.3556 | Val Acc: 0.5565 | No improvement: 3/5
+Epoch 16/20 | Train Loss: 2.1659 | Train Acc: 0.5974 | Val Loss: 2.3656 | Val Acc: 0.5532 | No improvement: 4/5
+Epoch 17/20 | Train Loss: 2.1601 | Train Acc: 0.5991 | Val Loss: 2.3323 | Val Acc: 0.5613 | No improvement: 5/5
+
+Early stopping triggered after 17 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5681  →  saved to optuna_trial_45.pth
+  Trial  45 | bal_acc=0.5664 | Human=0.529 | Denisovan=0.439 | Neanderthal=0.731
+[32m[I 2026-05-05 02:24:12,579][0m Trial 45 finished with value: 0.5664320971597477 and parameters: {'num_conv_layers': 2, 'num_dense_layers': 2, 'filters_0': 256, 'filters_1': 64, 'width_0': 7, 'width_1': 15, 'drop_conv_0': 0.34460432630979515, 'drop_conv_1': 0.3698915444762409, 'dense_0': 128, 'dense_1': 64, 'drop_dense_0': 0.33937658009367366, 'drop_dense_1': 0.4557347161319741, 'lr': 0.00020031182763452718, 'weight_decay': 0.0003165963224068109}. Best is trial 41 with value: 0.5798876062514048.[0m
+Epoch 1/20 | Train Loss: 2.4156 | Train Acc: 0.5457 | Val Loss: 2.4147 | Val Acc: 0.5482 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2672 | Train Acc: 0.5756 | Val Loss: 2.3436 | Val Acc: 0.5626 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2168 | Train Acc: 0.5852 | Val Loss: 2.3243 | Val Acc: 0.5638 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.1915 | Train Acc: 0.5900 | Val Loss: 2.3573 | Val Acc: 0.5502 | No improvement: 1/5
+Epoch 5/20 | Train Loss: 2.1788 | Train Acc: 0.5928 | Val Loss: 2.3311 | Val Acc: 0.5592 | No improvement: 2/5
+Epoch 6/20 | Train Loss: 2.1652 | Train Acc: 0.5947 | Val Loss: 2.2715 | Val Acc: 0.5748 | No improvement: 0/5
+Epoch 7/20 | Train Loss: 2.1569 | Train Acc: 0.5979 | Val Loss: 2.2919 | Val Acc: 0.5661 | No improvement: 1/5
+Epoch 8/20 | Train Loss: 2.1439 | Train Acc: 0.6003 | Val Loss: 2.2569 | Val Acc: 0.5750 | No improvement: 0/5
+Epoch 9/20 | Train Loss: 2.1389 | Train Acc: 0.6025 | Val Loss: 2.2439 | Val Acc: 0.5757 | No improvement: 0/5
+Epoch 10/20 | Train Loss: 2.1314 | Train Acc: 0.6026 | Val Loss: 2.2634 | Val Acc: 0.5741 | No improvement: 1/5
+Epoch 11/20 | Train Loss: 2.1284 | Train Acc: 0.6025 | Val Loss: 2.2481 | Val Acc: 0.5807 | No improvement: 0/5
+Epoch 12/20 | Train Loss: 2.1261 | Train Acc: 0.6023 | Val Loss: 2.2449 | Val Acc: 0.5794 | No improvement: 1/5
+Epoch 13/20 | Train Loss: 2.1177 | Train Acc: 0.6061 | Val Loss: 2.2422 | Val Acc: 0.5787 | No improvement: 2/5
+Epoch 14/20 | Train Loss: 2.1144 | Train Acc: 0.6061 | Val Loss: 2.2503 | Val Acc: 0.5768 | No improvement: 3/5
+Epoch 15/20 | Train Loss: 2.1128 | Train Acc: 0.6064 | Val Loss: 2.2492 | Val Acc: 0.5748 | No improvement: 4/5
+Epoch 16/20 | Train Loss: 2.1121 | Train Acc: 0.6066 | Val Loss: 2.2530 | Val Acc: 0.5791 | No improvement: 5/5
+
+Early stopping triggered after 16 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5807  →  saved to optuna_trial_46.pth
+  Trial  46 | bal_acc=0.5792 | Human=0.466 | Denisovan=0.468 | Neanderthal=0.804
+[32m[I 2026-05-05 02:28:14,836][0m Trial 46 finished with value: 0.579210159612401 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'filters_0': 256, 'filters_1': 128, 'filters_2': 64, 'width_0': 15, 'width_1': 11, 'width_2': 15, 'drop_conv_0': 0.17973782956707898, 'drop_conv_1': 0.3267158084093715, 'drop_conv_2': 0.10071139255931251, 'dense_0': 128, 'drop_dense_0': 0.31774322739977384, 'lr': 0.00013903023760122095, 'weight_decay': 0.0012827719007625917}. Best is trial 41 with value: 0.5798876062514048.[0m
+Epoch 1/20 | Train Loss: 2.4211 | Train Acc: 0.5462 | Val Loss: 2.4000 | Val Acc: 0.5529 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2683 | Train Acc: 0.5769 | Val Loss: 2.3289 | Val Acc: 0.5563 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2192 | Train Acc: 0.5844 | Val Loss: 2.3083 | Val Acc: 0.5692 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.1945 | Train Acc: 0.5916 | Val Loss: 2.2766 | Val Acc: 0.5708 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.1773 | Train Acc: 0.5925 | Val Loss: 2.2668 | Val Acc: 0.5757 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.1644 | Train Acc: 0.5961 | Val Loss: 2.2773 | Val Acc: 0.5718 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.1510 | Train Acc: 0.6000 | Val Loss: 2.2724 | Val Acc: 0.5717 | No improvement: 2/5
+Epoch 8/20 | Train Loss: 2.1452 | Train Acc: 0.6011 | Val Loss: 2.2612 | Val Acc: 0.5708 | No improvement: 3/5
+Epoch 9/20 | Train Loss: 2.1380 | Train Acc: 0.6023 | Val Loss: 2.2658 | Val Acc: 0.5757 | No improvement: 4/5
+Epoch 10/20 | Train Loss: 2.1384 | Train Acc: 0.6008 | Val Loss: 2.2425 | Val Acc: 0.5792 | No improvement: 0/5
+Epoch 11/20 | Train Loss: 2.1306 | Train Acc: 0.6034 | Val Loss: 2.2584 | Val Acc: 0.5750 | No improvement: 1/5
+Epoch 12/20 | Train Loss: 2.1251 | Train Acc: 0.6037 | Val Loss: 2.2464 | Val Acc: 0.5783 | No improvement: 2/5
+Epoch 13/20 | Train Loss: 2.1185 | Train Acc: 0.6055 | Val Loss: 2.2472 | Val Acc: 0.5776 | No improvement: 3/5
+Epoch 14/20 | Train Loss: 2.1133 | Train Acc: 0.6063 | Val Loss: 2.2529 | Val Acc: 0.5753 | No improvement: 4/5
+Epoch 15/20 | Train Loss: 2.1070 | Train Acc: 0.6073 | Val Loss: 2.2390 | Val Acc: 0.5831 | No improvement: 0/5
+Epoch 16/20 | Train Loss: 2.1098 | Train Acc: 0.6077 | Val Loss: 2.2467 | Val Acc: 0.5811 | No improvement: 1/5
+Epoch 17/20 | Train Loss: 2.1059 | Train Acc: 0.6066 | Val Loss: 2.2567 | Val Acc: 0.5761 | No improvement: 2/5
+Epoch 18/20 | Train Loss: 2.1007 | Train Acc: 0.6083 | Val Loss: 2.2436 | Val Acc: 0.5777 | No improvement: 3/5
+Epoch 19/20 | Train Loss: 2.0957 | Train Acc: 0.6103 | Val Loss: 2.2359 | Val Acc: 0.5817 | No improvement: 4/5
+Epoch 20/20 | Train Loss: 2.0935 | Train Acc: 0.6097 | Val Loss: 2.2764 | Val Acc: 0.5714 | No improvement: 5/5
+
+Early stopping triggered after 20 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5831  →  saved to optuna_trial_47.pth
+  Trial  47 | bal_acc=0.5816 | Human=0.489 | Denisovan=0.471 | Neanderthal=0.785
+[32m[I 2026-05-05 02:33:16,552][0m Trial 47 finished with value: 0.5816425061240255 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'filters_0': 256, 'filters_1': 128, 'filters_2': 64, 'width_0': 15, 'width_1': 11, 'width_2': 15, 'drop_conv_0': 0.18281326734302775, 'drop_conv_1': 0.29276983072250995, 'drop_conv_2': 0.1342698776169164, 'dense_0': 128, 'drop_dense_0': 0.35677016454523924, 'lr': 0.00012195151797538036, 'weight_decay': 0.0013563110015086574}. Best is trial 47 with value: 0.5816425061240255.[0m
+Epoch 1/20 | Train Loss: 2.4338 | Train Acc: 0.5408 | Val Loss: 2.4341 | Val Acc: 0.5460 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2768 | Train Acc: 0.5731 | Val Loss: 2.3975 | Val Acc: 0.5580 | No improvement: 0/5
+Epoch 3/20 | Train Loss: 2.2354 | Train Acc: 0.5808 | Val Loss: 2.3696 | Val Acc: 0.5637 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2078 | Train Acc: 0.5870 | Val Loss: 2.3494 | Val Acc: 0.5660 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.1907 | Train Acc: 0.5905 | Val Loss: 2.3458 | Val Acc: 0.5656 | No improvement: 1/5
+Epoch 6/20 | Train Loss: 2.1797 | Train Acc: 0.5936 | Val Loss: 2.3370 | Val Acc: 0.5640 | No improvement: 2/5
+Epoch 7/20 | Train Loss: 2.1702 | Train Acc: 0.5940 | Val Loss: 2.3184 | Val Acc: 0.5725 | No improvement: 0/5
+Epoch 8/20 | Train Loss: 2.1619 | Train Acc: 0.5974 | Val Loss: 2.3044 | Val Acc: 0.5717 | No improvement: 1/5
+Epoch 9/20 | Train Loss: 2.1538 | Train Acc: 0.5977 | Val Loss: 2.3344 | Val Acc: 0.5675 | No improvement: 2/5
+Epoch 10/20 | Train Loss: 2.1465 | Train Acc: 0.6001 | Val Loss: 2.3194 | Val Acc: 0.5718 | No improvement: 3/5
+Epoch 11/20 | Train Loss: 2.1426 | Train Acc: 0.6005 | Val Loss: 2.3069 | Val Acc: 0.5707 | No improvement: 4/5
+Epoch 12/20 | Train Loss: 2.1333 | Train Acc: 0.6020 | Val Loss: 2.3118 | Val Acc: 0.5711 | No improvement: 5/5
+
+Early stopping triggered after 12 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5725  →  saved to optuna_trial_48.pth
+  Trial  48 | bal_acc=0.5708 | Human=0.508 | Denisovan=0.444 | Neanderthal=0.760
+[32m[I 2026-05-05 02:35:58,066][0m Trial 48 finished with value: 0.5707636700976974 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'filters_0': 128, 'filters_1': 128, 'filters_2': 64, 'width_0': 15, 'width_1': 11, 'width_2': 15, 'drop_conv_0': 0.157810343742909, 'drop_conv_1': 0.27393046425309947, 'drop_conv_2': 0.33131760363843055, 'dense_0': 128, 'drop_dense_0': 0.3570923926720564, 'lr': 0.0001296017004860946, 'weight_decay': 0.0009370522321054974}. Best is trial 47 with value: 0.5816425061240255.[0m
+Epoch 1/20 | Train Loss: 2.3378 | Train Acc: 0.5613 | Val Loss: 2.4499 | Val Acc: 0.5353 | No improvement: 0/5
+Epoch 2/20 | Train Loss: 2.2674 | Train Acc: 0.5746 | Val Loss: 2.4882 | Val Acc: 0.5109 | No improvement: 1/5
+Epoch 3/20 | Train Loss: 2.2356 | Train Acc: 0.5808 | Val Loss: 2.3659 | Val Acc: 0.5513 | No improvement: 0/5
+Epoch 4/20 | Train Loss: 2.2251 | Train Acc: 0.5826 | Val Loss: 2.3513 | Val Acc: 0.5537 | No improvement: 0/5
+Epoch 5/20 | Train Loss: 2.2145 | Train Acc: 0.5842 | Val Loss: 2.3186 | Val Acc: 0.5602 | No improvement: 0/5
+Epoch 6/20 | Train Loss: 2.2185 | Train Acc: 0.5859 | Val Loss: 2.3360 | Val Acc: 0.5568 | No improvement: 1/5
+Epoch 7/20 | Train Loss: 2.2009 | Train Acc: 0.5877 | Val Loss: 2.4134 | Val Acc: 0.5371 | No improvement: 2/5
+Epoch 8/20 | Train Loss: 2.1991 | Train Acc: 0.5892 | Val Loss: 2.4385 | Val Acc: 0.5355 | No improvement: 3/5
+Epoch 9/20 | Train Loss: 2.1929 | Train Acc: 0.5887 | Val Loss: 2.3949 | Val Acc: 0.5441 | No improvement: 4/5
+Epoch 10/20 | Train Loss: 2.1870 | Train Acc: 0.5907 | Val Loss: 2.4310 | Val Acc: 0.5297 | No improvement: 5/5
+
+Early stopping triggered after 10 epochs (5 epochs without improvement).
+
+Best Val Acc: 0.5602  →  saved to optuna_trial_49.pth
+  Trial  49 | bal_acc=0.5586 | Human=0.405 | Denisovan=0.441 | Neanderthal=0.829
+[32m[I 2026-05-05 02:38:28,951][0m Trial 49 finished with value: 0.5585907799867696 and parameters: {'num_conv_layers': 3, 'num_dense_layers': 1, 'filters_0': 256, 'filters_1': 128, 'filters_2': 64, 'width_0': 15, 'width_1': 11, 'width_2': 15, 'drop_conv_0': 0.18952060958961806, 'drop_conv_1': 0.2858457690109455, 'drop_conv_2': 0.2729479234015623, 'dense_0': 128, 'drop_dense_0': 0.38922097981365694, 'lr': 0.0009048628178892502, 'weight_decay': 0.0012645104454679344}. Best is trial 47 with value: 0.5816425061240255.[0m
+
+============================================================
+OPTUNA RESULTS — multiclass
+============================================================
+  Best Balanced Acc : 0.5816
+  Best Params:
+    num_conv_layers: 3
+    num_dense_layers: 1
+    filters_0: 256
+    filters_1: 128
+    filters_2: 64
+    width_0: 15
+    width_1: 11
+    width_2: 15
+    drop_conv_0: 0.18281326734302775
+    drop_conv_1: 0.29276983072250995
+    drop_conv_2: 0.1342698776169164
+    dense_0: 128
+    drop_dense_0: 0.35677016454523924
+    lr: 0.00012195151797538036
+    weight_decay: 0.0013563110015086574
+
+  Per-class recall at best trial:
+    Denisovan_recall: 0.4706
+    Human_recall: 0.489
+    Neanderthal_recall: 0.7853
+    raw_val_acc: 0.5831
+
+  Full results saved → optuna_results_multiclass.csv

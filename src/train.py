@@ -10,7 +10,7 @@ class FocalLoss(torch.nn.Module):
         self.weight = weight
 
     def forward(self, inputs, targets):
-        ce_loss = F.cross_entropy(inputs, targets, weight=self.weight, reduction='none')
+        ce_loss = F.cross_entropy(inputs, targets,weight=self.weight ,  reduction='none')
         pt = torch.exp(-ce_loss)
         focal_loss = (1 - pt) ** self.gamma * ce_loss
         return focal_loss.mean()
@@ -26,7 +26,7 @@ def train_model(
     save_path,
     train_labels,
     lr: float = 1e-3,
-    weight_decay: float = 1e-3,
+    weight_decay: float = 1e-5, # default L2 regularization changed  thru config
     early_stopping_patience: int = 15,  # stop if no improvement for N epochs
 ):
     # Class-weighted loss — computed from train_labels before any training
@@ -38,7 +38,7 @@ def train_model(
 
     # Step on val_acc (mode='max') so scheduler triggers when learning stalls
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode="max", patience=8, factor=0.5, verbose=True
+        optimizer, mode="min", patience=8, factor=0.7, verbose=True
     )
 
     history = {
@@ -75,7 +75,7 @@ def train_model(
         train_loss = total_loss    / len(train_loader.dataset)
         train_acc  = train_correct / train_total
 
-        # ── validate ─────────────────────────────────────────────────────
+        #  validate
         model.eval()
         val_loss_total = 0.0
         val_correct    = 0
@@ -94,8 +94,8 @@ def train_model(
         val_loss = val_loss_total / len(val_loader.dataset)
         val_acc  = val_correct    / val_total
 
-        # ── scheduler + checkpoint ───────────────────────────────────────
-        scheduler.step(val_acc)
+        # cheduler + checkpoint
+        scheduler.step(val_loss)
 
         if val_acc > best_acc:
             best_acc = val_acc
@@ -114,7 +114,7 @@ def train_model(
               f"Val Loss: {val_loss:.4f} | Val Acc: {val_acc:.4f} | "
               f"No improvement: {epochs_without_improvement}/{early_stopping_patience}")
 
-        # ── early stopping ───────────────────────────────────────────────
+        # early stopping 
         if epochs_without_improvement >= early_stopping_patience:
             print(f"\nEarly stopping triggered after {epoch+1} epochs "
                   f"({early_stopping_patience} epochs without improvement).")
