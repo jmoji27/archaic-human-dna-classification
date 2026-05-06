@@ -1,39 +1,33 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 class RNNModel(nn.Module):
     def __init__(self, config, num_classes):
-        super().__init__()
-
-        self.hidden_size = 64 
-        self.num_layers = 1
-        dropout_rate = 0.5
+        super(RNNModel, self).__init__()
         
-        self.embedding = nn.Embedding(num_embeddings=4, embedding_dim=32)
-
-        self.rnn = nn.LSTM(
-            input_size=32,
-            hidden_size=self.hidden_size,
-            num_layers=self.num_layers,
-            batch_first=True,
-            bidirectional=True,
-            dropout=dropout_rate if self.num_layers > 1 else 0
+        self.hidden_size = config.get('hidden_size', 128)
+        self.num_layers = config.get('num_layers', 2)
+        self.input_size = 4
+        
+        self.lstm = nn.LSTM(
+            self.input_size, 
+            self.hidden_size, 
+            self.num_layers, 
+            batch_first=True, 
+            dropout=config.get('dropout', 0.3),
+            bidirectional=True
         )
-
+        
         self.fc = nn.Sequential(
-            nn.Linear(self.hidden_size * 2, 64),
+            nn.Linear(self.hidden_size * 2, self.hidden_size),
             nn.ReLU(),
-            nn.Dropout(dropout_rate),
-            nn.Linear(64, num_classes)
+            nn.Dropout(config.get('dropout', 0.3)),
+            nn.Linear(self.hidden_size, num_classes)
         )
 
     def forward(self, x):
-        x_indices = torch.argmax(x, dim=-1)
-        x_embedded = self.embedding(x_indices) 
+        _, (hn, _) = self.lstm(x)
         
-        out, _ = self.rnn(x_embedded)
-        out = torch.mean(out, dim=1)
-        out = self.fc(out)
+        final_hidden = torch.cat((hn[-2,:,:], hn[-1,:,:]), dim=1)
         
-        return out
+        return self.fc(final_hidden)
