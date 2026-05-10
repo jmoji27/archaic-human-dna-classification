@@ -12,12 +12,15 @@ from src.models.RNN import RNNModel
 from src.models.Transformer import TransformerModel
 from src.models.Danq import DanqModel
 from src.dataset import DNADataset, variable_length_collate  # FIX: import collate fn
+from src.danq_dataset import DanqDataset, danq_collate
+from src.train_danq import train_danq
 from src.train import train_model, train_rnn
 
 from src.configs.cnn_config import cnn_config
 from src.configs.rnn_config import rnn_config
 from src.configs.transformer_config import transformer_config
 from src.configs.danq_config import danq_config
+
 
 
 # SEQ_LEN is no longer used for padding — sequences are returned at their
@@ -245,22 +248,22 @@ def main():
     # returned at their original length. variable_length_collate pads each
     # batch to the longest sequence in that batch, making padding length
     # random and uncorrelated with class.
-    train_dataset = DNADataset(args.train_path, train=True)
-    val_dataset   = DNADataset(args.val_path,   train=False)
+    if args.model == "danq":
+        train_dataset = DanqDataset(args.train_path, train=True)
+        val_dataset   = DanqDataset(args.val_path,   train=False)
+        collate_fn    = danq_collate
+    else:
+        train_dataset = DNADataset(args.train_path, train=True)
+        val_dataset   = DNADataset(args.val_path,   train=False)
+        collate_fn    = variable_length_collate
 
     train_loader = DataLoader(
-        train_dataset,
-        batch_size=batch_size,
-        shuffle=True,
-        num_workers=2,
-        collate_fn=variable_length_collate,  # FIX: dynamic per-batch padding
+        train_dataset, batch_size=batch_size, shuffle=True,
+        num_workers=2, collate_fn=collate_fn,
     )
     val_loader = DataLoader(
-        val_dataset,
-        batch_size=batch_size,
-        shuffle=False,
-        num_workers=2,
-        collate_fn=variable_length_collate,  # FIX: same collate for val
+        val_dataset, batch_size=batch_size, shuffle=False,
+        num_workers=2, collate_fn=collate_fn,
     )
     print(f"Train: {len(train_dataset):,} | Val: {len(val_dataset):,}")
 
@@ -268,6 +271,16 @@ def main():
     save_dir  = f"results/{args.model}/{args.dataset_type}"
     os.makedirs(save_dir, exist_ok=True)
     save_path = f"{save_dir}/{args.model}_{args.dataset_type}_best_model.pt"
+
+    if args.model == "danq":
+        history = train_danq(
+            model, train_loader, val_loader, device,
+            num_epochs=args.epochs,
+            save_path=save_path,
+            train_labels=train_dataset.labels,
+            lr=config.get("lr", {}).get(args.dataset_type, 1e-3),
+            patience=15,
+        )
 
     if args.model == "rnn":
         history = train_rnn(

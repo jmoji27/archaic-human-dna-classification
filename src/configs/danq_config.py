@@ -31,11 +31,15 @@ danq_config = {
         "longerbp":   3e-4,
         "multiclass": 3e-4,
         "bottleneck": 3e-4,
+        "HumanvsNeanderthal":     3e-4,  # add
+        "DenisovanvsNeanderthal": 3e-4,  # add
     },
     "batch_size": {
         "original":   32,
         "longerbp":   32,
         "multiclass": 32,
         "bottleneck": 64,
+        "HumanvsNeanderthal":     32,  # add
+        "DenisovanvsNeanderthal": 32,  # add
     },
 }

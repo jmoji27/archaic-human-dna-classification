@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 data/
 outputs/
-*.npz
-*.pt
-*.pth
-*.ckpt
 __pycache__/
 .ipynb_checkpoints/
 results/
+venv/
+*.npz
 venv) jmoji@jmoji-Dell-G15-5511:~/archaic-human-dna-classification$ pip list
 Package                  Version
 ------------------------ ------------
@@ -298,3 +295,4 @@ dataset/multiclass/
 dataset/binary/
 dataset/multiclass/
 dataset/binary/original/train.csv
+

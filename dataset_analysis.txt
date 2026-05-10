@@ -1,0 +1,117 @@
+
+=================================================================
+Dataset: original
+=================================================================
+  [train]
+    Total samples : 2,019,025
+    Seq length — min: 35 | max: 120 | mean: 52.1 | median: 44
+    Class 0 (       Human) : 1,218,021  (60.3%)
+    Class 1 (   Denisovan) :  801,004  (39.7%)
+  [val]
+    Total samples : 148,815
+    Seq length — min: 35 | max: 120 | mean: 52.8 | median: 45
+    Class 0 (       Human) :   87,632  (58.9%)
+    Class 1 (   Denisovan) :   61,183  (41.1%)
+  [test]
+    Total samples : 50,906
+    Seq length — min: 35 | max: 120 | mean: 52.8 | median: 45
+    Class 0 (       Human) :   30,059  (59.0%)
+    Class 1 (   Denisovan) :   20,847  (41.0%)
+
+=================================================================
+Dataset: longerbp
+=================================================================
+  [train]
+    Total samples : 183,648
+    Seq length — min: 85 | max: 120 | mean: 99.6 | median: 98
+    Class 0 (       Human) :  104,240  (56.8%)
+    Class 1 (   Denisovan) :   79,408  (43.2%)
+  [val]
+    Total samples : 13,700
+    Seq length — min: 85 | max: 120 | mean: 99.6 | median: 98
+    Class 0 (       Human) :    7,745  (56.5%)
+    Class 1 (   Denisovan) :    5,955  (43.5%)
+  [test]
+    Total samples : 4,649
+    Seq length — min: 85 | max: 120 | mean: 99.8 | median: 99
+    Class 0 (       Human) :    2,631  (56.6%)
+    Class 1 (   Denisovan) :    2,018  (43.4%)
+
+=================================================================
+Dataset: bottleneck
+=================================================================
+  [train]
+    Total samples : 47,825
+    Seq length — min: 35 | max: 85 | mean: 47.4 | median: 43
+    Class 0 (       Human) :   25,032  (52.3%)
+    Class 1 (   Denisovan) :   22,793  (47.7%)
+  [val]
+    Total samples : 4,902
+    Seq length — min: 35 | max: 85 | mean: 48.6 | median: 44
+    Class 0 (       Human) :    2,501  (51.0%)
+    Class 1 (   Denisovan) :    2,401  (49.0%)
+  [test]
+    Total samples : 1,889
+    Seq length — min: 35 | max: 85 | mean: 47.8 | median: 43
+    Class 0 (       Human) :      964  (51.0%)
+    Class 1 (   Denisovan) :      925  (49.0%)
+
+=================================================================
+Dataset: multiclass
+=================================================================
+  [train]
+    Total samples : 72,786
+    Seq length — min: 35 | max: 85 | mean: 49.3 | median: 46
+    Class 0 (       Human) :   25,030  (34.4%)
+    Class 1 (   Denisovan) :   22,726  (31.2%)
+    Class 2 ( Neanderthal) :   25,030  (34.4%)
+  [val]
+    Total samples : 7,403
+    Seq length — min: 35 | max: 85 | mean: 49.4 | median: 46
+    Class 0 (       Human) :    2,501  (33.8%)
+    Class 1 (   Denisovan) :    2,401  (32.4%)
+    Class 2 ( Neanderthal) :    2,501  (33.8%)
+  [test]
+    Total samples : 2,837
+    Seq length — min: 35 | max: 85 | mean: 49.2 | median: 45
+    Class 0 (       Human) :      964  (34.0%)
+    Class 1 (   Denisovan) :      909  (32.0%)
+    Class 2 ( Neanderthal) :      964  (34.0%)
+
+=================================================================
+Dataset: HumanvsNeanderthal
+=================================================================
+  [train]
+    Total samples : 50,062
+    Seq length — min: 35 | max: 85 | mean: 52.6 | median: 50
+    Class 0 (       Human) :   25,032  (50.0%)
+    Class 1 ( Neanderthal) :   25,030  (50.0%)
+  [val]
+    Total samples : 5,002
+    Seq length — min: 35 | max: 85 | mean: 51.6 | median: 49
+    Class 0 (       Human) :    2,501  (50.0%)
+    Class 1 ( Neanderthal) :    2,501  (50.0%)
+  [test]
+    Total samples : 1,928
+    Seq length — min: 35 | max: 85 | mean: 51.2 | median: 48
+    Class 0 (       Human) :      964  (50.0%)
+    Class 1 ( Neanderthal) :      964  (50.0%)
+
+=================================================================
+Dataset: DenisovanvsNeanderthal
+=================================================================
+  [train]
+    Total samples : 47,753
+    Seq length — min: 35 | max: 85 | mean: 50.4 | median: 47
+    Class 0 (   Denisovan) :   22,723  (47.6%)
+    Class 1 ( Neanderthal) :   25,030  (52.4%)
+  [val]
+    Total samples : 4,896
+    Seq length — min: 35 | max: 85 | mean: 50.1 | median: 47
+    Class 0 (   Denisovan) :    2,395  (48.9%)
+    Class 1 ( Neanderthal) :    2,501  (51.1%)
+  [test]
+    Total samples : 1,869
+    Seq length — min: 35 | max: 85 | mean: 49.8 | median: 46
+    Class 0 (   Denisovan) :      905  (48.4%)
+    Class 1 ( Neanderthal) :      964  (51.6%)
