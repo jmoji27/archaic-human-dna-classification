@@ -20,7 +20,7 @@ def quick_duplicate_check(train_path, val_path):
     print(f"  Total samples: {len(train):,}")
     print(f"  Class 0 unique sequences: {len(train_0):,}")
     print(f"  Class 1 unique sequences: {len(train_1):,}")
-    print(f"  🚨 CROSS-CLASS DUPLICATES: {len(cross_class):,}")
+    print(f"   CROSS-CLASS DUPLICATES: {len(cross_class):,}")
     print(f"     ({100*len(cross_class)/len(train):.2f}% of dataset)")
     
     # Data leakage: train sequences in val
@@ -32,7 +32,7 @@ def quick_duplicate_check(train_path, val_path):
     print(f"     ({100*len(leakage)/len(val):.2f}% of val set)")
     
     if len(cross_class) > 0:
-        print("\n⚠️  WARNING: You have cross-class duplicates!")
+        print("\n WARNING: You have cross-class duplicates!")
         print("   This means the SAME sequence has DIFFERENT labels.")
         print("   The model cannot learn this - it's pure noise.")
         print("   → Run the cleaning pipeline ASAP!")
