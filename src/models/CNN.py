@@ -53,7 +53,7 @@ class CNN1D(nn.Module):
 
             in_features = out_features
 
-        # --- Output ---
+        #  Output 
         self.output = nn.Linear(in_features, num_classes)
 
     def forward(self, x):
