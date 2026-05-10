@@ -1,9 +1,12 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 
 class AttentionPool(nn.Module):
+    """
+    Weighted average over sequence positions.
+    Learns which positions matter most for the classification decision.
+    """
     def __init__(self, hidden_size):
         super().__init__()
         self.attn = nn.Linear(hidden_size, 1)
@@ -12,12 +15,20 @@ class AttentionPool(nn.Module):
         # x: (batch, L, hidden)
         scores = self.attn(x).squeeze(-1)            # (batch, L)
         if mask is not None:
-            scores = scores.masked_fill(mask, -1e9)  # ignore padding
+            scores = scores.masked_fill(mask, -1e9)  # ignore padding positions
         weights = torch.softmax(scores, dim=1)       # (batch, L)
         return (weights.unsqueeze(-1) * x).sum(1)    # (batch, hidden)
 
 
 class DanqModel(nn.Module):
+    """
+    Standard DanQ architecture:
+      1. Conv layer  — detects local sequence motifs (like a CNN)
+      2. MaxPool     — reduces sequence length, keeps strongest signals
+      3. BiLSTM      — captures dependencies between motifs across the sequence
+      4. Attention   — focuses on the most informative positions
+      5. Linear head — classification
+    """
     def __init__(self, config, num_classes):
         super().__init__()
 
@@ -47,6 +58,7 @@ class DanqModel(nn.Module):
 
         self.dropout_conv = nn.Dropout(config["dropout_conv"])
 
+        # BiLSTM — reads the pooled motif sequence in both directions
         self.lstm = nn.LSTM(
             input_size=config["conv_filters"],
             hidden_size=config["lstm_hidden"],
@@ -58,7 +70,7 @@ class DanqModel(nn.Module):
 
         self.dropout_lstm_out = nn.Dropout(config["dropout_lstm"])
 
-        # Attention pool replaces mean pool
+        # Attention pool — replaces naive mean/max pool over time
         self.attn_pool = AttentionPool(config["lstm_hidden"] * 2)
 
         self.dropout = nn.Dropout(config["dropout_dense"])
