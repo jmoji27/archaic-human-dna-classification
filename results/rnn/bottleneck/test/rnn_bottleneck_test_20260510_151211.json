@@ -1,0 +1,35 @@
+{
+    "model": "rnn",
+    "dataset": "bottleneck",
+    "model_path": "results\\rnn\\bottleneck\\rnn_bottleneck_best_model.pt",
+    "test_samples": 1889,
+    "accuracy": 0.6373742721016411,
+    "mcc": 0.27736477783560715,
+    "classification_report": {
+        "Human": {
+            "precision": 0.6203623813632442,
+            "recall": 0.745850622406639,
+            "f1-score": 0.6773433820065945,
+            "support": 964.0
+        },
+        "Denisovan": {
+            "precision": 0.6643835616438356,
+            "recall": 0.5243243243243243,
+            "f1-score": 0.5861027190332326,
+            "support": 925.0
+        },
+        "accuracy": 0.6373742721016411,
+        "macro avg": {
+            "precision": 0.6423729715035399,
+            "recall": 0.6350874733654817,
+            "f1-score": 0.6317230505199136,
+            "support": 1889.0
+        },
+        "weighted avg": {
+            "precision": 0.6419185442851854,
+            "recall": 0.6373742721016411,
+            "f1-score": 0.6326649207835349,
+            "support": 1889.0
+        }
+    }
+}
