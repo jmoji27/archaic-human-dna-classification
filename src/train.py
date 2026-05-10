@@ -25,8 +25,8 @@ def train_model(
     num_epochs,
     save_path,
     train_labels,
-    lr: float = 1e-3,
-    weight_decay: float = 1e-5, # default L2 regularization changed  thru config
+    lr : float = 1e-3,
+    weight_decay : float = 1e-4, #both hardcoded for now but will be added in main 
     early_stopping_patience: int = 15,  # stop if no improvement for N epochs
 ):
     classes, counts = torch.unique(train_labels, sorted=True, return_counts=True)
@@ -73,7 +73,6 @@ def train_model(
         train_loss = total_loss    / len(train_loader.dataset)
         train_acc  = train_correct / train_total
 
-        #  validate
         model.eval()
         val_loss_total = 0.0
         val_correct = 0
@@ -92,8 +91,7 @@ def train_model(
         val_loss = val_loss_total / len(val_loader.dataset)
         val_acc  = val_correct    / val_total
 
-        # cheduler + checkpoint
-        scheduler.step(val_loss)
+        scheduler.step(val_acc)
 
         if val_acc > best_acc:
             best_acc = val_acc

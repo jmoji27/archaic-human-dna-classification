@@ -285,6 +285,7 @@ def main():
             save_path=save_path,
             train_labels=train_dataset.labels,
             lr=config.get("lr", {}).get(args.dataset_type, 1e-3),
+            weight_decay=config.get("weight_decay", {}).get(args.dataset_type, 1e-4), 
         )
 
     # ── plot training curves
