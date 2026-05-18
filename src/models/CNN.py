@@ -11,7 +11,7 @@ class CNN1D(nn.Module):
         self.bn_layers = nn.ModuleList()
         self.dropout_layers = nn.ModuleList()
 
-        in_channels = 4  # DNA one-hot (A,C,G,T,N)
+        in_channels = 4  # DNA one-hot (A,C,G,T)
 
         #  Conv stack 
         for i in range(config["num_conv_layers"]):
