@@ -1,3 +1,4 @@
+from logging import config
 import os
 import json
 import argparse
@@ -19,16 +20,27 @@ from sklearn.metrics import (
 from sklearn.preprocessing import label_binarize
 from itertools import cycle
 
-from src.models.CNN import CNN1D
+from src.models.CNN import CNN1D 
+from src.models.CNNwithoutPooling import CNN1D_no_pooling 
 from src.models.RNN import RNNModel
 from src.models.Transformer import TransformerModel
 from src.models.Danq import DanqModel
 from src.dataset import DNADataset, variable_length_collate
 
+
 from src.configs.cnn_config import cnn_config
 from src.configs.rnn_config import rnn_config
 from src.configs.transformer_config import transformer_config
 from src.configs.danq_config import danq_config
+
+SEQ_LEN = {
+    "original":   85,
+    "longerbp":   120,
+    "bottleneck": 85,
+    "multiclass": 85,
+    "HumanvsNeanderthal": 85,
+    "DenisovanvsNeanderthal": 85
+}
 
 
 CLASS_NAMES = {
@@ -225,17 +237,25 @@ def main():
     # model
     model_map = {
         "cnn":         (CNN1D,            cnn_config),
+        "cnn_no_pooling": (CNN1D_no_pooling,           cnn_config),  
         "rnn":         (RNNModel,         rnn_config),
         "transformer": (TransformerModel, transformer_config),
         "danq":        (DanqModel,        danq_config),
     }
 
+
     if args.model not in model_map:
         raise ValueError(f"Unknown model '{args.model}'. Choose from: {list(model_map)}")
-
+    
     ModelClass, config = model_map[args.model]
-    model = ModelClass(config, args.num_classes).to(device)
-    model.load_state_dict(torch.load(args.model_path, map_location=device))
+    
+    if args.model == "cnn_no_pooling":
+        seq_l = SEQ_LEN.get(args.dataset_type, 85) 
+        model = ModelClass(config, args.num_classes, seq_length=seq_l).to(device)
+    else:
+        model = ModelClass(config, args.num_classes).to(device)
+
+    model.load_state_dict(torch.load(args.model_path, map_location=device), strict=False)
     model.eval()
     print(f"Loaded weights from {args.model_path}")
 
