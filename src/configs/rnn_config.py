@@ -1,10 +1,14 @@
+#  - "large" -> Human vs Neanderthal, Multiclass, original
+# ==============================================================================
+ARCH_MODE = "large" 
+
 rnn_config = {
-    # architecture
-    "hidden_size": 128,
-    "num_layers":  2,
+    # Architecture (automatically driven by ARCH_MODE)
+    "hidden_size": 64 if ARCH_MODE == "small" else 128,
+    "num_layers":  1 if ARCH_MODE == "small" else 2,
     "dropout":     0.3,
 
-    # training
+    # Training parameters
     "batch_size": {
         "binary": 64,
         "multiclass": 32,

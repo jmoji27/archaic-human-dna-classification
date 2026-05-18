@@ -1,0 +1,35 @@
+{
+    "model": "rnn",
+    "dataset": "original",
+    "model_path": "results\\rnn\\original\\rnn_original_best_model.pt",
+    "test_samples": 50906,
+    "accuracy": 0.4206183946882489,
+    "mcc": 0.011332840465091866,
+    "classification_report": {
+        "Human": {
+            "precision": 0.6152590779273766,
+            "recall": 0.05016800292757577,
+            "f1-score": 0.09277145493694249,
+            "support": 30059.0
+        },
+        "Denisovan": {
+            "precision": 0.41077288205551543,
+            "recall": 0.954765673718041,
+            "f1-score": 0.5744134368416496,
+            "support": 20847.0
+        },
+        "accuracy": 0.4206183946882489,
+        "macro avg": {
+            "precision": 0.513015979991446,
+            "recall": 0.5024668383228084,
+            "f1-score": 0.33359244588929604,
+            "support": 50906.0
+        },
+        "weighted avg": {
+            "precision": 0.5315179918993899,
+            "recall": 0.4206183946882489,
+            "f1-score": 0.29001324169621306,
+            "support": 50906.0
+        }
+    }
+}

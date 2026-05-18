@@ -1,45 +1,37 @@
 danq_config = {
-    # Conv motif scanner
-    # Original paper: 320 filters, width 26 for 1000bp
-    # Scaled for 35-85bp: smaller width so kernel fits on shortest reads
+    # Conv — single kernel width; 11bp captures TF-binding-site-sized motifs
     "conv_filters": 128,
-    "conv_width":   11,   # 11bp — captures transcription-factor-sized motifs
+    "conv_width":   11,
 
-    # Pooling
-    # Original: size 13, stride 13 (aggressive for 1000bp)
-    # For 35-85bp: gentle pool so BiLSTM still sees spatial structure
-    "pool_size":    3,
-    "pool_stride":  2,
+    # Pooling — gentle for short sequences
+    # Original paper used size=13, stride=13 on 1000bp; scaled down for 35-120bp
+    "pool_size":   2,
+    "pool_stride": 2,
 
     # BiLSTM
-    # Original: 320 hidden units
-    # Scaled down — sequence is short, don't need massive hidden state
-    "lstm_hidden":  128,
-    "lstm_layers":  1,    # start with 1, add second only if underfitting
+    "lstm_hidden": 128,
+    "lstm_layers": 1,
 
     # Dropout
     "dropout_conv":  0.1,
     "dropout_lstm":  0.2,
     "dropout_dense": 0.3,
 
-    # Dense head
-    "dense_units": 128,
-
-    # Training — same LR structure as cnn_config
+    # Learning rates per dataset
     "lr": {
-        "original":   3e-4,
-        "longerbp":   3e-4,
-        "multiclass": 3e-4,
-        "bottleneck": 3e-4,
-        "HumanvsNeanderthal":     3e-4,  # add
-        "DenisovanvsNeanderthal": 3e-4,  # add
+        "original":               3e-4,
+        "longerbp":               3e-4,
+        "multiclass":             1e-4,
+        "bottleneck":             3e-4,
+        "HumanvsNeanderthal":     3e-4,
+        "DenisovanvsNeanderthal": 3e-4,
     },
     "batch_size": {
-        "original":   32,
-        "longerbp":   32,
-        "multiclass": 32,
-        "bottleneck": 64,
-        "HumanvsNeanderthal":     32,  # add
-        "DenisovanvsNeanderthal": 32,  # add
+        "original":               32,
+        "longerbp":               32,
+        "multiclass":             32,
+        "bottleneck":             64,
+        "HumanvsNeanderthal":     32,
+        "DenisovanvsNeanderthal": 32,
     },
 }
