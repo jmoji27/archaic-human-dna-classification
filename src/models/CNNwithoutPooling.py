@@ -10,17 +10,16 @@ def _get(cfg, key, i):
 
 
 class CNN1D_no_pooling(nn.Module):
-    def __init__(self, config, num_classes, seq_length, strict_length=True):
+    def __init__(self, config, num_classes, seq_length):
         super().__init__()
         self.seq_length = seq_length
-        self._fc_built = False
 
-        self.conv_layers = nn.ModuleList()
-        self.bn_layers = nn.ModuleList()
+        # ── conv layers ──
+        self.conv_layers    = nn.ModuleList()
+        self.bn_layers      = nn.ModuleList()
         self.dropout_layers = nn.ModuleList()
 
         in_channels = 4  # A, C, G, T one-hot
-
         for i in range(config["num_conv_layers"]):
             out_channels = _get(config, "conv_filters", i)
             kernel_size  = _get(config, "conv_width", i)
@@ -36,31 +35,21 @@ class CNN1D_no_pooling(nn.Module):
             self.dropout_layers.append(nn.Dropout(dropout))
             in_channels = out_channels
 
-        self.final_channels = in_channels
+        self.final_channels = in_channels  # 32 with current config
+
+        # ── FC layers built eagerly — seq_length is known now ──
+        fc_in = seq_length * self.final_channels  # e.g. 85 * 32 = 2720
+
         self.fc_layers  = nn.ModuleList()
         self.fc_dropout = nn.ModuleList()
-        self._fc_config = config
-        self._num_dense = config["num_dense_layers"]
-        self._num_classes = num_classes
-        self.output_layer = None
 
-    def _build_fc(self, in_features):
-        """Called once on first forward pass with the real flattened size."""
-        config = self._fc_config
-        device = next(self.conv_layers[0].parameters()).device
-
-        for i in range(self._num_dense):
+        for i in range(config["num_dense_layers"]):
             out_features = _get(config, "dense_filters", i)
-            self.fc_layers.append(
-                nn.Linear(in_features, out_features).to(device)
-            )
-            self.fc_dropout.append(
-                nn.Dropout(_get(config, "dropout_rate_dense", i))
-            )
-            in_features = out_features
+            self.fc_layers.append(nn.Linear(fc_in, out_features))
+            self.fc_dropout.append(nn.Dropout(_get(config, "dropout_rate_dense", i)))
+            fc_in = out_features
 
-        self.output_layer = nn.Linear(in_features, self._num_classes).to(device)
-        self._fc_built = True
+        self.output_layer = nn.Linear(fc_in, num_classes)
 
     def forward(self, x):
         x = x.permute(0, 2, 1)  # (batch, 4, L)
@@ -81,15 +70,9 @@ class CNN1D_no_pooling(nn.Module):
 
         x = x.reshape(x.size(0), -1)
 
-        if not self._fc_built:
-            self._build_fc(x.size(1))
-
         for fc, drop in zip(self.fc_layers, self.fc_dropout):
             x = F.relu(fc(x))
             x = drop(x)
 
         return self.output_layer(x)
-
-
-
     

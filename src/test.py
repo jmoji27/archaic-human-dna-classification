@@ -228,34 +228,36 @@ def main():
     parser.add_argument("--test_path",    type=str, required=True)
     parser.add_argument("--num_classes",  type=int, required=True)
     parser.add_argument("--dataset_type", type=str, required=True)
-    parser.add_argument("--model_path",   type=str, required=True)  # path to .pt file
+    parser.add_argument("--model_path",   type=str, required=True)
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
-    # model
     model_map = {
-        "cnn":         (CNN1D,            cnn_config),
-        "cnn_no_pooling": (CNN1D_no_pooling,           cnn_config),  
-        "rnn":         (RNNModel,         rnn_config),
-        "transformer": (TransformerModel, transformer_config),
-        "danq":        (DanqModel,        danq_config),
+        "cnn":            (CNN1D,            cnn_config),
+        "cnn_no_pooling": (CNN1D_no_pooling, cnn_config),
+        "rnn":            (RNNModel,         rnn_config),
+        "transformer":    (TransformerModel, transformer_config),
+        "danq":           (DanqModel,        danq_config),
     }
-
 
     if args.model not in model_map:
         raise ValueError(f"Unknown model '{args.model}'. Choose from: {list(model_map)}")
-    
+
     ModelClass, config = model_map[args.model]
-    
+
     if args.model == "cnn_no_pooling":
-        seq_l = SEQ_LEN.get(args.dataset_type, 85) 
+        seq_l = SEQ_LEN.get(args.dataset_type, 85)
         model = ModelClass(config, args.num_classes, seq_length=seq_l).to(device)
     else:
         model = ModelClass(config, args.num_classes).to(device)
 
-    model.load_state_dict(torch.load(args.model_path, map_location=device), strict=False)
+    # ── load weights ──────────────────────────────────────────────────
+    model.load_state_dict(
+        torch.load(args.model_path, map_location=device, weights_only=True),
+        strict=True   # was strict=False — now fails loudly on any mismatch
+    )
     model.eval()
     print(f"Loaded weights from {args.model_path}")
 
@@ -278,7 +280,7 @@ def main():
 
     with torch.no_grad():
         for x, y in test_loader:
-            x, y   = x.to(device), y.to(device)
+            x, y    = x.to(device), y.to(device)
             logits  = model(x)
             probs   = torch.softmax(logits, dim=1)
             preds   = torch.argmax(logits, dim=1)
