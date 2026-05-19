@@ -1,3 +1,4 @@
+from logging import config
 import os
 import json
 import argparse
@@ -18,9 +19,8 @@ from sklearn.metrics import (
 from sklearn.preprocessing import label_binarize
 from itertools import cycle
 
-# Models
-from src.models.CNN import CNN1D
-from src.models.CNNwithoutPooling import CNN1D_no_pooling
+from src.models.CNN import CNN1D 
+from src.models.CNNwithoutPooling import CNN1D_no_pooling 
 from src.models.RNN import RNNModel
 from src.models.Transformer import TransformerModel
 from src.models.Danq import DanqModel
@@ -29,21 +29,21 @@ from src.models.Danq import DanqModel
 from src.dataset import DNADataset, variable_length_collate
 from src.danq_dataset import DanqDataset, danq_collate
 
-# Configs
+
 from src.configs.cnn_config import cnn_config
 from src.configs.rnn_config import rnn_config
 from src.configs.transformer_config import transformer_config
 from src.configs.danq_config import danq_config
 
-# Reference dictionary needed for CNN without pooling dimension calculation
 SEQ_LEN = {
-    "original": 85,
-    "longerbp": 120,
+    "original":   85,
+    "longerbp":   120,
     "bottleneck": 85,
     "multiclass": 85,
     "HumanvsNeanderthal": 85,
     "DenisovanvsNeanderthal": 85
 }
+
 
 CLASS_NAMES = {
     "original": ["Human", "Denisovan"],
@@ -226,19 +226,18 @@ def main():
     parser.add_argument("--test_path", type=str, required=True)
     parser.add_argument("--num_classes", type=int, required=True)
     parser.add_argument("--dataset_type", type=str, required=True)
-    parser.add_argument("--model_path", type=str, required=True)  # path to .pt file
+    parser.add_argument("--model_path",   type=str, required=True)
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
-    # ── Model Mapping Selection
     model_map = {
-        "cnn": (CNN1D, cnn_config),
+        "cnn":            (CNN1D,            cnn_config),
         "cnn_no_pooling": (CNN1D_no_pooling, cnn_config),
-        "rnn": (RNNModel, rnn_config),
-        "transformer": (TransformerModel, transformer_config),
-        "danq": (DanqModel, danq_config),
+        "rnn":            (RNNModel,         rnn_config),
+        "transformer":    (TransformerModel, transformer_config),
+        "danq":           (DanqModel,        danq_config),
     }
 
     if args.model not in model_map:
@@ -246,15 +245,17 @@ def main():
 
     ModelClass, config = model_map[args.model]
 
-    # Initialization adjustments for models without pooling layers
     if args.model == "cnn_no_pooling":
         seq_l = SEQ_LEN.get(args.dataset_type, 85)
         model = ModelClass(config, args.num_classes, seq_length=seq_l).to(device)
     else:
         model = ModelClass(config, args.num_classes).to(device)
 
-    # Use strict=False to accommodate architecture configurations safely
-    model.load_state_dict(torch.load(args.model_path, map_location=device), strict=False)
+    # ── load weights ──────────────────────────────────────────────────
+    model.load_state_dict(
+        torch.load(args.model_path, map_location=device, weights_only=True),
+        strict=True   # was strict=False — now fails loudly on any mismatch
+    )
     model.eval()
     print(f"Loaded weights from {args.model_path}")
 
@@ -283,20 +284,11 @@ def main():
     all_probs = []
 
     with torch.no_grad():
-        for batch in test_loader:
-            if args.model == "danq":
-                # DanQ returns sequence padding masks via danq_collate
-                x, y, mask = batch
-                x, y, mask = x.to(device), y.to(device), mask.to(device)
-                logits = model(x, mask=mask)
-            else:
-                # Other architectures map sequences directly
-                x, y = batch
-                x, y = x.to(device), y.to(device)
-                logits = model(x)
-
-            probs = torch.softmax(logits, dim=1)
-            preds = torch.argmax(logits, dim=1)
+        for x, y in test_loader:
+            x, y    = x.to(device), y.to(device)
+            logits  = model(x)
+            probs   = torch.softmax(logits, dim=1)
+            preds   = torch.argmax(logits, dim=1)
 
             all_preds.extend(preds.cpu().numpy())
             all_labels.extend(y.cpu().numpy())

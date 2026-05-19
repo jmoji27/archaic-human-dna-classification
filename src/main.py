@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 from datetime import datetime
 import matplotlib.pyplot as plt
 
+from src.models.CNNwithoutPooling import CNN1D_no_pooling
 from src.models.CNN import CNN1D
 from src.models.RNN import RNNModel
 from src.models.Transformer import TransformerModel
@@ -20,6 +21,7 @@ from src.configs.cnn_config import cnn_config
 from src.configs.rnn_config import rnn_config
 from src.configs.transformer_config import transformer_config
 from src.configs.danq_config import danq_config
+ 
 
 
 
@@ -221,6 +223,7 @@ def main():
     # ── model
     model_map = {
         "cnn":         (CNN1D,             cnn_config),
+        "cnn_no_pooling": (CNN1D_no_pooling, cnn_config),
         "rnn":         (RNNModel,          rnn_config),
         "transformer": (TransformerModel,  transformer_config),
         "danq":        (DanqModel,         danq_config),
@@ -233,9 +236,11 @@ def main():
    
 
     ModelClass, config = model_map[args.model]
-    model = ModelClass(config, args.num_classes).to(device)
+    if args.model == "cnn_no_pooling":
+        model = ModelClass(config, args.num_classes, seq_length=SEQ_LEN[args.dataset_type]).to(device)
+    else:
+        model = ModelClass(config, args.num_classes).to(device)
 
-    
     batch_size = config.get("batch_size", {}).get(args.dataset_type, 64)  # default batch size if not specified per dataset
     print(f"Device: {device} | Batch: {batch_size}")
     print("Sequences returned at natural length — padded per-batch by variable_length_collate")
@@ -282,7 +287,7 @@ def main():
             patience=15,
         )
 
-    if args.model == "rnn":
+    elif args.model == "rnn":
         history = train_rnn(
             model, train_loader, val_loader, device,
             num_epochs=args.epochs,
