@@ -9,7 +9,6 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from sklearn.metrics import (
     classification_report,
-    confusion_matrix,
     roc_curve,
     auc,
     precision_recall_curve,
@@ -19,29 +18,43 @@ from sklearn.metrics import (
 from sklearn.preprocessing import label_binarize
 from itertools import cycle
 
+# Models
 from src.models.CNN import CNN1D
+from src.models.CNNwithoutPooling import CNN1D_no_pooling
 from src.models.RNN import RNNModel
 from src.models.Transformer import TransformerModel
 from src.models.Danq import DanqModel
-from src.dataset import DNADataset, variable_length_collate
 
+# Datasets and Collate Functions
+from src.dataset import DNADataset, variable_length_collate
+from src.danq_dataset import DanqDataset, danq_collate
+
+# Configs
 from src.configs.cnn_config import cnn_config
 from src.configs.rnn_config import rnn_config
 from src.configs.transformer_config import transformer_config
 from src.configs.danq_config import danq_config
 
+# Reference dictionary needed for CNN without pooling dimension calculation
+SEQ_LEN = {
+    "original": 85,
+    "longerbp": 120,
+    "bottleneck": 85,
+    "multiclass": 85,
+    "HumanvsNeanderthal": 85,
+    "DenisovanvsNeanderthal": 85
+}
 
 CLASS_NAMES = {
-    "original":               ["Human", "Denisovan"],
-    "longerbp":               ["Human", "Denisovan"],
-    "bottleneck":             ["Human", "Denisovan"],
-    "multiclass":             ["Human", "Denisovan", "Neanderthal"],
-    "HumanvsNeanderthal":     ["Human", "Neanderthal"],
+    "original": ["Human", "Denisovan"],
+    "longerbp": ["Human", "Denisovan"],
+    "bottleneck": ["Human", "Denisovan"],
+    "multiclass": ["Human", "Denisovan", "Neanderthal"],
+    "HumanvsNeanderthal": ["Human", "Neanderthal"],
     "DenisovanvsNeanderthal": ["Denisovan", "Neanderthal"],
 }
 
 
-# Confusion Matrix 
 def plot_confusion_matrix(all_preds, all_labels, num_classes, dataset_type, save_dir, model_name):
     labels_names = CLASS_NAMES.get(dataset_type, [str(i) for i in range(num_classes)])
 
@@ -60,7 +73,7 @@ def plot_confusion_matrix(all_preds, all_labels, num_classes, dataset_type, save
     ax.set_xticklabels(labels_names, fontsize=12)
     ax.set_yticklabels(labels_names, fontsize=12)
     ax.set_xlabel("Predicted", fontsize=13, fontweight="bold")
-    ax.set_ylabel("True",      fontsize=13, fontweight="bold")
+    ax.set_ylabel("True", fontsize=13, fontweight="bold")
     ax.set_title(f"{model_name.upper()} — {dataset_type} — Confusion Matrix (test set)",
                  fontsize=13, fontweight="bold", pad=14)
 
@@ -83,12 +96,11 @@ def plot_confusion_matrix(all_preds, all_labels, num_classes, dataset_type, save
     header = "         " + "  ".join(f"{n:>12}" for n in labels_names)
     print(header)
     for i, row_name in enumerate(labels_names):
-        row_str = "  ".join(f"{cm[i,j]:>12}" for j in range(num_classes))
+        row_str = "  ".join(f"{cm[i, j]:>12}" for j in range(num_classes))
         print(f"  {row_name:>8}  {row_str}")
     print()
 
 
-#  AUROC 
 def plot_auroc(all_probs, all_labels, num_classes, dataset_type, save_dir, model_name):
     labels_names = CLASS_NAMES.get(dataset_type, [str(i) for i in range(num_classes)])
 
@@ -97,20 +109,20 @@ def plot_auroc(all_probs, all_labels, num_classes, dataset_type, save_dir, model
 
     if num_classes == 2:
         fpr, tpr, _ = roc_curve(all_labels, all_probs[:, 1])
-        roc_auc     = auc(fpr, tpr)
+        roc_auc = auc(fpr, tpr)
         plt.plot(fpr, tpr, linewidth=2,
                  label=f"{labels_names[1]} vs {labels_names[0]}  (AUC = {roc_auc:.3f})")
     else:
         all_labels_bin = label_binarize(all_labels, classes=list(range(num_classes)))
         for i, (name, color) in enumerate(zip(labels_names, colors)):
             fpr, tpr, _ = roc_curve(all_labels_bin[:, i], all_probs[:, i])
-            roc_auc     = auc(fpr, tpr)
+            roc_auc = auc(fpr, tpr)
             plt.plot(fpr, tpr, color=color, linewidth=2,
                      label=f"{name} (AUC = {roc_auc:.3f})")
 
     plt.plot([0, 1], [0, 1], "k--", linewidth=1, label="Random (AUC = 0.500)")
     plt.xlabel("False Positive Rate", fontsize=12)
-    plt.ylabel("True Positive Rate",  fontsize=12)
+    plt.ylabel("True Positive Rate", fontsize=12)
     plt.title(f"{model_name.upper()} — {dataset_type} — ROC Curve (test set)",
               fontsize=13, fontweight="bold")
     plt.legend(loc="lower right", fontsize=10)
@@ -125,7 +137,6 @@ def plot_auroc(all_probs, all_labels, num_classes, dataset_type, save_dir, model
     print(f"  AUROC plot saved → {path}")
 
 
-#  Precision-Recall Curve 
 def plot_precision_recall(all_probs, all_labels, num_classes, dataset_type, save_dir, model_name):
     labels_names = CLASS_NAMES.get(dataset_type, [str(i) for i in range(num_classes)])
 
@@ -145,7 +156,7 @@ def plot_precision_recall(all_probs, all_labels, num_classes, dataset_type, save
             plt.plot(recall, precision, color=color, linewidth=2,
                      label=f"{name} (AP = {ap:.3f})")
 
-    plt.xlabel("Recall",    fontsize=12)
+    plt.xlabel("Recall", fontsize=12)
     plt.ylabel("Precision", fontsize=12)
     plt.title(f"{model_name.upper()} — {dataset_type} — Precision-Recall Curve (test set)",
               fontsize=13, fontweight="bold")
@@ -165,23 +176,23 @@ def save_to_master_results(all_labels, all_preds, labels_names, accuracy, mcc, m
     report_dict = classification_report(
         all_labels, all_preds, target_names=labels_names, digits=4, output_dict=True
     )
-    
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     rows = []
 
     for class_name in labels_names:
         rows.append({
-            "timestamp":   timestamp,
-            "model":       model_name,
-            "dataset":     dataset_type,
-            "class":       class_name,
-            "precision":   round(report_dict[class_name]["precision"], 4),
-            "recall":      round(report_dict[class_name]["recall"], 4),
-            "f1":          round(report_dict[class_name]["f1-score"], 4),
-            "support":     int(report_dict[class_name]["support"]),
-            "accuracy":    round(accuracy, 4),
-            "mcc":         round(mcc, 4),
-            "macro_f1":    round(report_dict["macro avg"]["f1-score"], 4),
+            "timestamp": timestamp,
+            "model": model_name,
+            "dataset": dataset_type,
+            "class": class_name,
+            "precision": round(report_dict[class_name]["precision"], 4),
+            "recall": round(report_dict[class_name]["recall"], 4),
+            "f1": round(report_dict[class_name]["f1-score"], 4),
+            "support": int(report_dict[class_name]["support"]),
+            "accuracy": round(accuracy, 4),
+            "mcc": round(mcc, 4),
+            "macro_f1": round(report_dict["macro avg"]["f1-score"], 4),
             "weighted_f1": round(report_dict["weighted avg"]["f1-score"], 4),
         })
 
@@ -193,14 +204,15 @@ def save_to_master_results(all_labels, all_preds, labels_names, accuracy, mcc, m
         df_existing = pd.read_csv(master_path)
 
         already_exists = (
-            (df_existing["model"] == model_name) &
-            (df_existing["dataset"] == dataset_type)
+                (df_existing["model"] == model_name) &
+                (df_existing["dataset"] == dataset_type)
         ).any()
 
         if already_exists:
-            print(f"  WARNING: results for {model_name}/{dataset_type} already exist in master_results.csv — skipping save to avoid duplicates.")
+            print(
+                f"  WARNING: results for {model_name}/{dataset_type} already exist in master_results.csv — skipping save to avoid duplicates.")
             return
-        
+
         df_combined = pd.concat([df_existing, df_new], ignore_index=True)
     else:
         df_combined = df_new
@@ -208,82 +220,105 @@ def save_to_master_results(all_labels, all_preds, labels_names, accuracy, mcc, m
     print(f"  Master results updated → {master_path}")
 
 
-
-#  Main 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model",        type=str, required=True)
-    parser.add_argument("--test_path",    type=str, required=True)
-    parser.add_argument("--num_classes",  type=int, required=True)
+    parser.add_argument("--model", type=str, required=True)
+    parser.add_argument("--test_path", type=str, required=True)
+    parser.add_argument("--num_classes", type=int, required=True)
     parser.add_argument("--dataset_type", type=str, required=True)
-    parser.add_argument("--model_path",   type=str, required=True)  # path to .pt file
+    parser.add_argument("--model_path", type=str, required=True)  # path to .pt file
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
-    # model
+    # ── Model Mapping Selection
     model_map = {
-        "cnn":         (CNN1D,            cnn_config),
-        "rnn":         (RNNModel,         rnn_config),
+        "cnn": (CNN1D, cnn_config),
+        "cnn_no_pooling": (CNN1D_no_pooling, cnn_config),
+        "rnn": (RNNModel, rnn_config),
         "transformer": (TransformerModel, transformer_config),
-        "danq":        (DanqModel,        danq_config),
+        "danq": (DanqModel, danq_config),
     }
 
     if args.model not in model_map:
         raise ValueError(f"Unknown model '{args.model}'. Choose from: {list(model_map)}")
 
     ModelClass, config = model_map[args.model]
-    model = ModelClass(config, args.num_classes).to(device)
-    model.load_state_dict(torch.load(args.model_path, map_location=device))
+
+    # Initialization adjustments for models without pooling layers
+    if args.model == "cnn_no_pooling":
+        seq_l = SEQ_LEN.get(args.dataset_type, 85)
+        model = ModelClass(config, args.num_classes, seq_length=seq_l).to(device)
+    else:
+        model = ModelClass(config, args.num_classes).to(device)
+
+    # Use strict=False to accommodate architecture configurations safely
+    model.load_state_dict(torch.load(args.model_path, map_location=device), strict=False)
     model.eval()
     print(f"Loaded weights from {args.model_path}")
 
-    # data
-    batch_size   = config.get("batch_size", {}).get(args.dataset_type, 64)
-    test_dataset = DNADataset(args.test_path, train=False)
-    test_loader  = DataLoader(
+    # ── Dataset Mapping & Collate Function setup
+    batch_size = config.get("batch_size", {}).get(args.dataset_type, 64)
+
+    if args.model == "danq":
+        test_dataset = DanqDataset(args.test_path, train=False)
+        collate_fn = danq_collate
+    else:
+        test_dataset = DNADataset(args.test_path, train=False)
+        collate_fn = variable_length_collate
+
+    test_loader = DataLoader(
         test_dataset,
         batch_size=batch_size,
         shuffle=False,
         num_workers=2,
-        collate_fn=variable_length_collate,
+        collate_fn=collate_fn,
     )
     print(f"Test samples: {len(test_dataset):,}")
 
-    # inference
-    all_preds  = []
+    # ── Inference Pipeline Execution
+    all_preds = []
     all_labels = []
-    all_probs  = []
+    all_probs = []
 
     with torch.no_grad():
-        for x, y in test_loader:
-            x, y   = x.to(device), y.to(device)
-            logits  = model(x)
-            probs   = torch.softmax(logits, dim=1)
-            preds   = torch.argmax(logits, dim=1)
+        for batch in test_loader:
+            if args.model == "danq":
+                # DanQ returns sequence padding masks via danq_collate
+                x, y, mask = batch
+                x, y, mask = x.to(device), y.to(device), mask.to(device)
+                logits = model(x, mask=mask)
+            else:
+                # Other architectures map sequences directly
+                x, y = batch
+                x, y = x.to(device), y.to(device)
+                logits = model(x)
+
+            probs = torch.softmax(logits, dim=1)
+            preds = torch.argmax(logits, dim=1)
 
             all_preds.extend(preds.cpu().numpy())
             all_labels.extend(y.cpu().numpy())
             all_probs.extend(probs.cpu().numpy())
 
-    all_preds  = np.array(all_preds)
+    all_preds = np.array(all_preds)
     all_labels = np.array(all_labels)
-    all_probs  = np.array(all_probs)
+    all_probs = np.array(all_probs)
 
-    # metrics
+    # ── Metrics Calculation
     labels_names = CLASS_NAMES.get(args.dataset_type, [str(i) for i in range(args.num_classes)])
-    accuracy     = (all_preds == all_labels).mean()
-    mcc          = matthews_corrcoef(all_labels, all_preds)
+    accuracy = (all_preds == all_labels).mean()
+    mcc = matthews_corrcoef(all_labels, all_preds)
 
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"  Test Accuracy : {accuracy:.4f}")
     print(f"  MCC           : {mcc:.4f}")
     print(f"\n  Classification Report:")
     print(classification_report(all_labels, all_preds, target_names=labels_names, digits=4))
-    print(f"{'='*60}\n")
+    print(f"{'=' * 60}\n")
 
-    # plots
+    # ── Evaluation Plots and Saving Outputs
     save_dir = f"results/{args.model}/{args.dataset_type}/test"
     os.makedirs(save_dir, exist_ok=True)
 
@@ -292,15 +327,15 @@ def main():
     plot_precision_recall(all_probs, all_labels, args.num_classes, args.dataset_type, save_dir, args.model)
     save_to_master_results(all_labels, all_preds, labels_names, accuracy, mcc, args.model, args.dataset_type)
 
-    # save results
+    # Export complete run data object
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results = {
-        "model":        args.model,
-        "dataset":      args.dataset_type,
-        "model_path":   args.model_path,
+        "model": args.model,
+        "dataset": args.dataset_type,
+        "model_path": args.model_path,
         "test_samples": len(test_dataset),
-        "accuracy":     float(accuracy),
-        "mcc":          float(mcc),
+        "accuracy": float(accuracy),
+        "mcc": float(mcc),
         "classification_report": classification_report(
             all_labels, all_preds, target_names=labels_names, digits=4, output_dict=True
         ),
