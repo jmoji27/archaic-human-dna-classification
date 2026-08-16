@@ -1,0 +1,808 @@
+.
+├── cnn
+│   ├── bottleneck
+│   │   ├── cnn_bottleneck_best_model.pt
+│   │   ├── cnn_bottleneck_run_20260418_232501.json
+│   │   ├── cnn_bottleneck_run_20260418_232528.json
+│   │   ├── cnn_bottleneck_run_20260418_232704.json
+│   │   ├── cnn_bottleneck_run_20260418_232717.json
+│   │   ├── cnn_bottleneck_run_20260418_232919.json
+│   │   ├── cnn_bottleneck_run_20260419_005801.json
+│   │   ├── cnn_bottleneck_run_20260419_010151.json
+│   │   ├── cnn_bottleneck_run_20260419_011138.json
+│   │   ├── cnn_bottleneck_run_20260419_011429.json
+│   │   ├── cnn_bottleneck_run_20260419_140219.json
+│   │   ├── cnn_bottleneck_run_20260425_145658.json
+│   │   ├── cnn_bottleneck_run_20260425_150455.json
+│   │   ├── cnn_bottleneck_run_20260425_153545.json
+│   │   ├── cnn_bottleneck_run_20260509_041831.json
+│   │   ├── cnn_bottleneck_run_20260509_130656.json
+│   │   ├── cnn_bottleneck_run_20260509_150415.json
+│   │   ├── cnn_bottleneck_run_20260509_152628.json
+│   │   ├── cnn_bottleneck_run_20260509_155403.json
+│   │   ├── cnn_bottleneck_run_20260509_160206.json
+│   │   ├── cnn_bottleneck_run_20260509_161042.json
+│   │   ├── cnn_bottleneck_run_20260509_162254.json
+│   │   ├── cnn_bottleneck_run_20260509_184010.json
+│   │   ├── cnn_bottleneck_run_20260509_191146.json
+│   │   ├── cnn_bottleneck_run_20260509_191607.json
+│   │   ├── cnn_bottleneck_run_20260509_192933.json
+│   │   ├── cnn_bottleneck_run_20260509_193932.json
+│   │   ├── cnn_bottleneck_run_20260509_194445.json
+│   │   ├── cnn_bottleneck_run_20260509_194942.json
+│   │   ├── cnn_bottleneck_run_20260509_195717.json
+│   │   ├── cnn_bottleneck_run_20260509_233746.json
+│   │   ├── graphs
+│   │   │   ├── cnn_bottleneck_20260425_145657.png
+│   │   │   ├── cnn_bottleneck_20260425_150454.png
+│   │   │   ├── cnn_bottleneck_20260425_153544.png
+│   │   │   ├── cnn_bottleneck_20260509_041828.png
+│   │   │   ├── cnn_bottleneck_20260509_130651.png
+│   │   │   ├── cnn_bottleneck_20260509_150409.png
+│   │   │   ├── cnn_bottleneck_20260509_152622.png
+│   │   │   ├── cnn_bottleneck_20260509_155401.png
+│   │   │   ├── cnn_bottleneck_20260509_160204.png
+│   │   │   ├── cnn_bottleneck_20260509_161040.png
+│   │   │   ├── cnn_bottleneck_20260509_162251.png
+│   │   │   ├── cnn_bottleneck_20260509_184008.png
+│   │   │   ├── cnn_bottleneck_20260509_191144.png
+│   │   │   ├── cnn_bottleneck_20260509_191605.png
+│   │   │   ├── cnn_bottleneck_20260509_192931.png
+│   │   │   ├── cnn_bottleneck_20260509_193929.png
+│   │   │   ├── cnn_bottleneck_20260509_194443.png
+│   │   │   ├── cnn_bottleneck_20260509_194939.png
+│   │   │   ├── cnn_bottleneck_20260509_195714.png
+│   │   │   ├── cnn_bottleneck_20260509_233743.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_041831.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_130655.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_150414.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_152627.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_155403.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_160206.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_161042.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_162254.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_184010.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_191146.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_191607.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_192933.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_193931.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_194445.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_194942.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_195717.png
+│   │   │   ├── cnn_bottleneck_auroc_20260509_233746.png
+│   │   │   ├── cnn_bottleneck_confusion_20260425_145657.png
+│   │   │   ├── cnn_bottleneck_confusion_20260425_150455.png
+│   │   │   ├── cnn_bottleneck_confusion_20260425_153544.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_041829.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_130652.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_150411.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_152624.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_155402.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_160204.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_161040.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_162252.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_184009.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_191145.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_191606.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_192931.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_193930.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_194444.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_194940.png
+│   │   │   ├── cnn_bottleneck_confusion_20260509_195715.png
+│   │   │   └── cnn_bottleneck_confusion_20260509_233744.png
+│   │   └── test
+│   │       ├── cnn_bottleneck_test_20260510_023555.json
+│   │       └── graphs
+│   │           ├── cnn_bottleneck_auroc_test_20260510_023554.png
+│   │           ├── cnn_bottleneck_confusion_test_20260510_023552.png
+│   │           └── cnn_bottleneck_pr_curve_test_20260510_023554.png
+│   ├── DenisovanvsNeanderthal
+│   │   ├── cnn_DenisovanvsNeanderthal_best_model.pt
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260425_202052.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260425_202623.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260427_225511.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260427_233418.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260428_001204.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260501_000702.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260501_002901.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260501_005546.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260501_010822.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260504_145148.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260504_145925.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260504_150936.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260504_151630.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260504_231739.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_152529.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_154132.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_203330.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_203850.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_204717.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_211222.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260505_214758.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_021050.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_133503.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_134850.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_135659.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_140422.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_141010.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_141740.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_162713.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_165421.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_165656.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_171747.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_172118.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_172455.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_172845.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_173208.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_192958.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_193222.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_193928.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_194451.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_194751.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_195243.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_200431.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_201211.json
+│   │   ├── cnn_DenisovanvsNeanderthal_run_20260509_201538.json
+│   │   ├── graphs
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260425_202051.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260425_202621.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260427_225508.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260427_233415.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260428_001159.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260501_000659.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260501_002859.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260501_005542.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260501_010819.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260504_145147.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260504_145924.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260504_150935.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260504_151629.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260504_231738.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_152526.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_154124.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_203327.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_203848.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_204715.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_211218.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260505_214755.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_021047.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_133458.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_134845.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_135654.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_140417.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_141005.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_141735.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_162711.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_165419.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_165654.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_171745.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_172116.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_172453.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_172843.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_173206.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_192956.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_193220.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_193926.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_194449.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_194748.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_195239.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_200428.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_201208.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_20260509_201536.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260505_154131.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260505_203330.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260505_203850.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260505_204717.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260505_211222.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260505_214758.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_021050.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_133503.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_134850.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_135658.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_140421.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_141010.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_141740.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_162712.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_165421.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_165655.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_171747.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_172118.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_172454.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_172845.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_173208.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_192957.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_193221.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_193928.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_194450.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_194751.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_195242.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_200431.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_201211.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_auroc_20260509_201538.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260425_202051.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260425_202622.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260427_225510.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260427_233416.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260428_001201.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260501_000701.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260501_002900.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260501_005545.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260501_010821.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260504_145147.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260504_145925.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260504_150935.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260504_151629.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260504_231739.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_152528.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_154126.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_203328.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_203849.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_204715.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_211219.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260505_214756.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_021048.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_133500.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_134846.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_135655.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_140418.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_141007.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_141737.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_162711.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_165419.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_165654.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_171746.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_172116.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_172453.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_172844.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_173206.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_192956.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_193220.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_193927.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_194449.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_194749.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_195240.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_200429.png
+│   │   │   ├── cnn_DenisovanvsNeanderthal_confusion_20260509_201209.png
+│   │   │   └── cnn_DenisovanvsNeanderthal_confusion_20260509_201536.png
+│   │   └── test
+│   │       ├── cnn_DenisovanvsNeanderthal_test_20260510_012156.json
+│   │       ├── cnn_DenisovanvsNeanderthal_test_20260510_022611.json
+│   │       ├── cnn_DenisovanvsNeanderthal_test_20260517_170328.json
+│   │       └── graphs
+│   │           ├── cnn_DenisovanvsNeanderthal_auroc_test_20260510_012155.png
+│   │           ├── cnn_DenisovanvsNeanderthal_auroc_test_20260510_022610.png
+│   │           ├── cnn_DenisovanvsNeanderthal_auroc_test_20260517_170328.png
+│   │           ├── cnn_DenisovanvsNeanderthal_confusion_test_20260510_012153.png
+│   │           ├── cnn_DenisovanvsNeanderthal_confusion_test_20260510_022608.png
+│   │           ├── cnn_DenisovanvsNeanderthal_confusion_test_20260517_170327.png
+│   │           ├── cnn_DenisovanvsNeanderthal_pr_curve_test_20260510_012155.png
+│   │           ├── cnn_DenisovanvsNeanderthal_pr_curve_test_20260510_022610.png
+│   │           └── cnn_DenisovanvsNeanderthal_pr_curve_test_20260517_170328.png
+│   ├── HumanvsNeanderthal
+│   │   ├── cnn_HumanvsNeanderthal_best_model.pt
+│   │   ├── cnn_HumanvsNeanderthal_run_20260425_201806.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260425_203126.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260426_234551.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260427_185943.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260427_223939.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260427_231640.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260503_162050.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260503_162541.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260505_161058.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260505_163043.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260505_170232.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260505_200204.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260505_201506.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_023801.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_030127.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_143021.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_163114.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_164503.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_171028.json
+│   │   ├── cnn_HumanvsNeanderthal_run_20260509_171358.json
+│   │   ├── graphs
+│   │   │   ├── cnn_HumanvsNeanderthal_20260425_201805.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260425_203125.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260426_234548.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260427_185940.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260427_223935.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260427_231637.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260503_162049.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260503_162540.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260505_161052.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260505_163036.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260505_170226.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260505_200201.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260505_201504.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_023758.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_030124.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_143016.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_163112.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_164501.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_171026.png
+│   │   │   ├── cnn_HumanvsNeanderthal_20260509_171356.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260505_161058.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260505_163043.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260505_170232.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260505_200203.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260505_201506.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_023800.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_030127.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_143021.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_163114.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_164503.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_171028.png
+│   │   │   ├── cnn_HumanvsNeanderthal_auroc_20260509_171358.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260425_201806.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260425_203126.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260426_234550.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260427_185942.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260427_223937.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260427_231639.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260503_162050.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260503_162541.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260505_161053.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260505_163037.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260505_170228.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260505_200202.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260505_201504.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260509_023759.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260509_030125.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260509_143017.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260509_163113.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260509_164502.png
+│   │   │   ├── cnn_HumanvsNeanderthal_confusion_20260509_171027.png
+│   │   │   └── cnn_HumanvsNeanderthal_confusion_20260509_171357.png
+│   │   └── test
+│   │       ├── cnn_HumanvsNeanderthal_test_20260510_022851.json
+│   │       └── graphs
+│   │           ├── cnn_HumanvsNeanderthal_auroc_test_20260510_022850.png
+│   │           ├── cnn_HumanvsNeanderthal_confusion_test_20260510_022849.png
+│   │           └── cnn_HumanvsNeanderthal_pr_curve_test_20260510_022851.png
+│   ├── longerbp
+│   │   ├── cnn_longerbp_best_model.pt
+│   │   ├── cnn_longerbp_run_20260419_020444.json
+│   │   ├── cnn_longerbp_run_20260419_020603.json
+│   │   ├── cnn_longerbp_run_20260419_020849.json
+│   │   ├── cnn_longerbp_run_20260419_023118.json
+│   │   ├── cnn_longerbp_run_20260419_023806.json
+│   │   ├── cnn_longerbp_run_20260419_023926.json
+│   │   ├── cnn_longerbp_run_20260419_024103.json
+│   │   ├── cnn_longerbp_run_20260419_135530.json
+│   │   ├── cnn_longerbp_run_20260419_135733.json
+│   │   ├── cnn_longerbp_run_20260425_162050.json
+│   │   ├── cnn_longerbp_run_20260509_040508.json
+│   │   ├── cnn_longerbp_run_20260509_182727.json
+│   │   ├── cnn_longerbp_run_20260510_001704.json
+│   │   ├── graphs
+│   │   │   ├── cnn_longerbp_20260425_162048.png
+│   │   │   ├── cnn_longerbp_20260509_040502.png
+│   │   │   ├── cnn_longerbp_20260509_182721.png
+│   │   │   ├── cnn_longerbp_20260510_001700.png
+│   │   │   ├── cnn_longerbp_auroc_20260509_040507.png
+│   │   │   ├── cnn_longerbp_auroc_20260509_182727.png
+│   │   │   ├── cnn_longerbp_auroc_20260510_001704.png
+│   │   │   ├── cnn_longerbp_confusion_20260425_162049.png
+│   │   │   ├── cnn_longerbp_confusion_20260509_040505.png
+│   │   │   ├── cnn_longerbp_confusion_20260509_182723.png
+│   │   │   └── cnn_longerbp_confusion_20260510_001702.png
+│   │   └── test
+│   │       ├── cnn_longerbp_test_20260510_023912.json
+│   │       └── graphs
+│   │           ├── cnn_longerbp_auroc_test_20260510_023911.png
+│   │           ├── cnn_longerbp_confusion_test_20260510_023910.png
+│   │           └── cnn_longerbp_pr_curve_test_20260510_023912.png
+│   ├── multiclass
+│   │   ├── cnn_multiclass_best_model.pt
+│   │   ├── cnn_multiclass_run_20260418_223244.json
+│   │   ├── cnn_multiclass_run_20260418_223334.json
+│   │   ├── cnn_multiclass_run_20260425_140256.json
+│   │   ├── cnn_multiclass_run_20260425_194026.json
+│   │   ├── cnn_multiclass_run_20260503_163818.json
+│   │   ├── cnn_multiclass_run_20260503_165219.json
+│   │   ├── cnn_multiclass_run_20260504_225707.json
+│   │   ├── cnn_multiclass_run_20260505_175921.json
+│   │   ├── cnn_multiclass_run_20260505_190538.json
+│   │   ├── cnn_multiclass_run_20260505_194603.json
+│   │   ├── cnn_multiclass_run_20260509_131621.json
+│   │   ├── cnn_multiclass_run_20260509_132812.json
+│   │   ├── cnn_multiclass_run_20260509_143959.json
+│   │   ├── cnn_multiclass_run_20260509_173845.json
+│   │   ├── cnn_multiclass_run_20260509_180300.json
+│   │   ├── cnn_multiclass_run_20260509_181339.json
+│   │   ├── cnn_multiclass_run_20260509_182840.json
+│   │   ├── graphs
+│   │   │   ├── cnn_multiclass_20260425_140255.png
+│   │   │   ├── cnn_multiclass_20260425_194025.png
+│   │   │   ├── cnn_multiclass_20260503_163816.png
+│   │   │   ├── cnn_multiclass_20260503_165217.png
+│   │   │   ├── cnn_multiclass_20260504_225706.png
+│   │   │   ├── cnn_multiclass_20260505_175914.png
+│   │   │   ├── cnn_multiclass_20260505_190529.png
+│   │   │   ├── cnn_multiclass_20260505_194600.png
+│   │   │   ├── cnn_multiclass_20260509_131615.png
+│   │   │   ├── cnn_multiclass_20260509_132806.png
+│   │   │   ├── cnn_multiclass_20260509_143953.png
+│   │   │   ├── cnn_multiclass_20260509_173842.png
+│   │   │   ├── cnn_multiclass_20260509_180257.png
+│   │   │   ├── cnn_multiclass_20260509_181337.png
+│   │   │   ├── cnn_multiclass_20260509_182837.png
+│   │   │   ├── cnn_multiclass_auroc_20260505_175921.png
+│   │   │   ├── cnn_multiclass_auroc_20260505_190538.png
+│   │   │   ├── cnn_multiclass_auroc_20260505_194603.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_131620.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_132811.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_143959.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_173844.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_180300.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_181339.png
+│   │   │   ├── cnn_multiclass_auroc_20260509_182840.png
+│   │   │   ├── cnn_multiclass_confusion_20260425_194026.png
+│   │   │   ├── cnn_multiclass_confusion_20260503_163817.png
+│   │   │   ├── cnn_multiclass_confusion_20260503_165218.png
+│   │   │   ├── cnn_multiclass_confusion_20260504_225707.png
+│   │   │   ├── cnn_multiclass_confusion_20260505_175916.png
+│   │   │   ├── cnn_multiclass_confusion_20260505_190531.png
+│   │   │   ├── cnn_multiclass_confusion_20260505_194601.png
+│   │   │   ├── cnn_multiclass_confusion_20260509_131617.png
+│   │   │   ├── cnn_multiclass_confusion_20260509_132808.png
+│   │   │   ├── cnn_multiclass_confusion_20260509_143955.png
+│   │   │   ├── cnn_multiclass_confusion_20260509_173843.png
+│   │   │   ├── cnn_multiclass_confusion_20260509_180258.png
+│   │   │   ├── cnn_multiclass_confusion_20260509_181337.png
+│   │   │   └── cnn_multiclass_confusion_20260509_182838.png
+│   │   └── test
+│   │       ├── cnn_multiclass_test_20260510_023333.json
+│   │       └── graphs
+│   │           ├── cnn_multiclass_auroc_test_20260510_023332.png
+│   │           ├── cnn_multiclass_confusion_test_20260510_023330.png
+│   │           └── cnn_multiclass_pr_curve_test_20260510_023333.png
+│   └── original
+│       ├── binary (old reuslts)
+│       │   ├── cnn_binary_best_model.pt
+│       │   ├── cnn_binary_run_20260411_232255.json
+│       │   ├── cnn_binary_run_20260413_171027.json
+│       │   ├── cnn_binary_run_20260413_181450.json
+│       │   ├── cnn_binary_run_20260413_182014.json
+│       │   ├── cnn_binary_run_20260413_182501.json
+│       │   ├── cnn_binary_run_20260413_183010.json
+│       │   ├── cnn_binary_run_20260413_183622.json
+│       │   ├── cnn_binary_run_20260413_183807.json
+│       │   ├── cnn_binary_run_20260413_184456.json
+│       │   ├── cnn_binary_run_20260413_184603.json
+│       │   ├── cnn_binary_run_20260413_184711.json
+│       │   ├── cnn_binary_run_20260413_184851.json
+│       │   ├── cnn_binary_run_20260413_185517.json
+│       │   ├── cnn_binary_run_20260413_185841.json
+│       │   ├── cnn_binary_run_20260413_190329.json
+│       │   ├── cnn_binary_run_20260414_180444.json
+│       │   ├── cnn_binary_run_20260414_183848.json
+│       │   ├── cnn_binary_run_20260414_192927.json
+│       │   ├── cnn_binary_run_20260414_235705.json
+│       │   ├── cnn_binary_run_20260415_001735.json
+│       │   ├── cnn_binary_run_20260415_002419.json
+│       │   ├── cnn_binary_run_20260415_002958.json
+│       │   ├── cnn_binary_run_20260415_004131.json
+│       │   ├── cnn_binary_run_20260415_005623.json
+│       │   ├── cnn_binary_run_20260415_012439.json
+│       │   ├── cnn_binary_run_20260415_013305.json
+│       │   ├── cnn_binary_run_20260418_222851.json
+│       │   ├── cnn_binary_run_20260418_222946.json
+│       │   ├── cnn_binary_run_20260418_223835.json
+│       │   ├── cnn_binary_run_20260418_224323.json
+│       │   ├── cnn_binary_run_20260418_224846.json
+│       │   ├── cnn_binary_run_20260418_225140.json
+│       │   ├── cnn_binary_run_20260418_232106.json
+│       │   ├── cnn_binary_run_20260418_233519.json
+│       │   ├── cnn_binary_run_20260418_234243.json
+│       │   ├── cnn_binary_run_20260418_234943.json
+│       │   ├── cnn_binary_run_20260418_235540.json
+│       │   ├── cnn_binary_run_20260419_000233.json
+│       │   ├── cnn_binary_run_20260419_004903.json
+│       │   ├── cnn_binary_run_20260419_005452.json
+│       │   ├── cnn_binary_run_20260419_011044.json
+│       │   ├── cnn_binary_run_20260419_012120.json
+│       │   ├── cnn_binary_run_20260419_022415.json
+│       │   ├── cnn_binary_run_20260419_023446.json
+│       │   ├── cnn_binary_run_20260419_131208.json
+│       │   ├── cnn_binary_run_20260419_132733.json
+│       │   ├── cnn_binary_run_20260419_134620.json
+│       │   ├── cnn_binary_run_20260419_135324.json
+│       │   ├── cnn_binary_run_20260419_140144.json
+│       │   ├── cnn_binary_run_20260419_143903.json
+│       │   ├── cnn_binary_run_20260419_145822.json
+│       │   └── cnn_binary_run_20260419_154258.json
+│       ├── cnn_original_best_model.pt
+│       ├── cnn_original_run_20260425_172221.json
+│       ├── cnn_original_run_20260506_030457.json
+│       ├── cnn_original_run_20260509_202349.json
+│       ├── cnn_original_run_20260509_212014.json
+│       ├── cnn_original_run_20260509_221133.json
+│       ├── cnn_original_run_20260509_230002.json
+│       ├── graphs
+│       │   ├── cnn_original_20260425_172214.png
+│       │   ├── cnn_original_20260506_030445.png
+│       │   ├── cnn_original_20260509_202339.png
+│       │   ├── cnn_original_20260509_212002.png
+│       │   ├── cnn_original_20260509_221122.png
+│       │   ├── cnn_original_20260509_225951.png
+│       │   ├── cnn_original_auroc_20260506_030457.png
+│       │   ├── cnn_original_auroc_20260509_202349.png
+│       │   ├── cnn_original_auroc_20260509_212014.png
+│       │   ├── cnn_original_auroc_20260509_221133.png
+│       │   ├── cnn_original_auroc_20260509_230002.png
+│       │   ├── cnn_original_confusion_20260425_172220.png
+│       │   ├── cnn_original_confusion_20260506_030451.png
+│       │   ├── cnn_original_confusion_20260509_202344.png
+│       │   ├── cnn_original_confusion_20260509_212008.png
+│       │   ├── cnn_original_confusion_20260509_221127.png
+│       │   └── cnn_original_confusion_20260509_225956.png
+│       └── test
+│           ├── cnn_original_test_20260510_024010.json
+│           └── graphs
+│               ├── cnn_original_auroc_test_20260510_024009.png
+│               ├── cnn_original_confusion_test_20260510_024007.png
+│               └── cnn_original_pr_curve_test_20260510_024009.png
+├── cnn_binary.json
+├── cnn_no_pooling
+│   ├── bottleneck
+│   │   ├── cnn_no_pooling_bottleneck_best_model.pt
+│   │   ├── cnn_no_pooling_bottleneck_run_20260517_160856.json
+│   │   ├── cnn_no_pooling_bottleneck_run_20260518_103226.json
+│   │   ├── graphs
+│   │   │   ├── cnn_no_pooling_bottleneck_20260517_160851.png
+│   │   │   ├── cnn_no_pooling_bottleneck_20260518_103221.png
+│   │   │   ├── cnn_no_pooling_bottleneck_auroc_20260517_160856.png
+│   │   │   ├── cnn_no_pooling_bottleneck_auroc_20260518_103226.png
+│   │   │   ├── cnn_no_pooling_bottleneck_confusion_20260517_160852.png
+│   │   │   └── cnn_no_pooling_bottleneck_confusion_20260518_103222.png
+│   │   └── test
+│   │       ├── cnn_no_pooling_bottleneck_test_20260518_104233.json
+│   │       ├── cnn_no_pooling_bottleneck_test_20260519_131512.json
+│   │       └── graphs
+│   │           ├── cnn_no_pooling_bottleneck_auroc_test_20260518_104233.png
+│   │           ├── cnn_no_pooling_bottleneck_auroc_test_20260519_131511.png
+│   │           ├── cnn_no_pooling_bottleneck_confusion_test_20260518_104232.png
+│   │           ├── cnn_no_pooling_bottleneck_confusion_test_20260519_131510.png
+│   │           ├── cnn_no_pooling_bottleneck_pr_curve_test_20260518_104233.png
+│   │           └── cnn_no_pooling_bottleneck_pr_curve_test_20260519_131512.png
+│   ├── DenisovanvsNeanderthal
+│   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_best_model.pt
+│   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_run_20260512_203650.json
+│   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_run_20260512_204326.json
+│   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_run_20260517_150203.json
+│   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_run_20260518_101610.json
+│   │   ├── graphs
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_20260512_203647.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_20260512_204324.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_20260517_150153.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_20260518_101607.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_auroc_20260512_203650.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_auroc_20260512_204326.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_auroc_20260517_150202.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_auroc_20260518_101610.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_confusion_20260512_203648.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_confusion_20260512_204325.png
+│   │   │   ├── cnn_no_pooling_DenisovanvsNeanderthal_confusion_20260517_150157.png
+│   │   │   └── cnn_no_pooling_DenisovanvsNeanderthal_confusion_20260518_101607.png
+│   │   └── test
+│   │       ├── cnn_no_pooling_DenisovanvsNeanderthal_test_20260517_173846.json
+│   │       ├── cnn_no_pooling_DenisovanvsNeanderthal_test_20260518_101826.json
+│   │       └── graphs
+│   │           ├── cnn_no_pooling_DenisovanvsNeanderthal_auroc_test_20260517_173846.png
+│   │           ├── cnn_no_pooling_DenisovanvsNeanderthal_auroc_test_20260518_101826.png
+│   │           ├── cnn_no_pooling_DenisovanvsNeanderthal_confusion_test_20260517_173845.png
+│   │           ├── cnn_no_pooling_DenisovanvsNeanderthal_confusion_test_20260518_101826.png
+│   │           ├── cnn_no_pooling_DenisovanvsNeanderthal_pr_curve_test_20260517_173846.png
+│   │           └── cnn_no_pooling_DenisovanvsNeanderthal_pr_curve_test_20260518_101826.png
+│   ├── HumanvsNeanderthal
+│   │   ├── cnn_no_pooling_HumanvsNeanderthal_best_model.pt
+│   │   ├── cnn_no_pooling_HumanvsNeanderthal_run_20260512_205127.json
+│   │   ├── cnn_no_pooling_HumanvsNeanderthal_run_20260517_151851.json
+│   │   ├── cnn_no_pooling_HumanvsNeanderthal_run_20260518_102348.json
+│   │   ├── graphs
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_20260512_205123.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_20260517_151849.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_20260518_102346.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_auroc_20260512_205127.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_auroc_20260517_151851.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_auroc_20260518_102348.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_confusion_20260512_205123.png
+│   │   │   ├── cnn_no_pooling_HumanvsNeanderthal_confusion_20260517_151849.png
+│   │   │   └── cnn_no_pooling_HumanvsNeanderthal_confusion_20260518_102346.png
+│   │   └── test
+│   │       ├── cnn_no_pooling_HumanvsNeanderthal_test_20260518_102709.json
+│   │       └── graphs
+│   │           ├── cnn_no_pooling_HumanvsNeanderthal_auroc_test_20260518_102709.png
+│   │           ├── cnn_no_pooling_HumanvsNeanderthal_confusion_test_20260518_102708.png
+│   │           └── cnn_no_pooling_HumanvsNeanderthal_pr_curve_test_20260518_102709.png
+│   └── multiclass
+│       ├── cnn_no_pooling_multiclass_best_model.pt
+│       ├── cnn_no_pooling_multiclass_run_20260517_152752.json
+│       ├── cnn_no_pooling_multiclass_run_20260518_103309.json
+│       ├── graphs
+│       │   ├── cnn_no_pooling_multiclass_20260517_152749.png
+│       │   ├── cnn_no_pooling_multiclass_20260518_103305.png
+│       │   ├── cnn_no_pooling_multiclass_auroc_20260517_152751.png
+│       │   ├── cnn_no_pooling_multiclass_auroc_20260518_103308.png
+│       │   ├── cnn_no_pooling_multiclass_confusion_20260517_152749.png
+│       │   └── cnn_no_pooling_multiclass_confusion_20260518_103306.png
+│       └── test
+│           ├── cnn_no_pooling_multiclass_test_20260518_104244.json
+│           └── graphs
+│               ├── cnn_no_pooling_multiclass_auroc_test_20260518_104244.png
+│               ├── cnn_no_pooling_multiclass_confusion_test_20260518_104243.png
+│               └── cnn_no_pooling_multiclass_pr_curve_test_20260518_104244.png
+├── danq
+│   ├── bottleneck
+│   │   ├── danq_bottleneck_best_model.pt
+│   │   ├── danq_bottleneck_run_20260425_154413.json
+│   │   ├── graphs
+│   │   │   ├── danq_bottleneck_20260425_154412.png
+│   │   │   └── danq_bottleneck_confusion_20260425_154413.png
+│   │   └── test
+│   │       ├── danq_bottleneck_test_20260518_095612.json
+│   │       ├── danq_bottleneck_test_20260519_131600.json
+│   │       └── graphs
+│   │           ├── danq_bottleneck_auroc_test_20260518_095612.png
+│   │           ├── danq_bottleneck_auroc_test_20260519_131559.png
+│   │           ├── danq_bottleneck_confusion_test_20260518_095611.png
+│   │           ├── danq_bottleneck_confusion_test_20260519_131558.png
+│   │           ├── danq_bottleneck_pr_curve_test_20260518_095612.png
+│   │           └── danq_bottleneck_pr_curve_test_20260519_131559.png
+│   ├── DenisovanvsNeanderthal
+│   │   ├── danq_DenisovanvsNeanderthal_best_model.pt
+│   │   ├── danq_DenisovanvsNeanderthal_run_20260509_015357.json
+│   │   └── graphs
+│   │       ├── danq_DenisovanvsNeanderthal_20260509_015354.png
+│   │       ├── danq_DenisovanvsNeanderthal_auroc_20260509_015357.png
+│   │       └── danq_DenisovanvsNeanderthal_confusion_20260509_015355.png
+│   ├── HumanvsNeanderthal
+│   │   ├── danq_HumanvsNeanderthal_best_model.pt
+│   │   ├── graphs
+│   │   │   └── danq_HumanvsNeanderthal_20260511_024504.png
+│   │   └── test
+│   │       ├── danq_HumanvsNeanderthal_test_20260510_235542.json
+│   │       ├── danq_HumanvsNeanderthal_test_20260518_095223.json
+│   │       └── graphs
+│   │           ├── danq_HumanvsNeanderthal_auroc_test_20260518_095223.png
+│   │           ├── danq_HumanvsNeanderthal_confusion_test_20260518_095222.png
+│   │           └── danq_HumanvsNeanderthal_pr_curve_test_20260518_095223.png
+│   ├── longerbp
+│   │   ├── danq_longerbp_best_model.pt
+│   │   ├── danq_longerbp_run_20260425_155703.json
+│   │   ├── danq_longerbp_run_20260425_161155.json
+│   │   └── graphs
+│   │       ├── danq_longerbp_20260425_155701.png
+│   │       ├── danq_longerbp_20260425_161153.png
+│   │       ├── danq_longerbp_confusion_20260425_155702.png
+│   │       └── danq_longerbp_confusion_20260425_161154.png
+│   └── original
+│       └── test
+│           ├── danq_original_test_20260518_095538.json
+│           └── graphs
+│               ├── danq_original_auroc_test_20260518_095538.png
+│               ├── danq_original_confusion_test_20260518_095537.png
+│               └── danq_original_pr_curve_test_20260518_095538.png
+├── master_results_cnn.csv
+├── master_results.csv
+├── master_results_danq.csv
+├── mlp
+│   └── binary
+│       ├── graphs
+│       └── mlp_binary_best_model.pt
+└── rnn
+    ├── bottleneck
+    │   ├── graphs
+    │   │   ├── rnn_bottleneck_20260506_025601.png
+    │   │   ├── rnn_bottleneck_20260506_102542.png
+    │   │   ├── rnn_bottleneck_confusion_20260506_025609.png
+    │   │   ├── rnn_bottleneck_confusion_20260506_102550.png
+    │   │   └── rnn_original_auroc_20260506_102541.png
+    │   ├── rnn_bottleneck_run_20260506_025610.json
+    │   ├── rnn_bottleneck_run_20260506_102550.json
+    │   └── test
+    │       ├── graphs
+    │       │   ├── rnn_bottleneck_auroc_test_20260510_151211.png
+    │       │   ├── rnn_bottleneck_confusion_test_20260510_151210.png
+    │       │   └── rnn_bottleneck_pr_curve_test_20260510_151211.png
+    │       └── rnn_bottleneck_test_20260510_151211.json
+    ├── DenisovanvsNeanderthal
+    │   ├── graphs
+    │   │   ├── rnn_DenisovanvsNeanderthal_20260503_012400.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_20260505_002128.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_20260505_005617.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_20260506_113915.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_confusion_20260503_012414.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_confusion_20260505_002138.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_confusion_20260505_005630.png
+    │   │   ├── rnn_DenisovanvsNeanderthal_confusion_20260506_113923.png
+    │   │   └── rnn_original_auroc_20260506_113914.png
+    │   ├── rnn_DenisovanvsNeanderthal_run_20260503_012415.json
+    │   ├── rnn_DenisovanvsNeanderthal_run_20260505_002138.json
+    │   ├── rnn_DenisovanvsNeanderthal_run_20260505_005631.json
+    │   ├── rnn_DenisovanvsNeanderthal_run_20260506_113924.json
+    │   └── test
+    │       ├── graphs
+    │       │   ├── rnn_DenisovanvsNeanderthal_auroc_test_20260510_151425.png
+    │       │   ├── rnn_DenisovanvsNeanderthal_confusion_test_20260510_151424.png
+    │       │   └── rnn_DenisovanvsNeanderthal_pr_curve_test_20260510_151425.png
+    │       └── rnn_DenisovanvsNeanderthal_test_20260510_151425.json
+    ├── HumanvsNeanderthal
+    │   ├── graphs
+    │   │   ├── rnn_HumanvsNeanderthal_20260504_234308.png
+    │   │   ├── rnn_HumanvsNeanderthal_20260505_230350.png
+    │   │   ├── rnn_HumanvsNeanderthal_20260506_105857.png
+    │   │   ├── rnn_HumanvsNeanderthal_20260510_015923.png
+    │   │   ├── rnn_HumanvsNeanderthal_auroc_20260510_015944.png
+    │   │   ├── rnn_HumanvsNeanderthal_confusion_20260504_234316.png
+    │   │   ├── rnn_HumanvsNeanderthal_confusion_20260505_230401.png
+    │   │   ├── rnn_HumanvsNeanderthal_confusion_20260506_105905.png
+    │   │   ├── rnn_HumanvsNeanderthal_confusion_20260510_015930.png
+    │   │   └── rnn_original_auroc_20260506_105857.png
+    │   ├── rnn_HumanvsNeanderthal_run_20260504_234317.json
+    │   ├── rnn_HumanvsNeanderthal_run_20260505_230401.json
+    │   ├── rnn_HumanvsNeanderthal_run_20260506_105906.json
+    │   ├── rnn_HumanvsNeanderthal_run_20260510_015944.json
+    │   └── test
+    │       ├── graphs
+    │       │   ├── rnn_HumanvsNeanderthal_auroc_test_20260510_151854.png
+    │       │   ├── rnn_HumanvsNeanderthal_confusion_test_20260510_151854.png
+    │       │   └── rnn_HumanvsNeanderthal_pr_curve_test_20260510_151854.png
+    │       └── rnn_HumanvsNeanderthal_test_20260510_151855.json
+    ├── longerbp
+    │   ├── graphs
+    │   │   ├── rnn_longerbp_20260506_011812.png
+    │   │   └── rnn_longerbp_confusion_20260506_011820.png
+    │   ├── rnn_longerbp_run_20260506_011820.json
+    │   └── test
+    │       ├── graphs
+    │       │   ├── rnn_longerbp_auroc_test_20260510_152235.png
+    │       │   ├── rnn_longerbp_confusion_test_20260510_152235.png
+    │       │   └── rnn_longerbp_pr_curve_test_20260510_152236.png
+    │       └── rnn_longerbp_test_20260510_152236.json
+    ├── multiclass
+    │   ├── graphs
+    │   │   ├── rnn_multiclass_20260425_140052.png
+    │   │   ├── rnn_multiclass_20260506_023039.png
+    │   │   └── rnn_multiclass_confusion_20260506_023046.png
+    │   ├── rnn_multiclass_best_model.pt
+    │   ├── rnn_multiclass_run_20260416_225436.json
+    │   ├── rnn_multiclass_run_20260416_230751.json
+    │   ├── rnn_multiclass_run_20260416_235050.json
+    │   ├── rnn_multiclass_run_20260420_221926.json
+    │   ├── rnn_multiclass_run_20260420_225858.json
+    │   ├── rnn_multiclass_run_20260420_230409.json
+    │   ├── rnn_multiclass_run_20260420_231442.json
+    │   ├── rnn_multiclass_run_20260425_140052.json
+    │   ├── rnn_multiclass_run_20260426_231027.json
+    │   ├── rnn_multiclass_run_20260427_004820.json
+    │   ├── rnn_multiclass_run_20260506_023047.json
+    │   └── test
+    │       ├── graphs
+    │       │   ├── rnn_multiclass_auroc_test_20260510_152930.png
+    │       │   ├── rnn_multiclass_confusion_test_20260510_152930.png
+    │       │   └── rnn_multiclass_pr_curve_test_20260510_152931.png
+    │       └── rnn_multiclass_test_20260510_152931.json
+    └── original
+        ├── graphs
+        │   ├── rnn_original_20260506_020350.png
+        │   ├── rnn_original_20260506_033146.png
+        │   ├── rnn_original_20260506_035734.png
+        │   ├── rnn_original_20260510_013812.png
+        │   ├── rnn_original_confusion_20260506_020412.png
+        │   ├── rnn_original_confusion_20260506_033201.png
+        │   ├── rnn_original_confusion_20260506_035749.png
+        │   └── rnn_original_confusion_20260510_013832.png
+        ├── rnn_original_best_model.pt
+        ├── rnn_original_run_20260506_020413.json
+        ├── rnn_original_run_20260506_033201.json
+        ├── rnn_original_run_20260506_035749.json
+        └── test
+            ├── graphs
+            │   ├── rnn_original_auroc_test_20260510_152458.png
+            │   ├── rnn_original_confusion_test_20260510_152458.png
+            │   └── rnn_original_pr_curve_test_20260510_152459.png
+            └── rnn_original_test_20260510_152459.json
+
+88 directories, 718 files

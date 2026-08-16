@@ -1,0 +1,35 @@
+{
+    "model": "cnn",
+    "dataset": "bottleneck",
+    "model_path": "src/checkpoints/cnn_bottleneck_best_model.pt",
+    "test_samples": 1889,
+    "accuracy": 0.6379036527263102,
+    "mcc": 0.27840421935551474,
+    "classification_report": {
+        "Human": {
+            "precision": 0.6208981001727115,
+            "recall": 0.745850622406639,
+            "f1-score": 0.6776625824693685,
+            "support": 964.0
+        },
+        "Denisovan": {
+            "precision": 0.66484268125855,
+            "recall": 0.5254054054054054,
+            "f1-score": 0.5869565217391305,
+            "support": 925.0
+        },
+        "accuracy": 0.6379036527263102,
+        "macro avg": {
+            "precision": 0.6428703907156308,
+            "recall": 0.6356280139060222,
+            "f1-score": 0.6323095521042494,
+            "support": 1889.0
+        },
+        "weighted avg": {
+            "precision": 0.6424167542248029,
+            "recall": 0.6379036527263102,
+            "f1-score": 0.6332459037105171,
+            "support": 1889.0
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "model": "rnn",
+    "dataset": "multiclass",
+    "model_config": {
+        "hidden_size": 128,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "batch_size": {
+            "binary": 64,
+            "multiclass": 32,
+            "bottleneck": 32
+        },
+        "lr": {
+            "binary": 0.001,
+            "multiclass": 0.0005,
+            "bottleneck": 0.0005
+        }
+    },
+    "training_config": {
+        "batch_size": 32,
+        "epochs": 2
+    },
+    "history": {
+        "train_loss": [
+            0.9328729736864906,
+            0.8998175889357617
+        ],
+        "val_loss": [
+            0.9306706193410335,
+            0.9220342345452222
+        ],
+        "train_acc": [
+            0.5400489105047674,
+            0.5647239853818042
+        ],
+        "val_acc": [
+            0.5361339997298392,
+            0.5359989193570174
+        ]
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "model": "danq",
+    "dataset": "bottleneck",
+    "model_path": "src/checkpoints/danq_HumanvsNeanderthal_best_model.pt",
+    "test_samples": 1889,
+    "accuracy": 0.49285336156696663,
+    "mcc": -0.030927122105848352,
+    "classification_report": {
+        "Human": {
+            "precision": 0.5020435967302452,
+            "recall": 0.7645228215767634,
+            "f1-score": 0.6060855263157895,
+            "support": 964.0
+        },
+        "Denisovan": {
+            "precision": 0.46080760095011875,
+            "recall": 0.20972972972972972,
+            "f1-score": 0.28826151560178304,
+            "support": 925.0
+        },
+        "accuracy": 0.49285336156696663,
+        "macro avg": {
+            "precision": 0.481425598840182,
+            "recall": 0.48712627565324657,
+            "f1-score": 0.44717352095878626,
+            "support": 1889.0
+        },
+        "weighted avg": {
+            "precision": 0.4818512748156783,
+            "recall": 0.49285336156696663,
+            "f1-score": 0.4504543934886555,
+            "support": 1889.0
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "model": "cnn",
+    "dataset": "multiclass",
+    "model_path": "src/checkpoints/cnn_multiclass_best_model.pt",
+    "test_samples": 2837,
+    "accuracy": 0.5731406415227353,
+    "mcc": 0.36759729403021485,
+    "classification_report": {
+        "Human": {
+            "precision": 0.5138888888888888,
+            "recall": 0.49896265560165975,
+            "f1-score": 0.5063157894736842,
+            "support": 964.0
+        },
+        "Denisovan": {
+            "precision": 0.6841121495327103,
+            "recall": 0.40264026402640263,
+            "f1-score": 0.5069252077562327,
+            "support": 909.0
+        },
+        "Neanderthal": {
+            "precision": 0.5702781844802343,
+            "recall": 0.808091286307054,
+            "f1-score": 0.6686695278969957,
+            "support": 964.0
+        },
+        "accuracy": 0.5731406415227353,
+        "macro avg": {
+            "precision": 0.5894264076339445,
+            "recall": 0.5698980686450388,
+            "f1-score": 0.560636841708971,
+            "support": 2837.0
+        },
+        "weighted avg": {
+            "precision": 0.5875907658276589,
+            "recall": 0.5731406415227353,
+            "f1-score": 0.5616781317574026,
+            "support": 2837.0
+        }
+    }
+}
