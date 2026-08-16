@@ -1,0 +1,35 @@
+{
+    "model": "cnn",
+    "dataset": "HumanvsNeanderthal",
+    "model_path": "src/checkpoints/cnn_HumanvsNeanderthal_best_model.pt",
+    "test_samples": 1928,
+    "accuracy": 0.729253112033195,
+    "mcc": 0.46034174734851274,
+    "classification_report": {
+        "Human": {
+            "precision": 0.7517084282460137,
+            "recall": 0.6846473029045643,
+            "f1-score": 0.7166123778501629,
+            "support": 964.0
+        },
+        "Neanderthal": {
+            "precision": 0.7104761904761905,
+            "recall": 0.7738589211618258,
+            "f1-score": 0.7408142999006951,
+            "support": 964.0
+        },
+        "accuracy": 0.729253112033195,
+        "macro avg": {
+            "precision": 0.7310923093611021,
+            "recall": 0.7292531120331951,
+            "f1-score": 0.728713338875429,
+            "support": 1928.0
+        },
+        "weighted avg": {
+            "precision": 0.731092309361102,
+            "recall": 0.729253112033195,
+            "f1-score": 0.7287133388754289,
+            "support": 1928.0
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "model": "cnn",
+    "dataset": "DenisovanvsNeanderthal",
+    "model_path": "src/checkpoints/cnn_DenisovanvsNeanderthal_best_model.pt",
+    "test_samples": 1869,
+    "accuracy": 0.78330658105939,
+    "mcc": 0.5954673441844229,
+    "classification_report": {
+        "Denisovan": {
+            "precision": 0.9180602006688964,
+            "recall": 0.6066298342541436,
+            "f1-score": 0.7305389221556886,
+            "support": 905.0
+        },
+        "Neanderthal": {
+            "precision": 0.7199055861526357,
+            "recall": 0.9491701244813278,
+            "f1-score": 0.8187919463087249,
+            "support": 964.0
+        },
+        "accuracy": 0.78330658105939,
+        "macro avg": {
+            "precision": 0.818982893410766,
+            "recall": 0.7778999793677357,
+            "f1-score": 0.7746654342322068,
+            "support": 1869.0
+        },
+        "weighted avg": {
+            "precision": 0.8158552523576736,
+            "recall": 0.78330658105939,
+            "f1-score": 0.7760584059885013,
+            "support": 1869.0
+        }
+    }
+}

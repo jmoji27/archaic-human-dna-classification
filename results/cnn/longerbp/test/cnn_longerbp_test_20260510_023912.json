@@ -1,0 +1,35 @@
+{
+    "model": "cnn",
+    "dataset": "longerbp",
+    "model_path": "src/checkpoints/cnn_longerbp_best_model.pt",
+    "test_samples": 4649,
+    "accuracy": 0.5893740589374059,
+    "mcc": 0.21687892739808476,
+    "classification_report": {
+        "Human": {
+            "precision": 0.7019015659955258,
+            "recall": 0.47700494108703917,
+            "f1-score": 0.5680018103643358,
+            "support": 2631.0
+        },
+        "Denisovan": {
+            "precision": 0.5190492834673192,
+            "recall": 0.7358771060455896,
+            "f1-score": 0.6087312973970076,
+            "support": 2018.0
+        },
+        "accuracy": 0.5893740589374059,
+        "macro avg": {
+            "precision": 0.6104754247314225,
+            "recall": 0.6064410235663145,
+            "f1-score": 0.5883665538806717,
+            "support": 4649.0
+        },
+        "weighted avg": {
+            "precision": 0.6225305386472959,
+            "recall": 0.5893740589374059,
+            "f1-score": 0.5856813338816367,
+            "support": 4649.0
+        }
+    }
+}

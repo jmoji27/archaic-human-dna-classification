@@ -1,0 +1,35 @@
+{
+    "model": "danq",
+    "dataset": "bottleneck",
+    "model_path": "src/checkpoints/danq_bottleneck_best_model.pt",
+    "test_samples": 1889,
+    "accuracy": 0.5283218634197988,
+    "mcc": 0.09274470677395208,
+    "classification_report": {
+        "Human": {
+            "precision": 0.5201992252351965,
+            "recall": 0.975103734439834,
+            "f1-score": 0.6784554312522555,
+            "support": 964.0
+        },
+        "Denisovan": {
+            "precision": 0.7073170731707317,
+            "recall": 0.0627027027027027,
+            "f1-score": 0.11519364448857994,
+            "support": 925.0
+        },
+        "accuracy": 0.5283218634197988,
+        "macro avg": {
+            "precision": 0.613758149202964,
+            "recall": 0.5189032185712683,
+            "f1-score": 0.3968245378704177,
+            "support": 1889.0
+        },
+        "weighted avg": {
+            "precision": 0.6118265462200404,
+            "recall": 0.5283218634197988,
+            "f1-score": 0.40263904546273727,
+            "support": 1889.0
+        }
+    }
+}

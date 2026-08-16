@@ -1,0 +1,35 @@
+{
+    "model": "danq",
+    "dataset": "original",
+    "model_path": "src/checkpoints/danq_original_best_model.pt",
+    "test_samples": 50906,
+    "accuracy": 0.4869367068714886,
+    "mcc": 0.0813057209498887,
+    "classification_report": {
+        "Human": {
+            "precision": 0.6617683277235038,
+            "recall": 0.26817259389866593,
+            "f1-score": 0.38167613636363634,
+            "support": 30059.0
+        },
+        "Denisovan": {
+            "precision": 0.4319431891542931,
+            "recall": 0.8023696455125437,
+            "f1-score": 0.5615725508628214,
+            "support": 20847.0
+        },
+        "accuracy": 0.4869367068714886,
+        "macro avg": {
+            "precision": 0.5468557584388984,
+            "recall": 0.5352711197056048,
+            "f1-score": 0.4716243436132289,
+            "support": 50906.0
+        },
+        "weighted avg": {
+            "precision": 0.567650450385816,
+            "recall": 0.4869367068714886,
+            "f1-score": 0.45534722725792215,
+            "support": 50906.0
+        }
+    }
+}

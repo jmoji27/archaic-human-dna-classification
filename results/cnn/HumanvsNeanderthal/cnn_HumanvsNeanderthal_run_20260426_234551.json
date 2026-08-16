@@ -1,0 +1,75 @@
+{
+    "model": "cnn",
+    "dataset": "HumanvsNeanderthal",
+    "model_config": {
+        "num_conv_layers": 4,
+        "conv_filters": [
+            64,
+            128,
+            256,
+            256
+        ],
+        "conv_width": [
+            15,
+            11,
+            7,
+            7
+        ],
+        "conv_stride": 1,
+        "max_pool_size": 3,
+        "max_pool_stride": 2,
+        "dropout_rate_conv": [
+            0.2,
+            0.3,
+            0.4,
+            0.4
+        ],
+        "num_dense_layers": 2,
+        "dense_filters": [
+            256,
+            128
+        ],
+        "dropout_rate_dense": [
+            0.5,
+            0.5
+        ],
+        "batch_size": {
+            "original": 32,
+            "longerbp": 32,
+            "multiclass": 64,
+            "bottleneck": 64,
+            "HumanvsNeanderthal": 32,
+            "DenisovanvsNeanderthal": 32
+        },
+        "lr": {
+            "original": 5e-05,
+            "longerbp": 0.0001,
+            "multiclass": 0.0003,
+            "bottleneck": 0.0001,
+            "HumanvsNeanderthal": 0.0001,
+            "DenisovanvsNeanderthal": 0.0001
+        }
+    },
+    "training_config": {
+        "batch_size": 32,
+        "epochs": 2
+    },
+    "history": {
+        "train_loss": [
+            0.6025447736279449,
+            0.568720576073167
+        ],
+        "val_loss": [
+            0.6168767036747237,
+            0.6151358446613496
+        ],
+        "train_acc": [
+            0.6640565698533818,
+            0.69399944069354
+        ],
+        "val_acc": [
+            0.6675329868052778,
+            0.6719312275089964
+        ]
+    }
+}
